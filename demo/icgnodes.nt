@@ -1,0 +1,377 @@
+#
+# Icon Code Generator Types
+#
+
+include icnnodes.h
+
+enum Condition { EQ, NE, CS, CC, HI, LS, GT, LE, FS, FC, LO, HS, LT, GE, UC }
+
+enum DataType { B, W, D, F, L }
+
+enum InsnType { I, M }
+
+enum LocType { GLOBAL, PARAM, LOCAL, STATIC, CONST }
+
+enum ProcReg { FP, SB, SP }
+
+node Addr {
+  slot Absolute {
+    Disp disp;
+  }
+  slot External {
+    Disp disp1;
+    Disp disp2;
+  }
+  slot Frame {
+    Disp disp;
+  }
+  slot FrameRelative {
+    Disp disp2;
+    Disp disp1;
+  }
+  slot Immediate {
+    MValue value;
+  }
+  slot Program {
+    Disp disp;
+  }
+  slot Register {
+    DataType dt;
+    int number;
+  }
+  slot RegisterRelative {
+    DataType dt;
+    Disp disp;
+    int number;
+  }
+  slot Stack {
+    Disp disp;
+  }
+  slot StackRelative {
+    Disp disp2;
+    Disp disp1;
+  }
+  slot Static {
+    Disp disp;
+  }
+  slot StaticRelative {
+    Disp disp2;
+    Disp disp1;
+  }
+  slot TopOfStack {
+  }
+}
+ 
+node CGContext {
+  slot Loop {
+    Expression e;
+    int saveState1;
+    int saveState2;
+    int endLabel;
+  }
+  slot Proc {
+    CGProc p;
+    int saveState1;
+    int saveState2;
+    int endLabel;
+    int dataLabel;
+  }
+  CGContext c;
+}
+
+node CGProc {
+  Token name;
+  Queue paramQ;
+  Queue localQ;
+  Queue staticQ;
+  Expression init;
+  Expression body;
+  Type type;
+  null Queue code;
+  null Queue constQ;
+  null int localSize;
+  null int paramSize;
+  null int tempSize;
+}
+
+node CGVar {
+  Token name;
+  Type type;
+  null int align;
+  null LocType location;
+  null int offset;
+  null int position;
+  null int size;
+  null MValue value;
+}
+
+node Disp {
+  slot DataLabel {
+    int number;
+  }
+  slot NamedLabel {
+    char *name;
+  }
+  slot Number {
+    int number;
+  }
+  slot TempLabel {
+    int number;
+  }
+}
+
+node Insn {
+  slot Align {
+    int number;
+  }
+  slot Comment {
+    char *text;
+  }
+  slot DataMode {
+  }
+  slot Document {
+    CGVar var;
+  }
+  slot Global {
+    char *label;
+  }
+  slot MInsn {
+    MInsn mi;
+  }
+  slot NamedData {
+    char *name;
+    MValue value;
+  }
+  slot NamedLabel {
+    char *name;
+  }
+  slot Queue {
+    Queue queue;
+  }
+  slot RS {
+    int number1;
+    int number2;
+  }
+  slot SS {
+    int number1;
+    int number2;
+  }
+  slot TempData {
+    int number;
+    MValue value;
+  }
+  slot TempLabel {
+    int number;
+  }
+  slot TextMode {
+  }
+}
+
+node MInsn {
+  slot AbsoluteValue {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Add {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot AddQuick {
+    DataType dt;
+    int src;
+    Addr dest;
+  }
+  slot AdjustStackPointer {
+    DataType dt;
+    Addr src;
+  }
+  slot And {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot ArithmeticComplement {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot ArithmeticShift {
+    DataType dt;
+    Addr count;
+    Addr dest;
+  }
+  slot Branch {
+    Condition cond;
+    Disp dest;
+  }
+  slot BranchToSubroutine {
+    Disp dest;
+  }
+  slot Compare {
+    DataType dt;
+    Addr src1;
+    Addr src2;
+  }
+  slot CompareMultiple {
+    DataType dt;
+    Addr block1;
+    Addr block2;
+    int length;
+  }
+  slot CompareQuick {
+    DataType dt;
+    int src1;
+    Addr src2;
+  }
+  slot ConvertDF {
+    Addr src;
+    Addr dest;
+  }
+  slot ConvertFD {
+    Addr src;
+    Addr dest;
+  }
+  slot Divide {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot EffectiveAddress {
+    Addr src;
+    Addr dest;
+  }
+  slot Enter {
+    Queue regs;
+    int disp;
+  }
+  slot Exit {
+    Queue regs;
+  }
+  slot Jump {
+    Addr dest;
+  }
+  slot JumpToSubroutine {
+    Addr dest;
+  }
+  slot LoadProcessorRegister {
+    DataType dt;
+    ProcReg procreg;
+    Addr src;
+  }
+  slot LogicalComplement {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot LogicalShift {
+    DataType dt;
+    Addr count;
+    Addr dest;
+  }
+  slot Modulus {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Move {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot MoveMultiple {
+    DataType dt;
+    Addr block1;
+    Addr block2;
+    int length;
+  }
+  slot MoveQuick {
+    DataType dt;
+    int src;
+    Addr dest;
+  }
+  slot Multiply {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Negate {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot NoOperation {
+  }
+  slot Or {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Queue {
+    Queue queue;
+  }
+  slot Quotient {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Remainder {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Return {
+    int constant;
+  }
+  slot Rotate {
+    DataType dt;
+    Addr count;
+    Addr dest;
+  }
+  slot StoreProcessorRegister {
+    DataType dt;
+    ProcReg procreg;
+    Addr dest;
+  }
+  slot Subtract {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+  slot Xor {
+    DataType dt;
+    Addr src;
+    Addr dest;
+  }
+}
+
+node MValue {
+#
+# Machine Addressable Types (Immediates)
+#
+  slot Byte {
+    char value;
+  }
+  slot Word {
+    short value;
+  }
+  slot DoubleWord {
+    long value;
+  }
+  slot Float {
+    float value;
+  }
+  slot LongFloat {
+    double value;
+  }
+#
+# Compound Types
+#
+  slot Cset {
+    char *value;
+  }
+  slot String {
+    char *value;
+  }
+}

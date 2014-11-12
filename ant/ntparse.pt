@@ -1,0 +1,36 @@
+#ifndef ntparse_pt
+#define ntparse_pt
+
+#include "ntparse.td"
+
+#ifdef __ANSI_C__
+Void doEncode(Queue, Queue, Queue);
+Enum doEnum(Token, Queue);
+Token doFakeToken(void);
+Void doNQEnum(Queue, Enum);
+Void doNQInclude(Queue, Token);
+Void doNQNode(Queue, Node);
+Void doNQSlot(Queue, Slot);
+Void doNQToken(Queue, Token);
+Void doNQVar(Queue, Token, Queue, Queue, Token, Queue);
+Node doNode(Token, Queue, Queue);
+Void doNothing(void);
+Queue doQ(void);
+Slot doSlot(Token, Queue);
+#else
+Void doEncode();
+Enum doEnum();
+Token doFakeToken();
+Void doNQEnum();
+Void doNQInclude();
+Void doNQNode();
+Void doNQSlot();
+Void doNQToken();
+Void doNQVar();
+Node doNode();
+Void doNothing();
+Queue doQ();
+Slot doSlot();
+#endif /* __ANSI_C__ */
+
+#endif /* ntparse_pt */

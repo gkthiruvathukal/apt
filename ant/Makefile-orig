@@ -1,0 +1,75 @@
+#
+# UNIX Makefile for an Apt Project
+# Copyright {c} 1990 -- Apt Technologies
+# All Rights Reserved
+#
+
+NAME = nt
+OTHER = ntcgen.o nttype.o
+
+APT=..
+APT_INCLUDE=${APT}/lib
+APTC=${APT}/apt/apt
+ASTC=${APT}/ast/ast
+LIB=${APT}/lib
+
+CFLAGS = ${CD} -I${APT_INCLUDE} -I.. ${CDEFINES}
+
+CP = cp -p
+RM = rm -f
+ECHO = echo
+
+.c.o:
+	@ ${ECHO} Compiling $*.c
+	@ ${CC} ${CFLAGS} -c $*.c
+
+ACTIONS = ${NAME}acts
+CLASS = ${NAME}class
+MAIN = ${NAME}main
+PARSER = ${NAME}parse
+SCANNER = ${NAME}scan
+TYPES = ${NAME}type
+
+CORE = ${PARSER}.o ${SCANNER}.o ${ACTIONS}.o ${CLASS}.o ${MAIN}.o 
+OBJECTS = ${CORE} ${OTHER}
+
+all: one two
+
+one:
+	@ ${ECHO} "Making Apt Node Tool"
+
+two: ${NAME}
+
+install: ${NAME}
+	@ ${CP} ${NAME} ${IBIN} 
+
+${NAME}: ${OBJECTS}
+	@ ${ECHO} Linking ${NAME}
+	@ ${CC} -o ${NAME} ${CFLAGS} ${OBJECTS} -L${LIB} -lall
+
+${ACTIONS}.o: ${ACTIONS}.c ${PARSER}.pt
+
+${CLASS}.o: ${CLASS}.c ${SCANNER}.h
+
+${MAIN}.o: ${MAIN}.c
+
+${PARSER}.o: ${PARSER}.c
+
+${PARSER}.c: ${PARSER}.grm ${TYPES}.h
+	@ ${ECHO} Generating Parse Tables
+	@ ${APTC} -w ${PARSER}.grm -i ${TYPES}
+
+${SCANNER}.o: ${SCANNER}.c
+
+${SCANNER}.c: ${SCANNER}.ast
+	@ ${ECHO} Generating Lexical Analyzer
+	@ ${ASTC} ${SCANNER}.ast -i ${PARSER}.h -t
+
+clean:
+	@ ${RM} ${OBJECTS} ${SCANNER}.[ch] ${PARSER}.[ch] ${PARSER}.pt
+	@ ${RM} ${PARSER}.td ${PARSER}.lst
+	@ ${RM} *.o *.obj *.smp *.sym *.dbd *.bak core
+
+pristine:
+	@ make clean
+	@ ${RM} nt

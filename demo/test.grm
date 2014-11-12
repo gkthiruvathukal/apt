@@ -1,0 +1,83 @@
+%PRODUCTIONS
+LanguageSpec -> _BeginSpec SectionList _EndSpec
+SectionList -> Section SectionList _ListGroup
+SectionList -> _ListEmpty
+Section -> productions EoLSep _BeginProductions ProductionList _EndProductions
+Section -> aliases EoLSep _BeginAliases AliasList _EndAliases
+Section -> actions _BeginPhaseIds PhaseIdList _EndPhaseIds EoLSep _BeginActions ActionList _EndActions
+Section -> fiducials EoLSep _BeginFiducials FiducialList _EndFiducials
+Section -> phases EoLSep _BeginPhases PhaseList _EndPhases
+ProductionList -> Production ProductionList _ListGroup
+ProductionList -> _ListEmpty
+Production -> ident <- RhsList EoLs _DoProduction
+RhsList -> ident _RhsIdent RhsList _ListGroup
+RhsList -> <- _RhsIdent RhsList _ListGroup
+RhsList -> _ListEmpty
+PhaseIdList -> PhaseId PhaseIdListTail _ListGroup
+PhaseIdListTail -> PhaseId PhaseIdListTail _ListGroup
+PhaseIdListTail -> _ListEmpty
+PhaseId -> ident _DoPhaseId
+ActionList -> Action ActionList _ListGroup
+ActionList -> _ListEmpty
+Action -> ident ident ( Parameters ) : ( ident , number ) EoLs _DoAction
+Parameters -> Parameter ParamTail _ListGroup
+Parameters -> _ListEmpty
+ParamTail -> , Parameter _ListGroup ParamTail _ListGroup
+ParamTail -> _ListEmpty
+Parameter -> number ParamNumber
+Parameter -> ident _ParamEnum
+Parameter -> character _ParamChar
+Parameter -> string _ParamString
+ParamNumber -> : ident _ParamStack
+ParamNumber -> _ParamInt
+AliasList -> Alias AliasList _ListGroup
+AliasList -> _ListEmpty
+Alias -> ident ident EoLs _DoAlias
+FiducialList -> Fiducial FiducialList _ListGroup
+FiducialList -> _ListEmpty
+Fiducial -> ident EoLs _DoFiducial
+PhaseList -> Phase PhaseList _ListGroup
+PhaseList -> _ListEmpty
+Phase -> ident EoLs _DoPhase
+EoLs -> EoL EoLsTl
+EoLsTl -> EoL _EatEoL EoLsTl
+EoLsTl ->
+EoLSep -> EoLs _EatEoL
+%ALIASES
+<- arrow
+, comma
+( lparen
+) rparen
+: colon
+%PHASES
+A
+%ACTIONS A
+_EatEoL semEatEoL():(Void,1)
+_BeginSpec semBeginSpec():(Token,0)
+_EndSpec semEndSpec():(Token,2)
+_ListGroup semListGroup():(Token,2)
+_ListEmpty semListEmpty():(Token,0)
+_BeginProductions semBeginProductions():(Token,1)
+_EndProductions semEndProductions():(Token,2)
+_BeginAliases semBeginAliases():(Token,1)
+_EndAliases semEndAliases():(Token,2)
+_BeginActions semBeginActions():(Token,1)
+_EndActions semEndActions():(Token,2)
+_BeginFiducials semBeginFiducials():(Token,1)
+_EndFiducials semEndFiducials():(Token,2)
+_DoProduction semDoProduction(4:Token):(Token,4)
+_RhsIdent semRhsIdent(1:Token):(Token,1)
+_DoAction semDoAction(12:Token,11:Token,5:Token,3:Token):(Token,12)
+_ParamEnum semParamEnum(1:Token):(Token,1)
+_ParamChar semParamChar(1:Token):(Token,1)
+_ParamString semParamString(1:Token):(Token,1)
+_ParamStack semParamStack(3:Token,1:Token):(Token,3)
+_ParamInt semParamInt(1:Token):(Token,1)
+_DoAlias semDoAlias(3:Token,2:Token):(Token,3)
+_DoFiducial semDoFiducial(2:Token):(Token,2)
+_DoPhaseId semDoPhaseId(1:Token):(Token,1)
+_DoPhase semDoPhase(2:Token):(Token,2)
+_BeginPhaseIds semBeginPhaseIds():(Token,1)
+_EndPhaseIds semEndPhaseIds():(Token,2)
+_BeginPhases semBeginPhases():(Token,1)
+_EndPhases semEndPhases():(Token,2)

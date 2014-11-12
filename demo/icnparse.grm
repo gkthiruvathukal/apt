@@ -1,0 +1,422 @@
+%PHASES
+Declaration
+Translation
+%PRODUCTIONS
+prog -> _Prologue decl progtl _Epilogue
+progtl -> sep decl _DeclList progtl
+progtl ->
+type -> any _SimpleType
+type -> int _SimpleType
+type -> real _SimpleType
+type -> string _SimpleType
+type -> cset _SimpleType
+type -> void _SimpleType
+type -> id _UserType
+type -> record { fieldlistopt } _RecordType
+type -> union { fieldlistopt } _UnionType
+type -> set of type _SetType
+type -> [ typetail
+typetail -> ] type _ListType
+typetail -> type ] type _TableType
+type -> ( paramlist ) type _ProcType
+type -> ref type _RefType
+type -> { type } _NestedType
+decl -> globaldec
+decl -> procdec
+decl -> typedec
+decl -> _NoDecl
+typedec -> type id = type _TypeDef
+globaldec -> global idlistd : type _GlobDecl
+globaldec -> external idlistd : type _GlobDecl
+idlistd -> id _EnqueueFirstIdDecl idlistdtl
+idlistdtl -> , id _EnqueueNextIdDecl idlistdtl
+idlistdtl ->
+idlistp -> id _EnqueueFirstIdProc idlistptl
+idlistptl -> , id _EnqueueNextIdProc idlistptl
+idlistptl ->
+fieldlistopt -> _NoFields
+fieldlistopt -> fieldlist
+fieldlist -> idlistd : type _FirstField fieldlisttl
+fieldlisttl -> ; idlistd : type _NextField fieldlisttl
+fieldlisttl -> _EndFields
+procdec -> header locopt initopt seq end _ProcDecl
+header -> _LocalTable procedure id ( paramlist ) refopt type sep _ProcHead
+paramlist -> parameter _EnqueueFirstParameter paramlisttl
+paramlist -> _MakeQueueD
+paramlisttl -> ; parameter _EnqueueNextParameter paramlisttl
+paramlisttl ->
+parameter -> refopt id : type _ScrubParameter
+refopt -> ref _Ref
+refopt -> _NoRef
+sep -> ; _Discard
+sep -> eol _Discard
+locals -> localspec idlistp : type sep _LocalDecl localstl
+localstl -> localspec idlistp : type sep _LocalDecl localstl
+localstl -> 
+locopt -> locals
+locopt ->
+localspec -> local
+localspec -> static
+localspec -> dynamic
+initopt -> initial e sep _Initializer
+initopt -> _NoInitializer
+seq -> eopt _ExpSeqHead seqtl
+seqtl -> sep eopt _ExpSeqNext seqtl
+seqtl -> 
+eopt -> _NoExp
+eopt -> e
+e -> e1
+e1 -> e2 e1tl
+e1tl -> & e2 _BinOp e1tl
+e1tl ->
+e2 -> e3 e2tl
+e2tl -> ?  e3 _BinOp e2tl
+e2tl ->
+e3 -> e4 e3tl
+e3tl -> asgnop e3 _BinOp
+e3tl ->
+e4 -> e5 e4tl
+e4tl -> to e5 byopt e4tl
+e4tl ->
+byopt -> by e5 _TerOp
+byopt -> _BinOp
+e5 -> e6 e5tl
+e5tl -> | e5 _BinOp
+e5tl ->
+e6 -> e7 e6tl
+e6tl -> relop e7 _RelOp e6tl
+e6tl -> = e7 _BinOp e6tl
+e6tl ->
+e7 -> e8 e7tl
+e7tl -> catop e8 _BinOp e7tl
+e7tl -> 
+e8 -> e9 e8tl
+e8tl -> addop e9 _BinOp e8tl
+e8tl ->
+e9 -> e10 e9tl
+e9tl -> mulop e10 _BinOp e9tl
+e9tl ->
+e10 -> e11 e10tl
+e10tl -> ^ e10 _BinOp
+e10tl ->
+e11 -> e12 e11tl
+e11tl -> \\ e12 _BinOp e11tl
+e11tl -> @ e12 _BinOp e11tl
+e11tl ->
+e12 -> uop e12 _UnaryOp
+e12 -> e13
+e13 -> ek
+e13 -> e14 e13tl
+e13tl -> ( elist ) _ProcCall e13tl
+e13tl -> [ e rangetl ] _Subscript e13tl
+e13tl -> [: type ] _Cast e13tl
+e13tl -> . id _FieldRef e13tl
+e13tl ->
+rangetl -> : e _Range
+rangetl -> +: e _Range
+rangetl -> -: e _Range
+rangetl -> _NoRange
+elist -> e _ExpSeqHead elisttl
+elist -> _NoExpSeq
+elisttl -> , e _ExpSeqNext2 elisttl
+elisttl -> 
+ek -> repeat e _Repeat
+ek -> while e doopt _While
+ek -> until e doopt _Until
+ek -> every e doopt _Every
+ek -> if e then e elseopt
+ek -> case e of { caselist } _Case
+ek -> next _Next
+ek -> break eopt _Break
+ek -> return eopt _Return
+ek -> suspend eopt _Suspend
+ek -> fail _Fail
+ek -> create e _Create
+doopt -> do e _Do
+doopt -> _NoDo
+elseopt -> else e _IfThenElse
+elseopt -> _IfThen
+caselist -> caseclause _CaseListHead caselisttl
+caselist -> caseclause _CaseListHead
+caselisttl ->
+caselisttl -> sep caseclause _CaseListNext caselisttl
+caselisttl -> sep defaultclause _CaseListNext
+caseclause -> e : e _CaseClause
+caseclause -> default : e _DefaultClause
+caseclause -> _NoCaseClause
+e14 -> ( elist ) _Parens
+e14 -> [ elist ] _ListCons
+e14 -> { seq } _Block
+e14 -> id _Var
+e14 -> & kwdtl
+e14 -> lit
+kwdtl -> id _Keyword
+kwdtl -> fail _Keyword
+relop -> <
+relop -> <=
+relop -> >
+relop -> >=
+relop -> ~=
+uop -> not
+uop -> |
+uop -> !
+uop -> *
+uop -> +
+uop -> -     
+uop -> .
+uop -> /
+uop -> =
+uop -> ?
+uop -> \\
+uop -> ~
+uop -> @
+uop -> ^
+mulop -> *
+mulop -> /
+mulop -> %
+mulop -> **
+addop -> +
+addop -> - 
+addop -> ++
+addop -> --
+asgnop -> :=
+asgnop -> *:=
+asgnop -> /:=
+asgnop -> %:=
+asgnop -> **:=
+asgnop -> +:=
+asgnop -> -:=
+asgnop -> ++:=
+asgnop -> --:=
+lit -> intcon _ConstInt
+lit -> radintcon _ConstRadix
+lit -> realcon _ConstReal
+lit -> csetcon _ConstCset
+lit -> stringcon _ConstString
+lit -> hexcon _ConstInt
+lit -> octcon _ConstInt
+%ALIASES
+< lt
+<= lteq
+> gt
+>= gteq
+~= noteq
+! bang
+, comma
+) rparen
+( lparen
+; semico
+& conjop
+? scanop
+| altop
+= equal
+^ carat
+@ coop
+[ lbrack
+[: castop
+] rbrack
+. dot
+: colon
++: pcolon
+-: mcolon
+- minus
+{ lbrace
+} rbrace
+* star
++ plus
+/ slash
+\\ bslash
+~ tilde
+% pct
+** starstar
+++ plusplus
+-- minusminus
+:= assign
+/:= slash_assign
+%:= pct_assign
+**:= starstar_assign
+*:= star_assign
++:= plus_assign
+-:= minus_assign
+++:= plusplus_assign
+--:= minusminus_assign
+%ACTIONS Declaration
+_BinOp doNothing():(Void,1)
+_Block doNothing():(Void,2)
+_Break doNothing():(Void,1)
+_Case doNothing():(Void,4)
+_CaseClause doNothing():(Void,1)
+_CaseListHead doNothing():(Void,0)
+_CaseListNext doNothing():(Void,0)
+_Cast doNothing():(Void,2)
+_ConstInt doNothing():(Void,1)
+_ConstRadix doNothing():(Void,1)
+_ConstReal doNothing():(Void,1)
+_ConstCset doNothing():(Void,1)
+_ConstString doNothing():(Void,1)
+_Create doNothing():(Void,1)
+_DeclList doNothing():(Void,0)
+_DefaultClause doNothing():(Void,2)
+_Discard doNothing():(Void,1)
+_Do doNothing():(Void,1)
+_EndFields doNothing():(Void,0)
+_EnqueueFirstIdDecl doEnqueueFirstId(1:Token):(Queue,1)
+_EnqueueFirstIdProc doNothing():(Void,1)
+_EnqueueFirstParameter doEnqueueFirstParam(4:Token,3:Token,1:Type):(Queue,4)
+_EnqueueNextIdDecl doEnqueueNextId(3:Queue,1:Token):(Void,2)
+_EnqueueNextIdProc doNothing():(Void,2)
+_EnqueueNextParameter doEnqueueNextParam(6:Queue,4:Token,3:Token,1:Type):(Void,5)
+_Epilogue doDeclEpilogue():(Void,0)
+_ExpSeqHead doNothing():(Void,0)
+_ExpSeqNext doNothing():(Void,0)
+_ExpSeqNext2 doNothing():(Void,1)
+_Every doNothing():(Void,1)
+_Fail doNothing():(Void,1)
+_FieldRef doNothing():(Void,1)
+_FirstField doFirstField(3:Queue,1:Type):(Queue,3)
+_GlobDecl doGlobDecl(4:Token,3:Queue,1:Type):(Void,4)
+_IfThen doNothing():(Void,2)
+_IfThenElse doNothing():(Void,3)
+_Initializer doNothing():(Void,1)
+_Keyword doNothing():(Void,2)
+_ListCons doNothing():(Void,2)
+_ListType TypeListNew(1:Type):(Type,3)
+_LocalDecl doNothing():(Void,3)
+_LocalTable doNothing():(Void,0)
+_MakeQueue QueueNew():(Queue,0)
+_MakeQueueD QueueNew():(Queue,0)
+_MoreLocalDecl doNothing():(Void,2)
+_NestedType doNestedType(2:Type):(Type,3)
+_Next doNothing():(Void,0)
+_NextField doNextField(5:Queue,3:Queue,1:Type):(Void,4)
+_NoCaseClause doNothing():(Void,0)
+_NoDecl doNothing():(Void,0)
+_NoDo doNothing():(Void,0)
+_NoExp doNothing():(Void,0)
+_NoExpSeq doNothing():(Void,0)
+_NoFields QueueNew():(Queue,0)
+_NoFields doNothing():(Void,0)
+_NoIdList1 QueueNew():(Queue,0)
+_NoIdList2 QueueNew():(Queue,0)
+_NoInitList doNothing():(Void,0)
+_NoInitializer doNothing():(Void,0)
+_NoParameters doNothing():(Void,0)
+_NoRange doNothing():(Void,0)
+_NoRef doPushNullToken():(Token,0)
+_Parens doNothing():(Void,2)
+_ProcCall doNothing():(Void,2)
+_ProcDecl PutProcedureDecl(2:Misc):(Void,2)
+_ProcHead doProcHead(6:Token,4:Queue,2:Token,1:Type):(Misc,7)
+_ProcType TypeProcedureNew(3:Queue,1:Type):(Type,4)
+_Prologue doDeclPrologue():(Void,0)
+_Range doNothing():(Void,1)
+_RecordType TypeRecordNew(2:Queue):(Type,4)
+_Ref doNothing():(Void,0)
+_RefType TypeRefNew(1:Type):(Type,2)
+_RelOp doNothing():(Void,1)
+_Repeat doNothing():(Void,1)
+_Return doNothing():(Void,1)
+_ScrubParameter doNothing():(Void,0)
+_SetType TypeSetNew(1:Type):(Type,2)
+_SimpleType doSimpleType(1:Token):(Type,1)
+_Subscript doNothing():(Void,2)
+_Suspend doNothing():(Void,1)
+_TableType TypeTableNew(3:Type,1:Type):(Type,4)
+_TerOp doNothing():(Void,2)
+_TypeDef doTypeDef(3:Token,1:Type):(Type,4)
+_UnaryOp doNothing():(Void,1)
+_UnionType TypeUnionNew(2:Queue):(Type,4)
+_Until doNothing():(Void,1)
+_UserType TypeIdNew(1:Token):(Type,1)
+_Var doNothing():(Void,1)
+_While doNothing():(Void,1)
+%ACTIONS Translation
+_BinOp doBinOp(3:Expression,2:Token,1:Expression):(Expression,3)
+_Block ExpressionSequenceNew(2:Queue):(Expression,3)
+_Break ExpressionBreakNew(1:Expression):(Expression,2)
+_Case ExpressionCaseNew(5:Expression,2:Queue):(Expression,6)
+_CaseClause CaseClauseNew(3:Expression,1:Expression):(CaseClause,3)
+_CaseListHead doCaseListHead(1:CaseClause):(Queue,1)
+_CaseListNext doCaseListNext(2:Queue,1:CaseClause):(Void,1)
+_Cast ExpressionCastNew(4:Expression,2:Type):(Expression,4)
+_ConstInt doConstInt(1:Token):(Expression,1)
+_ConstReal doConstReal(1:Token):(Expression,1)
+_ConstCset doConstCset(1:Token):(Expression,1)
+_ConstRadix doConstRadix(1:Token):(Expression,1)
+_ConstString doConstString(1:Token):(Expression,1)
+_Create ExpressionCreateNew(1:Expression):(Expression,2)
+_DeclList doNothing():(Void,1)
+_DefaultClause doDefaultClause(1:Expression):(CaseClause,3)
+_Discard doNothing():(Void,1)
+_Do doDo(1:Expression):(Expression,2)
+_EndFields doNothing():(Void,0)
+_EnqueueFirstIdProc doEnqueueFirstId(1:Token):(Queue,1)
+_EnqueueFirstIdDecl doNothing():(Void,1)
+_EnqueueNextIdProc doEnqueueNextId(3:Queue,1:Token):(Void,2)
+_EnqueueNextIdDecl doNothing():(Void,2)
+_EnqueueFirstParameter doNothing():(Void,0)
+_EnqueueNextParameter doNothing():(Void,0)
+_Epilogue doProcEpilogue():(Void,0)
+_ExpSeqHead doExpSeqHead(1:Expression):(Queue,1)
+_ExpSeqNext doExpSeqNext(2:Queue,1:Expression):(Void,1)
+_ExpSeqNext2 doExpSeqNext(3:Queue,1:Expression):(Void,2)
+_Every ExpressionEveryNew(2:Expression,1:Expression):(Expression,3)
+_Fail ExpressionFailNew():(Expression,1)
+_FieldRef ExpressionFieldRefNew(3:Expression,1:Token):(Expression,3)
+_FirstField doNothing():(Void,1)
+_GlobDecl doNothing():(Void,2)
+_IfThen doIfThen(3:Expression,1:Expression):(Expression,4)
+_IfThenElse ExpressionIfNew(5:Expression,3:Expression,1:Expression):(Expression,6)
+_Initializer doInitializer(1:Expression):(Expression,2)
+_Keyword doKeyword(1:Token):(Expression,2)
+_ListCons ExpressionListConsNew(2:Queue):(Expression,3)
+_ListType doNothing():(Void,2)
+_LocalDecl doLocalDecl(4:Token,3:Queue,1:Type):(Void,4)
+_LocalTable doLocalTable():(Void,0)
+_MakeQueue QueueNew():(Queue,0)
+_MakeQueueD doNothing():(Void,0)
+_MoreLocalDecl doNothing():(Void,0)
+_NestedType doNothing():(Void,2)
+_Next ExpressionNextNew():(Expression,1)
+_NextField doNothing():(Void,2)
+_NoCaseClause doPushNullCaseClause():(CaseClause,0)
+_NoDecl doNothing():(Void,0)
+_NoDo doPushNullExpression():(Expression,0)
+_NoExp doPushNullExpression():(Expression,0)
+_NoExpSeq QueueNew():(Queue,0)
+_NoFields doNothing():(Void,0)
+_NoFields doNothing():(Void,0)
+_NoIdList1 doNothing():(Void,0)
+_NoIdList2 doNothing():(Void,0)
+_NoInitList QueueNew():(Queue,0)
+_NoInitializer doPushNullExpression():(Expression,0)
+_NoParameters doNothing():(Void,0)
+_NoRange doNothing():(Void,0)
+_NoRef doPushNullToken():(Token,0)
+_Parens doParens(2:Queue):(Expression,3)
+_ProcCall ExpressionProcCallNew(4:Expression,2:Queue):(Expression,4)
+_ProcDecl doProcDeclP(3:Expression,2:Queue):(Void,3)
+_ProcHead doProcHead2(5:Token):(Void,6)
+_ProcType doNothing():(Void,2)
+_Prologue doProcPrologue():(Void,0)
+_Range doRange(3:Expression,2:Token,1:Expression):(Expression,3)
+_RecordType TypeRecordNew(2:Queue):(Type,4)
+_Ref doNothing():(Void,0)
+_RefType TypeRefNew(1:Type):(Type,2)
+_RelOp doRelOp(3:Expression,2:Token,1:Expression):(Expression,3)
+_Repeat ExpressionRepeatNew(1:Expression):(Expression,2)
+_Return ExpressionReturnNew(1:Expression):(Expression,2)
+_ScrubParameter doNothing():(Void,3)
+_SetType TypeSetNew(1:Type):(Type,2)
+_SimpleType doSimpleType(1:Token):(Type,1)
+_Subscript ExpressionSubscriptNew(4:Expression,2:Expression):(Expression,4)
+_Suspend ExpressionSuspendNew(1:Expression):(Expression,2)
+_TableType TypeTableNew(3:Type,1:Type):(Type,4)
+_TerOp doTerOp(5:Expression,3:Expression,1:Expression):(Expression,5)
+_TypeDef doTypeDef(3:Token,1:Type):(Type,4)
+_UnaryOp doUnaryOp(2:Token,1:Expression):(Expression,2)
+_UnionType TypeUnionNew(2:Queue):(Type,4)
+_Until ExpressionUntilNew(2:Expression,1:Expression):(Expression,3)
+_UserType TypeIdNew(1:Token):(Type,1)
+_Var doVar(1:Token):(Expression,1)
+_While ExpressionWhileNew(2:Expression,1:Expression):(Expression,3)

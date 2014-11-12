@@ -1,0 +1,5328 @@
+%!
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%DocumentFonts: (atend)
+%%EndComments
+%
+% FrameMaker PostScript Prolog 3.0, for use with FrameMaker 3.0
+% Copyright (c) 1986,87,89,90,91 by Frame Technology Corporation.
+% All rights reserved.
+%
+% Known Problems:
+%	Due to bugs in Transcript, the 'PS-Adobe-' is omitted from line 1
+/FMversion (3.0) def 
+% Set up Color vs. Black-and-White
+	/FMPrintInColor systemdict /colorimage known
+		systemdict /currentcolortransfer known or def
+% Uncomment this line to force b&w on color printer
+%   /FMPrintInColor false def
+/FrameDict 195 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} def
+	} if
+/FMVERSION {
+	FMversion ne {
+		/Times-Roman findfont 18 scalefont setfont
+		100 100 moveto
+		(FrameMaker version does not match postscript_prolog!)
+		dup =
+		show showpage
+		} if
+	} def 
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/organgle FMLOCAL
+	/orgfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne dup {setmanualfeed} if
+	/manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	/yscale exch def
+	/xscale exch def
+	currenttransfer cvlit /orgxfer exch def
+	currentscreen cvlit /orgproc exch def
+	/organgle exch def /orgfreq exch def
+	setpapername 
+	manualfeed {true} {papersize} ifelse 
+	{manualpapersize} {false} ifelse 
+	{desperatepapersize} if
+	end 
+	} def 
+	/pagesave FMLOCAL
+	/orgmatrix FMLOCAL
+	/landscape FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch neg translate pop 
+		}
+		{pop pop}
+		ifelse
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+	} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin
+	array /fillvals exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fy translate 
+	rotate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	} bind def
+/FMENDEPSF {
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	/FMdicttop countdictstack 1 add def 
+	statusdict begin stopped end 
+	countdictstack -1 FMdicttop {pop end} for 
+	} def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped pop 
+		end
+		} if
+	} def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+/freq dpi 18.75 div 8 div round dup 0 eq {pop 1} if 8 mul dpi exch div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setpattern {
+	 /bwidth  exch def
+	 /bpside  exch def
+	 /bstring exch def
+	 /onbits 0 def  /offbits 0 def
+	 freq sangle landscape {90 add} if 
+		{/y exch def
+		 /x exch def
+		 /xindex x 1 add 2 div bpside mul cvi def
+		 /yindex y 1 add 2 div bpside mul cvi def
+		 bstring yindex bwidth mul xindex 8 idiv add get
+		 1 7 xindex 8 mod sub bitshift and 0 ne
+		 {/onbits  onbits  1 add def 1}
+		 {/offbits offbits 1 add def 0}
+		 ifelse
+		}
+		setscreen
+	 {} settransfer
+	 offbits offbits onbits add div FMsetgray
+	/graymode false def
+	} bind def
+/grayness {
+	FMsetgray
+	graymode not {
+		/graymode true def
+		orgxfer cvx settransfer
+		orgfreq organgle orgproc cvx setscreen
+		} if
+	} bind def
+	/HUE FMLOCAL
+	/SAT FMLOCAL
+	/BRIGHT FMLOCAL
+	/Colors FMLOCAL
+FMPrintInColor 
+	
+	{
+	/HUE 0 def
+	/SAT 0 def
+	/BRIGHT 0 def
+	% array of arrays Hue and Sat values for the separations [HUE BRIGHT]
+	/Colors   
+	[[0    0  ]    % black
+	 [0    0  ]    % white
+	 [0.00 1.0]    % red
+	 [0.37 1.0]    % green
+	 [0.60 1.0]    % blue
+	 [0.50 1.0]    % cyan
+	 [0.83 1.0]    % magenta
+	 [0.16 1.0]    % comment / yellow
+	 ] def
+      
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPCOLORc { 
+		BITMAPTTRUECOLORc } def
+	/K { 
+		Colors exch get dup
+		0 get /HUE exch store 
+		1 get /BRIGHT exch store
+		  HUE 0 eq BRIGHT 0 eq and
+			{1.0 SAT sub setgray}
+			{HUE SAT BRIGHT sethsbcolor} 
+		  ifelse
+		} def
+	/FMsetgray { 
+		/SAT exch 1.0 exch sub store 
+		  HUE 0 eq BRIGHT 0 eq and
+			{1.0 SAT sub setgray}
+			{HUE SAT BRIGHT sethsbcolor} 
+		  ifelse
+		} bind def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	/FMsetgray {setgray} bind def
+	/K { 
+		pop
+		} def
+	}
+ifelse
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setpattern} 
+	{grayness}
+	ifelse
+	} bind def
+/V { 
+	gsave eofill grestore
+	} bind def
+/N { 
+	stroke
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+	/rad FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	newpath
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rad arcto
+	x2 y2 x2 y1 rad arcto
+	x2 y1 x1 y1 rad arcto
+	x1 y1 x1 y2 rad arcto
+	closepath
+	16 {pop} repeat
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath fill
+	grestore
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	stroke
+	grestore
+	} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 4 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+	dup 
+	8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+	/r exch def
+	/d exch def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+	/proc1 FMLOCAL
+	/proc2 FMLOCAL
+	/newproc FMLOCAL
+/Fmcc {
+    /proc2 exch cvlit def
+    /proc1 exch cvlit def
+    /newproc proc1 length proc2 length add array def
+    newproc 0 proc1 putinterval
+    newproc proc1 length proc2 putinterval
+    newproc cvx
+} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch Fmcc settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/bitmapsave save def 
+	colorsetup
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	colorsetup
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} {is} {is} true 3 colorimage
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        
+        /is w string def
+        
+        ws 0 w getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {ip} {gip} {bip} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        
+        /is w string def
+        
+        ws 0 w getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {ip gip bip w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+%%EndProlog
+%%BeginSetup
+(3.0) FMVERSION
+1 1 612 792 0 1 8 FMDOCUMENT
+0 0 /Helvetica-Bold FMFONTDEFINE
+1 0 /Times-Roman FMFONTDEFINE
+2 0 /Times-Bold FMFONTDEFINE
+3 0 /Courier-Bold FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+72 444.68 558 444.68 2 L
+2 Z
+N
+72 75.33 558 75.33 2 L
+0.25 H
+N
+0 10 Q
+(1) 207 60.96 T
+0 9 Q
+( of) 212.56 60.96 T
+0 10 Q
+(47) 226.04 60.96 T
+207 659 558 669 C
+207 660 459 660 2 L
+0.25 H
+0 Z
+0 X
+0 K
+N
+0 0 612 792 C
+1 24 Q
+0 X
+0 K
+-0.17 (Apt Compiler T) 207 677 S
+-0.17 (oolkit) 356.26 677 S
+2 12 Q
+(George K. Thiruvathukal) 207 629 T
+1 10 Q
+(T) 207 616.33 T
+(ellabs Incorporated) 212.41 616.33 T
+(Data Communications Division) 207 604.33 T
+(Illinois Institute of T) 207 580.33 T
+(echnology) 289.32 580.33 T
+(Department of Computer Science) 207 568.33 T
+(Internet: gkt@iitmax.iit.edu) 207 556.33 T
+2 12 Q
+(Ufuk V) 207 531 T
+(erun) 243.54 531 T
+1 10 Q
+(Illinois Institute of T) 207 518.33 T
+(echnology) 289.32 518.33 T
+(Department of Computer Science) 207 506.33 T
+(Internet: thssuxv@iitmax.iit.edu) 207 494.33 T
+72 417 558 420 C
+207 419.15 558 419.15 2 L
+0.25 H
+2 Z
+0 X
+0 K
+N
+72 419.15 198 419.15 2 L
+0 Z
+N
+0 0 612 792 C
+0 12 Q
+0 X
+0 K
+(1.0) 181.33 424 T
+(Overview of the Apt Compiler T) 207 424 T
+(oolkit) 384.72 424 T
+0 10 Q
+(1.1) 184.11 390.33 T
+(Introduction) 207 390.33 T
+1 F
+1.24 (The Apt Compiler T) 207 366.33 P
+1.24 (oolkit was designed to address the need for structured, ef) 291.92 366.33 P
+1.24 (\336cient,) 530.52 366.33 P
+2.11 (portable, and capable tools to prototype language translators and compilers. In the) 207 354.33 P
+0.46 (current release of the toolkit tools are available for the generation of scanners, parsers,) 207 342.33 P
+1.59 (and data structures. A robust library of functions is supplied with the toolkit which) 207 330.33 P
+0.91 (includes support for the scanner) 207 318.33 P
+0.91 (, the parser) 337.93 318.33 P
+0.91 (, abstract data types \050which are commonly) 383.48 318.33 P
+(used in language translators/compilers\051, and string functions.) 207 306.33 T
+0 F
+(1.2) 184.11 276.33 T
+(The T) 207 276.33 T
+(ools) 232.92 276.33 T
+1 F
+3.06 (The following subsections provide a synopsis of the supported tools in the Apt) 207 252.33 P
+0.81 (Compiler T) 207 240.33 P
+0.81 (oolkit. As we have dedicated a chapter for the discussion of each tool, we) 253.48 240.33 P
+(will defer discussion of details to the respective chapters.) 207 228.33 T
+0 9 Q
+(1.2.1) 178.01 205 T
+(The Apt Parsing T) 207 205 T
+(ool \050APT\051) 283.24 205 T
+1 10 Q
+0.31 (The Apt Parsing T) 207 180.33 P
+0.31 (ool \050APT\051 is a tool for the generation of LL\0501\051 Parsers. The tool and) 281.36 180.33 P
+0.93 (the code it produces has been designed to be ef) 207 168.33 P
+0.93 (\336cient, portable, structured, language-) 403.1 168.33 P
+1.16 (independent, and human-readable. W) 207 156.33 P
+1.16 (e ur) 359.28 156.33 P
+1.16 (ge the reader to examine the output of APT) 375.52 156.33 P
+0.39 (\050and the other tools\051 and compare its readability to other popular tools \050like yacc\051. The) 207 144.33 P
+(code produced has the appearance of being written by hand.) 207 132.33 T
+FMENDPAGE
+%%EndPage: "1" 2
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Overview of the Apt Compiler T) 207 739.85 T
+(oolkit) 340.18 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(2 of 47) 529.53 60.96 T
+(1.2.2) 178.01 681.33 T
+(The Apt Scanning T) 207 681.33 T
+(ool \050AST\051) 290.73 681.33 T
+1 10 Q
+0.69 (The Apt Scanning T) 207 656.66 P
+0.69 (ool is a tool for the generation of scanners based on deterministic) 289.72 656.66 P
+0.87 (\336nite state automata \050DF) 207 644.66 P
+0.87 (A\051. While we appreciate the elegance of regular expressions,) 307.96 644.66 P
+2.68 (many experience compiler writers and theoreticians are in agreement that regular) 207 632.66 P
+0.02 (expressions, when translated to optimized DF) 207 620.66 P
+0.02 (A, generally incur a lar) 389.04 620.66 P
+0.02 (ger space overhead) 481.37 620.66 P
+-0.06 (than hand-coded DF) 207 608.66 P
+-0.06 (A. W) 287.74 608.66 P
+-0.06 (ith the Apt Scanning T) 308.93 608.66 P
+-0.06 (ool one can specify the lexical elements) 399.05 608.66 P
+1.97 (as an FSA in symbolic fashion. Extensive library support is provided to support a) 207 596.66 P
+1.15 (variety of common transition character classes and actions which must be performed) 207 584.66 P
+0.3 (during scanning. As is the case with APT) 207 572.66 P
+0.3 (, AST has been designed to accommodate the) 373.81 572.66 P
+-0.24 (same features as APT) 207 560.66 P
+-0.24 (. AST and APT can be integrated to build a recognizer for virtually) 292.42 560.66 P
+(any programming language of practical interest.) 207 548.66 T
+0 9 Q
+(1.2.3) 178.01 525.33 T
+(The Apt Node T) 207 525.33 T
+(ool \050ANT\051) 272.74 525.33 T
+1 10 Q
+2.95 (The Apt Node T) 207 500.66 P
+2.95 (ool is a tool which generates code for many typically required) 280.93 500.66 P
+1.38 (manipulations of data structures. Given a set of nodes \050for instance, an Expression\051,) 207 488.66 P
+1.1 (ANT can be used to generate code for the allocation, disposal, modi\336cation, shallow) 207 476.66 P
+0.52 (replication, deep replication, and \050a skeleton of\051 general traversal of the type. The tool) 207 464.66 P
+0.14 (was developed initially as an ACT demonstration program. After the \336rst release it was) 207 452.66 P
+0.12 (considered so useful to a number of projects that it was re\336ned into a tool to support all) 207 440.66 P
+1.4 (of the common operations needed for the management of data structure classes in a) 207 428.66 P
+1.3 (compiler) 207 416.66 P
+1.3 (. The ANT can work with AST and APT to build a recognizer and all data) 241.98 416.66 P
+0.35 (structures \050ef) 207 404.66 P
+0.35 (fectively the compiler front-end\051 so the compiler writer can work on code) 259.62 404.66 P
+(generation \050of which we hope to assuage by supporting with tools someday\051.) 207 392.66 T
+0 9 Q
+(1.2.4) 178.01 369.33 T
+(The Apt Data T) 207 369.33 T
+(ype \050ADT\051 Library) 269.75 369.33 T
+1 10 Q
+0.85 (Included with the Apt Compiler T) 207 344.66 P
+0.85 (oolkit is a robust collection of generic abstract data) 346.87 344.66 P
+1.74 (types. The types have been carefully chosen to account for all of the possible data) 207 332.66 P
+0.11 (structures a compiler writer might need to construct in a compiler) 207 320.66 P
+0.11 (. Included in the ADT) 469.57 320.66 P
+-0.13 (Library are static stacks, dynamic stacks, queues, deques, A) 207 308.66 P
+-0.13 (VL trees, tables, hash tables,) 443.9 308.66 P
+1.04 (buf) 207 296.66 P
+1.04 (fers, and buf) 220.14 296.66 P
+1.04 (fered input streams. While we plan to augment the library with more) 272.28 296.66 P
+1.24 (types \050to accommodate other users who might \336nd the libraries useful, like database) 207 284.66 P
+2.44 (designers\051, we believe our library adequately addresses the needs of the compiler) 207 272.66 P
+2.59 (writing community) 207 260.66 P
+2.59 (. A substantial section of the manual is dedicated to the ADT) 285.84 260.66 P
+(Library) 207 248.66 T
+(.) 236.32 248.66 T
+0 9 Q
+(1.2.5) 178.01 225.33 T
+(How to Read and Use this Document) 207 225.33 T
+1 10 Q
+2.51 (W) 207 200.66 P
+2.51 (e have designed the document to \322jump start\323 the compiler writer in you. The) 215.63 200.66 P
+0.5 (discussions of the tools and libraries are deliberately succinct. W) 207 188.66 P
+0.5 (e will not present any) 469.95 188.66 P
+1.28 (examples in the chapters on tools and libraries and will allocate an entire chapter to) 207 176.66 P
+0.27 (present a non-trivial example of a translator which uses APT) 207 164.66 P
+0.27 (, AST) 451.55 164.66 P
+0.27 (, ANT) 474.95 164.66 P
+0.27 (, and the ADT) 500.02 164.66 P
+(Library) 207 152.66 T
+(.) 236.32 152.66 T
+1.23 (While we hope the document is suf) 207 128.66 P
+1.23 (\336ciently interesting and concise to maintain your) 355.2 128.66 P
+0.98 (interest, we understand that the nineties are a time when people hardly have time for) 207 116.66 P
+-0.25 (reading literature \050especially of the technical variety\051. If you just do not have the time to) 207 104.66 P
+FMENDPAGE
+%%EndPage: "2" 3
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(3 of 47) 529.53 60.96 T
+1 10 Q
+0.75 (read the sections on the tools, you can skip the sections on the tools and libraries and) 207 680.66 P
+(proceed to the detailed example \050which is self-contained\051.) 207 668.66 T
+72 625.33 558 628.33 C
+207 627.48 558 627.48 2 L
+0.25 H
+2 Z
+0 X
+0 K
+N
+72 627.48 198 627.48 2 L
+0 Z
+N
+0 0 612 792 C
+0 12 Q
+0 X
+0 K
+(2.0) 181.33 632.33 T
+(The Apt Parsing T) 207 632.33 T
+(ool) 308.74 632.33 T
+0 10 Q
+(2.1) 184.11 598.66 T
+(Introduction) 207 598.66 T
+1 F
+0.03 (The Apt Parsing T) 207 574.66 P
+0.03 (ool is a tool for the generation of LL\0501\051 parsers. As input, it accepts a) 280.52 574.66 P
+0.2 (speci\336cation \336le which contains the language grammar) 207 562.66 P
+0.2 (, the prototypes for the semantic) 428.2 562.66 P
+-0.08 (actions, error recovery information, and alias information. W) 207 550.66 P
+-0.08 (e will discuss each of these) 449.88 550.66 P
+(aspects in detail in the section pertaining to the speci\336cation \336le.) 207 538.66 T
+1.93 (The language grammar which is acceptable to APT must be in LL\0501\051 form. If the) 207 514.66 P
+0.12 (grammar is not in LL\0501\051 form, APT will make the determination and inform the user of) 207 502.66 P
+2.52 (how the grammar violates the LL\0501\051 property) 207 490.66 P
+2.52 (. Grammars in which left recursion,) 403.01 490.66 P
+(ambiguity) 207 478.66 T
+(, or common pre\336xes are present typically violate the LL\0501\051 property) 246.89 478.66 T
+(.) 521.87 478.66 T
+-0.01 (Semantic analysis is speci\336ed at a high-level in the speci\336cation \336le. The decision to do) 207 454.66 P
+1.75 (this was motivated by our desire to achieve language-independence in our tools. A) 207 442.66 P
+0.24 (semantic action is speci\336ed in a syntax which permits a complete function prototype to) 207 430.66 P
+-0.23 (be de\336ned and what semantic stack elements are passed to the semantic action when it is) 207 418.66 P
+(invoked.) 207 406.66 T
+-0.17 (Error recovery information merely involves the speci\336cation of a set of \336ducial symbols) 207 382.66 P
+0.63 (which can be used to attempt recovery from syntax errors. W) 207 370.66 P
+0.63 (e are presently exploring) 457.02 370.66 P
+-0.22 (more advanced techniques for the management of errors and intend to expand APT once) 207 358.66 P
+1.28 (we have determined which technique is well-suited to LL\0501\051 parsing. From our own) 207 346.66 P
+1.06 (experience syntactic error recovery is really not so important and often leads to poor) 207 334.66 P
+0.23 (diagnosis and recovery) 207 322.66 P
+0.23 (. A fast parser and intelligent \336rst error message tend to be most) 298.97 322.66 P
+(useful for one to get a program compiled in an expedient manner) 207 310.66 T
+(.) 465.98 310.66 T
+0.4 (Alias information enables the user of APT to specify the grammar exactly as he or she) 207 286.66 P
+0.22 (has written it and then associate symbols which are not identi\336ers with identi\336ers. This) 207 274.66 P
+0.74 (feature must be used with grammars containing non-identi\336er symbols to ensure code) 207 262.66 P
+(generation of symbols which are identi\336ers.) 207 250.66 T
+0.41 (The abovementioned features will all be discussed in detail in the section pertaining to) 207 226.66 P
+0.38 (the speci\336cation \336le syntax. In the next section we will discuss some of the features of) 207 214.66 P
+0.09 (APT and \050hopefully\051 convince you that there are compelling reasons to use it and avoid) 207 202.66 P
+(many of the other available parsing tools.) 207 190.66 T
+0 F
+(2.2) 184.11 160.66 T
+(What in the W) 207 160.66 T
+(orld is so Good about APT?) 272.89 160.66 T
+1 F
+-0.24 (W) 207 136.66 P
+-0.24 (ith the myriad of software tools and technology out there one has to at least ponder the) 216.04 136.66 P
+0.28 (issue of why yet-another) 207 124.66 P
+0.28 (-parsing-tool ought to be used. As one of the authors once had) 306.18 124.66 P
+(to make a case for using it to develop a compiler at a former place of employment, the) 207 112.66 T
+FMENDPAGE
+%%EndPage: "3" 4
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(4 of 47) 529.53 60.96 T
+1 10 Q
+0.58 (following paragraphs are somewhat of a regur) 207 680.66 P
+0.58 (gitation and an expansion of reasons for) 394.61 680.66 P
+(using the Apt Parsing T) 207 668.66 T
+(ool \050as well as the Apt Compiler T) 301.25 668.66 T
+(oolkit\051) 439.07 668.66 T
+0 9 Q
+(2.2.1) 178.01 645.33 T
+(Ef\336cienct) 207 645.33 T
+1 10 Q
+-0.16 (A claim often made by people and companies who manufacture tools, we have designed) 207 620.66 P
+0.87 (APT with ef) 207 608.66 P
+0.87 (\336ciency in mind. The tool generates ef) 257.97 608.66 P
+0.87 (\336cient table strcutures for ef) 417.04 608.66 P
+0.87 (\336cient) 533.01 608.66 P
+0.87 (execution of the parser and the semantics. The parse tables generated are compressed) 207 596.66 P
+-0.25 (for ef) 207 584.66 P
+-0.25 (\336cient representation and access. Semantic actions are represented by a jump table.) 228.49 584.66 P
+0 9 Q
+(2.2.2) 178.01 561.33 T
+(Structured) 207 561.33 T
+1 10 Q
+1.91 (The techniques used to develop the tool, its libraries, and the companion tools are) 207 536.66 P
+-0.21 (structured and object-oriented. In most of the parsing tools we have studied and used the) 207 524.66 P
+2.93 (lexical analysis, parsing, and semantics are combined. There is certainly nothing) 207 512.66 P
+0.43 (structured about such a design. The APT philosophy is for these phases to be logically) 207 500.66 P
+0.71 (divided among a number of modules. W) 207 488.66 P
+0.71 (e say \322a number of modules,\323 as the user can) 371.75 488.66 P
+0.82 (de\336ne his or her semantics as a number of modules. The APT speci\336cation \336les does) 207 476.66 P
+0.68 (not permit any coupling of parsing with lexical analysis or semantics. These activities) 207 464.66 P
+(must be de\336ned in separate compilation units.) 207 452.66 T
+0 9 Q
+(2.2.3) 178.01 429.33 T
+(T) 207 429.33 T
+(ype-Safe Semantics) 211.83 429.33 T
+1 10 Q
+-0.1 (Semantic analysis is conducted in a type-safe manner) 207 404.66 P
+-0.1 (. The term type-safe was emanated) 419.19 404.66 P
+0.55 (from the C/C++ world when mechanisms were added to the C language to ensure that) 207 392.66 P
+0.33 (the linkage of object modules resulted in a warning or an error) 207 380.66 P
+0.33 (, if a mismatch occurred) 459.8 380.66 P
+1.12 (between a function declaration and its usage. In APT a similar mechanism exists for) 207 368.66 P
+0.8 (semantics. Once the interface to a semantic routine is de\336ned in the speci\336cation \336le,) 207 356.66 P
+-0.07 (the semantic routine must be de\336ned exactly as speci\336ed. When the semantics are being) 207 344.66 P
+1.47 (executed, APT checks whether the attributes from the stack are of the correct types) 207 332.66 P
+0.78 (before passing them to a semantic routine. While type-safety does not preclude errors) 207 320.66 P
+0.76 (from occurring, it does assuage the process of debugging. If one knows that a routine) 207 308.66 P
+0.15 (was called correctly \050with incorrect data\051, the incorrect data can minimally be browsed.) 207 296.66 P
+2.1 (As all C programmers know) 207 284.66 P
+2.1 (, it is not always possible to determine what is being) 327.99 284.66 P
+(referenced in a pointer context.) 207 272.66 T
+0 9 Q
+(2.2.4) 178.01 249.33 T
+(Debugging Support) 207 249.33 T
+1 10 Q
+-0.06 (Let us face the music. Even the best programmers do not write perfect code all the time.) 207 224.66 P
+0.96 (Because we realize the users of our tools to be con\336ned to the human race, APT has) 207 212.66 P
+3.29 (been designed to include extensive debugging support. The scanner) 207 200.66 P
+3.29 (, parser) 502.98 200.66 P
+3.29 (, and) 535.28 200.66 P
+0.46 (semantics can all be tested without using a debugger) 207 188.66 P
+0.46 (, as APT has several trace options) 420.1 188.66 P
+0.5 (available. These trace options can be imported from the APT library and conditionally) 207 176.66 P
+(invoked to test various aspects of the compiler or translator being developed.) 207 164.66 T
+0 9 Q
+(2.2.5) 178.01 141.33 T
+(Language Independence) 207 141.33 T
+1 10 Q
+0.07 (All of the tools in the Apt Compiler T) 207 116.66 P
+0.07 (oolkit are designed to be as language independent) 358.47 116.66 P
+1.38 (as possible. What this means is that the speci\336cation \336le syntax is independent of a) 207 104.66 P
+0.11 (particular language. This does not mean that we have not used a particular language for) 207 92.66 P
+FMENDPAGE
+%%EndPage: "4" 5
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(5 of 47) 529.53 60.96 T
+1 10 Q
+2.12 (the implementation of ACT and its libraries. W) 207 680.66 P
+2.12 (e \336rmly believe in our decision to) 410.36 680.66 P
+-0.09 (maintain language independence and believe the decision enables the language designer) 207 668.66 P
+0.03 (and implementor to avoid the details of coding in a speci\336c language until the design of) 207 656.66 P
+(the language and semantics is completed.) 207 644.66 T
+0 9 Q
+(2.2.6) 178.01 621.33 T
+(Integration) 207 621.33 T
+1 10 Q
+-0.01 (APT integrates well with other tools, like lex, which are designed for lexical analysis. It) 207 596.66 P
+0.12 (also integrates with a number of tools found in the Apt Compiler T) 207 584.66 P
+0.12 (oolkit. Coupled with) 475.3 584.66 P
+0.5 (ACT) 207 572.66 P
+0.5 (, syntax analysis and construction-oriented semantics can be achieved without the) 226.25 572.66 P
+(need to write a single line of code.) 207 560.66 T
+0 9 Q
+(2.2.7) 178.01 537.33 T
+(Multiple Semantic Phases) 207 537.33 T
+1 10 Q
+1.77 (APT is perhaps the only documented tool to provide support for multiple semantic) 207 512.66 P
+1.24 (phases. While we are still experimenting with the best syntax for de\336ning semantics) 207 500.66 P
+0.56 (over multiple phases, a useful \050but tentative\051 form of it exists in the current version of) 207 488.66 P
+1.39 (APT) 207 476.66 P
+1.39 (. This feature is vital to the correct implementation of a programming language) 225.14 476.66 P
+0.3 (which contains forward references, such as Modula-2. T) 207 464.66 P
+0.3 (o implement such a feature the) 433.52 464.66 P
+3.4 (semantics must be divided into two phases: declaration analysis and expression) 207 452.66 P
+0.02 (analysis. The idea is to spend ef) 207 440.66 P
+0.02 (fort in one phase to collect declarations and install them) 334.36 440.66 P
+0.52 (in the symbol table and then spend ef) 207 428.66 P
+0.52 (fort in the next phase to construct data structures) 359.53 428.66 P
+0.8 (for expressions and statements. W) 207 416.66 P
+0.8 (e have used the feature of multiple semantic phases) 346.23 416.66 P
+(for the development of an Icon compiler \050which is still under development\051.) 207 404.66 T
+0 9 Q
+(2.2.8) 178.01 381.33 T
+(Portable) 207 381.33 T
+1 10 Q
+2.11 (Many of the compiler tools available on the market and in the public domain are) 207 356.66 P
+0.63 (severely weak with respect to the feature of portability) 207 344.66 P
+0.63 (. Our tools were designed to be) 429.57 344.66 P
+1.38 (portable from the start. The APT tools can be built on any platform which supports) 207 332.66 P
+0.35 (Portable or ANSI C language compilers. The code generated by the tools and the ACT) 207 320.66 P
+0.03 (libraries can be compiled with any C compiler \050including the ones which accept ancient) 207 308.66 P
+0.12 (dialects of C\051. As we have a need for the translators we develop to work on a variety of) 207 296.66 P
+0.74 (platforms, APT has literally paved the way for it to be possible. W) 207 284.66 P
+0.74 (e gave up on yacc,) 480.96 284.66 P
+0.27 (because it does not generate acceptable code for ANSI C compilers. The Apt Compiler) 207 272.66 P
+-0.09 (T) 207 260.66 P
+-0.09 (ools have been compiled on many UNIX systems, DOS, and AmigaDOS. W) 212.41 260.66 P
+-0.09 (e have not) 517.1 260.66 P
+1.23 (had the software to test other platforms, but we have good reasons to believe it will) 207 248.66 P
+(work when we do!) 207 236.66 T
+0 9 Q
+(2.2.9) 178.01 213.33 T
+(Intelligible) 207 213.33 T
+1 10 Q
+1.04 (A word which means \322able to be understood or comprehended,\323 the ACT tools have) 207 188.66 P
+2.23 (been designed to contain and to produce readable source code. Such code can be) 207 176.66 P
+1.62 (adapted by users, if necessary) 207 164.66 P
+1.62 (. Other tools produce code which appears to be some) 331.9 164.66 P
+3.73 (random permutation of the digits of pi interspersed with random alphanumeric) 207 152.66 P
+0.44 (characters. The code \336les produced by the ACT tools produce code which looks better) 207 140.66 P
+-0.03 (than code which is written by hand. Comments and annotations are inserted in the code,) 207 128.66 P
+(when necessary) 207 116.66 T
+(, to enhance readability and comprehension.) 269.35 116.66 T
+FMENDPAGE
+%%EndPage: "5" 6
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(6 of 47) 529.53 60.96 T
+0 10 Q
+(2.3) 184.11 680.66 T
+(The Speci\336cation File) 207 680.66 T
+1 F
+1.78 (The speci\336cation \336le is used to de\336ne the syntax and semantics of a programming) 207 664.66 P
+2.63 (language save the implementation details of the semantics. A speci\336cation \336le is) 207 652.66 P
+1.04 (divided into one or more sections. A section is opened via a section keyword, which) 207 640.66 P
+0.06 (begins with a percent sign and is followed by PRODUCTIONS, ACTIONS, ALIASES,) 207 628.66 P
+-0.23 (or FIDUCIALS. If one of these names does not appear after the percent sign, a section is) 207 616.66 P
+0.47 (not opened and the symbol is not considered a special keyword. A section may appear) 207 604.66 P
+0.25 (more than one time. When more than one occurrence of a section is detected, the items) 207 592.66 P
+0.07 (which appear in it are appended to lists of items detected in previous occurrences of the) 207 580.66 P
+0.01 (same type of section. This feature allows the language designer the \337exibility to specify) 207 568.66 P
+1.81 (related grammatical rules and semantics alternatively) 207 556.66 P
+1.81 (, which is useful for lar) 428.27 556.66 P
+1.81 (ge and) 529.83 556.66 P
+(complicated programming languages.) 207 544.66 T
+0 9 Q
+(2.3.1) 178.01 521.33 T
+(%PRODUCTIONS Section) 207 521.33 T
+1 10 Q
+0.69 (The %PRODUCTIONS section contains is list of lines, each of which is a production) 207 496.66 P
+(with the following syntax:) 207 484.66 T
+(<production> ::= <lhs> -> <rhs>) 207 466.66 T
+(<lhs> ::= <symbol>) 207 454.66 T
+(<rhs> ::= { <symbol> }*) 207 442.66 T
+(<symbol> ::= { <printable-character> }+) 207 430.66 T
+0.35 (While we are assuming the reader is familiar with BNF grammars, we wish to comfort) 207 408.66 P
+0.43 (the reader with some explanation in his or her most familiar language. A production is) 207 396.66 P
+0.77 (de\336ned above to be a left-hand-side followed by a right-hand-side. The left-hand-side) 207 384.66 P
+0.2 (must be a single symbol \050called a nonterminal symbol in compiler literature\051; the right-) 207 372.66 P
+0.12 (hand-side is zero or more symbols in length. One must separate the symbols \050as well as) 207 360.66 P
+1.04 (the arrow which delineates the left and right-hand-sides by white space. A symbol is) 207 348.66 P
+2.25 (de\336ned to be a sequence of one or more printable characters. The de\336nition of a) 207 336.66 P
+1.53 (printable character is somewhat standardized; however) 207 324.66 P
+1.53 (, check the C macro \050shipped) 433.78 324.66 P
+0.89 (with your C compiler\051 for the macro \322isprint,\323 as this is the macro we use in APT to) 207 312.66 P
+(determine whether a candidate character for a symbol is printable.) 207 300.66 T
+0.43 (The symbols which appear on the right-hand-side are either terminal or nonterminal in) 207 276.66 P
+-0.24 (nature. Any symbol which appears on the left-hand-side is deemed nonterminal by APT) 207 264.66 P
+-0.24 (;) 555.22 264.66 P
+2.02 (any other symbol is terminal. A terminal symbol can either correspond to a token) 207 252.66 P
+0.72 (\050which is obtained from the lexical analyzer\051 or a phrase marker) 207 240.66 P
+0.72 (. T) 470.06 240.66 P
+0.72 (o de\336ne a terminal) 481.18 240.66 P
+1.79 (symbol as a token does not require any ef) 207 228.66 P
+1.79 (fort at all; however) 387.11 228.66 P
+1.79 (, to de\336ne a terminal) 468.4 228.66 P
+1.25 (symbol as a phrase marker requires one to de\336ne it as an action in the %ACTIONS) 207 216.66 P
+(section.) 207 204.66 T
+0 9 Q
+(2.3.2) 178.01 181.33 T
+(%ACTIONS Section) 207 181.33 T
+1 10 Q
+1.58 (The %ACTIONS section consists of the section header) 207 156.66 P
+1.58 (, followed by a list of phase) 437.77 156.66 P
+(names \050see %PHASES\051 on the same line, followed by a list of action de\336nitions.) 207 144.66 T
+0.07 (At least one phase name must be listed per %ACTIONS section. Every translator has at) 207 120.66 P
+0.94 (least one semantic phase. If the language designer does not perceive a need for more) 207 108.66 P
+(than one semantic phase, it is suggested that he name the phase after the language.) 207 96.66 T
+FMENDPAGE
+%%EndPage: "6" 7
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(7 of 47) 529.53 60.96 T
+1 10 Q
+2.51 (An action de\336niton is an association between a terminal symbol \050called a phrase) 207 680.66 P
+0.94 (marker\051 and a function. The function is declared in a special manner so the language) 207 668.66 P
+0.42 (designer can tell APT what semantic stack elements are passed to the semantic routine) 207 656.66 P
+(when invoked. The following syntax is used to de\336ne a phrase marker:) 207 644.66 T
+(<semantic-action> ::= <phrase-marker> <function>) 207 626.66 T
+(<phrase-marker> ::= <symbol>) 207 614.66 T
+(<function> ::= <function-name> \050 <ar) 207 602.66 T
+(guments> \051 <return>) 358.89 602.66 T
+(<ar) 207 590.66 T
+(guments> ::= { <ar) 220.22 590.66 T
+(gument> }*) 296.44 590.66 T
+(<ar) 207 578.66 T
+(gument> ::= <disp> : <type-name>) 220.22 578.66 T
+(<disp> ::= <non-negative-integer>) 207 566.66 T
+(<non-negative-integer> ::= { <digit> }+) 207 554.66 T
+(<return> ::= : \050 <type-name>, <pop-count> \051) 207 542.66 T
+(<pop-count> ::= <non-negative-integer>) 207 530.66 T
+(<type-name> ::= <identi\336er>) 207 518.66 T
+(<function-name> ::= <identi\336er>) 207 506.66 T
+(<symbol> ::= { <printable-character> }+) 207 494.66 T
+0.4 (The above is looks intimidating, but it is really simple. A semantic action is de\336ned as) 207 472.66 P
+-0.25 (an association between a phrase marker \050a symbol\051 and a function. The function is really) 207 460.66 P
+2.33 (a function prototype, which is speci\336ed as a function name followed by a list of) 207 448.66 P
+0.42 (ar) 207 436.66 P
+0.42 (guments \050possibly empty\051, followed by return information. Each ar) 214.59 436.66 P
+0.42 (gument is a colon) 485.94 436.66 P
+1.14 (separated pair of a non-negative integral displacement and a type \050which must be an) 207 424.66 P
+1.76 (identi\336er\051. Here the displacement refers to the position at which the attribute to be) 207 412.66 P
+0.14 (passed to the semantic routine is located along the semantic stack \050with the top of stack) 207 400.66 P
+-0.2 (growing downward\051 and the type-name is type of the attribute. The return information is) 207 388.66 P
+0.82 (a comma-separated pair of a type-name and a pop-count. The type name is the return) 207 376.66 P
+1.33 (type of the semantic function. The pop-count speci\336es the number of symbols to be) 207 364.66 P
+(popped from the semantic stack before the return result is pushed.) 207 352.66 T
+0.49 (The reader might be confused at this point, so we will provide an example of concrete) 207 328.66 P
+(nature. Suppose we de\336ned three productions as follows:) 207 316.66 T
+(%PRODUCTIONS) 207 292.66 T
+(Expression -> T) 207 274.66 T
+(erm Expression\325) 270.79 274.66 T
+(Expression\325 -> op T) 207 262.66 T
+(erm _BinOp Expression\325) 286.61 262.66 T
+(Expression\325 ->) 207 250.66 T
+(%ACTIONS Equation) 207 228.66 T
+(_BinOp ExpressionBinaryNew\0503:ExpRec,2:T) 207 210.66 T
+(oken,1:ExpRec\051:\050ExpRec,3\051) 390.07 210.66 T
+0.7 (W) 207 188.66 P
+0.7 (e \336rst note that the above is not a complete speci\336cation for the familiar expression) 215.63 188.66 P
+2.14 (language. It merely speci\336es enough for us to illustrate how a terminal symbol is) 207 176.66 P
+0.96 (mapped to a phrase marker and a phrase marker is associated with a function \050which) 207 164.66 P
+(must either be generated or written by the language implementor\051.) 207 152.66 T
+1.4 (In the above grammar the nonterminal symbols are Expression and Expression\325; the) 207 128.66 P
+0.14 (terminals are op and _BinOp. The %ACTIONS section is where an association is made) 207 116.66 P
+3.17 (between the terminal symbol _BinOp and a function ExpressionBinaryNew) 207 104.66 P
+3.17 (. The) 534.29 104.66 P
+0.36 (function ExpressionBinaryNew is a function \050user) 207 92.66 P
+0.36 (-de\336ned\051 which takes a total of three) 409.29 92.66 P
+FMENDPAGE
+%%EndPage: "7" 8
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(8 of 47) 529.53 60.96 T
+1 10 Q
+0.07 (ar) 207 680.66 P
+0.07 (guments: the left operand \050an ExpRec\051, the operator \050a T) 214.59 680.66 P
+0.07 (oken, which is a type built-in) 441.04 680.66 P
+0.42 (to the Apt Compiler T) 207 668.66 P
+0.42 (oolkit\051, and the right operand \050an ExpRec\051. It returns an ExpRec) 296.81 668.66 P
+0.03 (\050which is a synthesis of the three values passed as parameters\051 which is pushed onto the) 207 656.66 P
+(semantic stack after three symbols are popped.) 207 644.66 T
+1.4 (W) 207 620.66 P
+1.4 (e apologize if this example has the appearance of being deliberately terse, but we) 215.63 620.66 P
+1.72 (believe the \336nal section pertaining to the design and implementation of a complete) 207 608.66 P
+1.66 (translator will elucidate the points above and provide a concrete example of how a) 207 596.66 P
+(translator for a language of simple to intermediate dif) 207 584.66 T
+(\336culty is developed.) 420.55 584.66 T
+0 9 Q
+(2.3.3) 178.01 561.33 T
+(%ALIASES) 207 561.33 T
+1 10 Q
+0.45 (Aliases are really not essential to language design, but they are essential to APT itself.) 207 536.66 P
+0.61 (One of the features of the APT speci\336cation \336le is that one can use non-alphanumeric) 207 524.66 P
+0.32 (\050but printable\051 character strings to represent grammar symbols. Because APT produces) 207 512.66 P
+-0.02 (readable code, however) 207 500.66 P
+-0.02 (, it needs to have a valid identi\336er associated with the symbol, if) 301.19 500.66 P
+0.37 (the symbol is not a valid identi\336er for the tar) 207 488.66 P
+0.37 (get programming language \050which is C or) 388.66 488.66 P
+(Modula-2 at the moment\051. The syntax for an alias is stated simply:) 207 476.66 T
+(<alias> ::= <symbol> <identi\336er>) 207 452.66 T
+0.74 (The above rule speci\336es that a symbol is associated with an identi\336er) 207 428.66 P
+0.74 (. Aliases are not) 491.38 428.66 P
+(transitive, as we cannot see much point in supporting the notion.) 207 416.66 T
+0 9 Q
+(2.3.4) 178.01 393.33 T
+(%FIDUCIALS) 207 393.33 T
+1 10 Q
+0.12 (Fiducial symbols can be speci\336ed for panic mode error recovery) 207 368.66 P
+0.12 (. A \336ducial symbol is a) 464.69 368.66 P
+0.01 (symbol which can be trusted to appear in the input and lead to proper resynchronization) 207 356.66 P
+0.54 (of the parser) 207 344.66 P
+0.54 (, if an error occurs. The syntax for the speci\336cation of \336ducials is simpler) 257.63 344.66 P
+(than that for any other feature:) 207 332.66 T
+(<\336ducial> ::= <symbol>) 207 308.66 T
+-0.06 (W) 207 284.66 P
+-0.06 (e are planning on adding advanced error recovery capabilities to APT) 215.63 284.66 P
+-0.06 (. As an exercise,) 492.4 284.66 P
+0.14 (the reader is invited to implement an error recovery feature in APT) 207 272.66 P
+0.14 (. Since he or she has) 475.68 272.66 P
+(the source code at his or her disposal, the opportunity to do so is ripe.) 207 260.66 T
+0 9 Q
+(2.3.5) 178.01 237.33 T
+(%PHASES) 207 237.33 T
+1 10 Q
+-0.13 (Phases may be speci\336ed when it is desired for semantics to be executed on the stream of) 207 210.66 P
+0.87 (syntactically correct input several times. All phrase markers must be de\336ned for each) 207 200.66 P
+(phase listed. The syntax for the speci\336cation of phases is trivial:) 207 190.66 T
+(<phase> ::= <identifer>) 207 166.66 T
+1.01 (It is important to include one or more phase identi\336ers after the %ACTIONS section) 207 142.66 P
+2.21 (header to inform APT that the actions are de\336ned for the listed phase names. As) 207 132.66 P
+3.69 (mentioned previously) 207 122.66 P
+3.69 (, multiple %ACTIONS sections may be speci\336ed, so each) 296.94 122.66 P
+(semantic phase can be de\336ned in terms of one \050or more\051 actions section\050s\051.) 207 112.66 T
+FMENDPAGE
+%%EndPage: "8" 9
+%%Page: "9" 9
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(9 of 47) 529.53 60.96 T
+1 10 Q
+1.32 (In a future release of the documentation we will provide a detailed example of how) 207 680.66 P
+-0.04 (multiple semantic phases are employed. For now) 207 670.66 P
+-0.04 (, however) 401.84 670.66 P
+-0.04 (, we leave the reader with the) 440.82 670.66 P
+(de\336nition of the feature and his or her imagination for how it might be used.) 207 660.66 T
+0 F
+(2.4) 184.11 620.66 T
+(Command Line Interface) 207 620.66 T
+0 9 Q
+(2.4.1) 178.01 597.33 T
+(Command Line Interface) 207 597.33 T
+1 10 Q
+1.94 (The interface to the Apt Parsing T) 207 572.66 P
+1.94 (ool is command line oriented. The \336gure below) 354.52 572.66 P
+0.3 (illustrates the screen of text which appears when you invoke the Apt Parsing T) 207 560.66 P
+0.3 (ool with) 524.66 560.66 P
+-0.07 (no command line ar) 207 548.66 P
+-0.07 (guments. As is the protocol for most Unix tools, a tool invoked with) 286.26 548.66 P
+0.02 (no command line ar) 207 536.66 P
+0.02 (guments or with incorrect ar) 286.54 536.66 P
+0.02 (guments greets you with a usage screen) 399.68 536.66 P
+-0.01 (from which you will \050hopefully\051 be able to \336gure out the proper syntax of the command) 207 524.66 P
+0.64 (line required to invoke the tool. W) 207 512.66 P
+0.64 (e have not adhered to tradition exactly) 347.99 512.66 P
+0.64 (, however) 504.39 512.66 P
+0.64 (, as) 544.04 512.66 P
+0.48 (the Apt Parsing T) 207 500.66 P
+0.48 (ool usage screen is a bit verbose \050compared to Unix tools\051 and much) 278.54 500.66 P
+1.4 (more helpful. W) 207 488.66 P
+1.4 (e do not feel this departure from tradition is disadvantageous to the) 274.77 488.66 P
+(reader) 207 476.66 T
+(.) 231.42 476.66 T
+2 F
+(Apt Parsing T) 207 434.66 T
+(ool 3.0) 266.61 434.66 T
+(Copyright \050c\051 1991 -- Apt T) 207 422.66 T
+(echnologies) 322.95 422.66 T
+(Apt Parsing T) 207 398.66 T
+(ool -- ANSI-C Language Edition) 266.61 398.66 T
+(An APT command line uses the following syntax:) 207 374.66 T
+(% apt <\336le-name> <options>) 207 350.66 T
+(wher) 207 326.66 T
+(e:) 228.47 326.66 T
+( <\336le-name> ::= <\336le-pr) 207 302.66 T
+(e\336x>.grm) 309.27 302.66 T
+( <options> ::= { <option> }) 207 290.66 T
+( <option> ::= -a<switch> \050Analyze grammar only \050-c- and -l- ar) 207 278.66 T
+(e implicit\051\051) 475.69 278.66 T
+( <option> ::= -c<switch> \050Code generation \050default enabled\051\051) 207 266.66 T
+( <option> ::= -i <header) 207 254.66 T
+(-pr) 308.81 254.66 T
+(e\336x-list> \050Include type \336les\051) 321.96 254.66 T
+( <option> ::= -l<switch> \050List \336le \050default enabled\051\051) 207 242.66 T
+( <option> ::= -o <code-pr) 207 230.66 T
+(e\336x> \050Generate stub actions\051) 314.55 230.66 T
+( <option> ::= -s<switch> \050Semantic stack checks \050default enabled\051\051) 207 218.66 T
+( <option> ::= -t<switch> \050T) 207 206.66 T
+(erminal symbols \050default enabled\051\051) 322.29 206.66 T
+( <option> ::= -w<switch> \050Generate code on warnings \050default disabled\051\051) 207 194.66 T
+( <switch> ::= + | - | null) 207 182.66 T
+1 F
+0.17 (The Apt Parsing T) 207 160.66 P
+0.17 (ool accepts as input a grammar \336le followed by a number of options.) 280.92 160.66 P
+(These options are each explained below:) 207 148.66 T
+3 11 Q
+(\245) 207 130.66 T
+1 10 Q
+(-a : analyze grammar only) 220.74 130.66 T
+0.41 (Option a tells the Apt Parsing T) 207 106.66 P
+0.41 (ool to perform grammatical analysis only) 335.91 106.66 P
+0.41 (. This implies) 502.48 106.66 P
+0.65 (that no code generation or list \336le generation takes place. The grammatical analysis is) 207 94.66 P
+FMENDPAGE
+%%EndPage: "9" 10
+%%Page: "10" 10
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(10 of 47) 524.53 60.96 T
+1 10 Q
+-0.15 (useful to determine whether there are any problems with the input grammar \050such as left) 207 680.66 P
+1.65 (recursion, in\336nite-deriving nonterminals, unreachable symbols, and et cetera\051 before) 207 668.66 P
+(any code generation occurs. By default this option is disabled.) 207 656.66 T
+3 11 Q
+(\245) 207 638.66 T
+1 10 Q
+(-c : code generation) 220.74 638.66 T
+0.38 (Option c tells the Apt Parsing T) 207 614.66 P
+0.38 (ool to disable code generation. It might be useful to do) 335.73 614.66 P
+0.79 (this when there is a need to observe the results of the LL\0501\051 table construction phase.) 207 602.66 P
+-0.14 (Sometimes an LL\0501\051 problem requires the user to explore the FIRST and FOLLOW sets) 207 590.66 P
+1.29 (to understand the nature of it. Since option c does not disable option l, the user can) 207 578.66 P
+(obtain a list \336le without a code \336le being generated.) 207 566.66 T
+3 11 Q
+(\245) 207 548.66 T
+1 10 Q
+(-i : list of \336les to be included) 220.74 548.66 T
+0.32 (Option i permits the user to have a list of \336les be included by the code and header \336les) 207 524.66 P
+0.55 (of APT) 207 512.66 P
+0.55 (. This option is import so the user can convey type information to APT) 236.51 512.66 P
+0.55 (. As the) 526.09 512.66 P
+0.99 (speci\336cation \336le constrains the user to identi\336er type names, the type names must be) 207 500.66 P
+-0.13 (de\336ned somewhere \050like a C header \336le\051. It is not mandatory that this be done; however) 207 488.66 P
+-0.13 (,) 555.5 488.66 P
+0.78 (to achieve the maximum level of type checking, one ought to de\336ne every type name) 207 476.66 P
+(listed in the speci\336cation \336le in a header \336le.) 207 464.66 T
+3 11 Q
+(\245) 207 446.66 T
+1 10 Q
+(-l : list \336le generation) 220.74 446.66 T
+1.31 (Option l tells the Apt Parsing T) 207 422.66 P
+1.31 (ool to disable list \336le generation. Once the language) 339.63 422.66 P
+-0.2 (de\336nition is believed to be correct, there is no reason to generate a list \336le, as its primary) 207 410.66 P
+(utility is to determine whether there are problems with the language grammar) 207 398.66 T
+(.) 515.95 398.66 T
+3 11 Q
+(\245) 207 380.66 T
+1 10 Q
+(-o : generate stub action functions) 220.74 380.66 T
+1.84 (Option o is very useful. Never for) 207 356.66 P
+1.84 (get it. Once the language description and phrase) 353.04 356.66 P
+0.5 (markers are all de\336ned, the user can use this option to have Apt generate a \336le of stub) 207 344.66 P
+-0.21 (action functions. By generating a \336le of stub actions, the lexical analyzer) 207 332.66 P
+-0.21 (, the parser) 495.47 332.66 P
+-0.21 (, and) 538.78 332.66 P
+1.16 (the stub action functions can be linked together to produce a syntax analyzer for the) 207 320.66 P
+1.88 (language being implemented. The user can test whether the semantics will execute) 207 308.66 P
+0.15 (correctly \050given a suite of programs written in the language\051 without actually executing) 207 296.66 P
+1.22 (any semantics code. When he or she is con\336dent that the semantics are being called) 207 284.66 P
+1.54 (correctly and the semantic stack is being left in a healthy state, the actual semantic) 207 272.66 P
+2.54 (functions can be implemented and tested. This approach to development is much) 207 260.66 P
+0.23 (simpler than the one which is required for other parsing tools \050such as yacc\051, where the) 207 248.66 P
+0.76 (correctness of semantics cannot be tested at all. Also, this approach is consistent with) 207 236.66 P
+2.4 (the object \050or modular\051 paradigm, where objects \050or modules\051 are tested for their) 207 224.66 P
+(workability and then incorporated into the big picture.) 207 212.66 T
+3 11 Q
+(\245) 207 194.66 T
+1 10 Q
+(-s : disable semantic stack checks) 220.74 194.66 T
+0.63 (Option s disables the generation of run-time code to ensure that attributes pulled from) 207 170.66 P
+2.55 (the semantic stack each are of the type required by the semantic action function) 207 158.66 P
+0.92 (\050declared in the %ACTIONS section\051. Generally) 207 146.66 P
+0.92 (, one need not use this option, as the) 405.77 146.66 P
+3.13 (run-time code can be suppressed when the code \336le is compiled. The Make\336le) 207 134.66 P
+2.05 (\050distributed with the Apt system\051 explains how one can disable the semantic error) 207 122.66 P
+(checking code. The bottom line: use this option only if the code size is exorbitant.) 207 110.66 T
+3 11 Q
+(\245) 207 92.66 T
+1 10 Q
+(-t : disable generation of terminal symbol enumeration type) 220.74 92.66 T
+FMENDPAGE
+%%EndPage: "10" 11
+%%Page: "11" 11
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Parsing T) 207 739.85 T
+(ool) 283.24 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(1) 525.03 60.96 T
+(1 of 47) 529.53 60.96 T
+1 10 Q
+0.21 (Option t disables the generation of an enumeration type for the terminal symbols of the) 207 680.66 P
+0.42 (language. It is necessary for the user to do this when he or she supplies his or her own) 207 668.66 P
+0.38 (de\336nitions to APT in a header \336le. If the user opts to use the Apt Scanning T) 207 656.66 P
+0.38 (ool, he or) 519.2 656.66 P
+3.32 (she need never be concerned with this option. If this option is used, it is the) 207 644.66 P
+2 (responsibility of the user to ensure the \336le containing terminal symbol #de\336nes or) 207 632.66 P
+1.98 (enumeration type\050s\051 is supplied to APT \050via option i\051. Further) 207 620.66 P
+1.98 (, the values of these) 470.96 620.66 P
+-0.08 (symbols must not con\337ict with the values of other symbols de\336ned by APT) 207 608.66 P
+-0.08 (. The bottom) 506.8 608.66 P
+(line: use the Apt Scanning T) 207 596.66 T
+(ool to generate a scanner for use by the APT parser) 320.4 596.66 T
+(.) 524.67 596.66 T
+3 11 Q
+(\245) 207 578.66 T
+1 10 Q
+(-w : generate code on warnings) 220.74 578.66 T
+1.7 (Option w enables code to be generated when there are warnings which result from) 207 554.66 P
+0.22 (grammatical analysis or LL\0501\051 table construction. Use this option when the LL\0501\051 table) 207 542.66 P
+-0.23 (con\337icts are well-understood \050for instance, the if-then-else problem is a well-understood) 207 530.66 P
+(parsing table con\337ict which is resolved in favor of a shift\051.) 207 518.66 T
+0 9 Q
+(2.4.2) 178.01 495.33 T
+(Output Files) 207 495.33 T
+1 10 Q
+0.73 (A number of output \336les are potentially produced as a result of an invocation of APT) 207 470.66 P
+0.76 (with a grammar \336le and appropriate options. W) 207 458.66 P
+0.76 (e present each one below with a high-) 401.4 458.66 P
+1.38 (level description of its purpose. The details of their contents are not relevant to this) 207 446.66 P
+0.17 (document and will be the subject of a detailed technical report. W) 207 434.66 P
+0.17 (e believe the user can) 471.27 434.66 P
+0.4 (browse these \336les and understand their contents, as the code produced is very readable) 207 422.66 P
+(and almost self-documenting. Assume the grammar \336le is named language.grm.) 207 410.66 T
+3 11 Q
+(\245) 207 392.66 T
+1 10 Q
+(language.c) 220.74 392.66 T
+0.56 (This is the code \336le. It contains the parse table \050prediction table\051, the semantic actions) 207 368.66 P
+0.53 (tables \050which consist of a phase table and an action table per phase\051, phrase functions,) 207 356.66 P
+0.31 (and index tables \050to expedite lookups on the parse table. The parse table is compressed) 207 344.66 P
+0.87 (to minimize the amount of space required for its representation. The phrase functions) 207 332.66 P
+3.72 (contain inline code to invoke the associated semantic action function with the) 207 320.66 P
+-0.14 (appropriate stack elements, to consume attributes from the semantic stack, and to push a) 207 308.66 P
+(synthesized attribute onto the semantic stack.) 207 296.66 T
+3 11 Q
+(\245) 207 278.66 T
+1 10 Q
+(language.h) 220.74 278.66 T
+0.62 (This is the header \336le. It contains export information for the code \336le. It also contains) 207 254.66 P
+(enumeration types for the terminals, the nonterminals, and the actions.) 207 242.66 T
+3 11 Q
+(\245) 207 224.66 T
+1 10 Q
+(language.td) 220.74 224.66 T
+1.1 (This is the type de\336nition \336le. It contains default type de\336nitions for the type names) 207 200.66 P
+0.71 (which appear in the %ACTIONS section. Each of these type names is de\336ned to be a) 207 188.66 P
+-0.16 (generic pointer \050which, in C, is a pointer to void - void *\051. When the user speci\336es his or) 207 176.66 P
+0.74 (her own type de\336nitions \050via option i\051, the default type de\336nitions are suppressed and) 207 164.66 P
+0.38 (replaced with the user type de\336nitions. This is re\337ected in the \336le via a replacement of) 207 152.66 P
+0.21 (the type de\336nitions with a #include \050or import directive/syntax appropriate to the tar) 207 140.66 P
+0.21 (get) 545.79 140.66 P
+(language\051.) 207 128.66 T
+3 11 Q
+(\245) 207 110.66 T
+1 10 Q
+(language.pt) 220.74 110.66 T
+FMENDPAGE
+%%EndPage: "11" 12
+%%Page: "12" 12
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Scanning T) 207 739.85 T
+(ool) 290.73 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(12 of 47) 524.53 60.96 T
+1 10 Q
+0.82 (This is the prototypes \336le. This \336le is important in the context of the C programming) 207 680.66 P
+0.28 (language, as there are more than subtle dif) 207 668.66 P
+0.28 (ferences in how the interface to a function is) 378.11 668.66 P
+(de\336ned from old standards to new standards.) 207 656.66 T
+3 11 Q
+(\245) 207 638.66 T
+1 10 Q
+(language.lst) 220.74 638.66 T
+0.65 (This is the listing \336le. It contains all information pertinent to grammatical analysis \050in) 207 614.66 P
+0.84 (the context of LL\0501\051 grammars\051: FIRST) 207 602.66 P
+0.84 (, LAST) 370.09 602.66 P
+0.84 (, NEXTT) 400.18 602.66 P
+0.84 (O, and FOLLOW sets. Other) 438.6 602.66 P
+1.34 (information includes the minimum sentence derivable from a nonterminal \050including) 207 590.66 P
+0.29 (in\336nity\051, reachability information, the symbol table, and the production table. It is very) 207 578.66 P
+2.09 (useful for determining whether a problem exists with the language from an LL\0501\051) 207 566.66 P
+(perspective.) 207 554.66 T
+3 11 Q
+(\245) 207 536.66 T
+1 10 Q
+(language.err) 220.74 536.66 T
+1.3 (This is the error \336le. Included here is information about errors which arise from the) 207 512.66 P
+0.03 (generation of the LL\0501\051 parse table. If a con\337ict occurs during the process of generating) 207 500.66 P
+0.55 (the parse table, an informative message will appear here, along with an explanation of) 207 488.66 P
+0.81 (what type of con\337ict it is \050whether it arose from a FIRST set or a FOLLOW set\051 and) 207 476.66 P
+1.5 (how it was resolved. A resolution is always made in favor of the production which) 207 464.66 P
+1.3 (appeared \336rst. In a later version we might add support for syntax which permits the) 207 452.66 P
+0.58 (speci\336cation of how resolution is done for a given set of nonterminals, but the current) 207 440.66 P
+(mechanism adequately solves the problem with minimal burden for the user) 207 428.66 T
+(.) 510.13 428.66 T
+72 385.33 558 388.33 C
+207 387.48 558 387.48 2 L
+0.25 H
+2 Z
+0 X
+0 K
+N
+72 387.48 198 387.48 2 L
+0 Z
+N
+0 0 612 792 C
+0 12 Q
+0 X
+0 K
+(3.0) 181.33 392.33 T
+(The Apt Scanning T) 207 392.33 T
+(ool) 318.73 392.33 T
+0 10 Q
+(3.1) 184.11 358.66 T
+(Introduction and Overview of Features) 207 358.66 T
+1 F
+0.4 (The Apt Scanning T) 207 334.66 P
+0.4 (ool is a tool for the generation of a scanner \050a function\051 to achieve) 288.84 334.66 P
+-0.11 (lexical analysis. As input, it accepts a speci\336cation \336le which contains a description of a) 207 322.66 P
+0.97 (deterministic \336nite state machine \050DFSM\051. The format of the speci\336cation allows the) 207 310.66 P
+(DFSM to be speci\336ed as symbolically as possible.) 207 298.66 T
+0.16 (Also provided by the tool is extensive support for character classes and intrinsic lexical) 207 274.66 P
+0.7 (actions, both of which enable the language implementor to specify a DFSM in a terse) 207 262.66 P
+1.18 (manner) 207 250.66 P
+1.18 (. Character classes can be used to label a transition from one state to another) 236.42 250.66 P
+2.07 (state, which eliminates the need to replicate common transitions from one state to) 207 238.66 P
+1.5 (another state. Intrinsic lexical actions are present to perform various lexical actions.) 207 226.66 P
+(Some of the traditional lexical actions include the following:) 207 214.66 T
+3 11 Q
+(\245) 207 196.66 T
+1 10 Q
+(match the current character and put it into the buf) 220.74 196.66 T
+(fer which holds the token.) 418.47 196.66 T
+3 11 Q
+(\245) 207 181.66 T
+1 10 Q
+(same as 1, but advance the input pointer once done with 1.) 220.74 181.66 T
+3 11 Q
+(\245) 207 166.66 T
+1 10 Q
+(ignore the current character and advance the input pointer) 220.74 166.66 T
+(, as in 2.) 451.26 166.66 T
+3 11 Q
+(\245) 207 151.66 T
+1 10 Q
+(push the current character back into the input stream and do not add it to buf) 220.74 151.66 T
+(fer) 526.18 151.66 T
+(.) 536.72 151.66 T
+3 11 Q
+(\245) 207 136.66 T
+1 10 Q
+(like 4, but push back the last character which entered the token buf) 220.74 136.66 T
+(fer) 487.86 136.66 T
+(.) 498.4 136.66 T
+3 11 Q
+(\245) 207 121.66 T
+1 10 Q
+(like 5, but push back the second to last character which entered the token buf) 220.74 121.66 T
+(fer) 528.39 121.66 T
+(.) 538.93 121.66 T
+FMENDPAGE
+%%EndPage: "12" 13
+%%Page: "13" 13
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Scanning T) 207 739.85 T
+(ool) 290.73 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(13 of 47) 524.53 60.96 T
+1 10 Q
+4.98 (W) 207 680.66 P
+4.98 (e believe these cases encompass all lexical actions appropriate to modern) 215.63 680.66 P
+1.99 (programming languages. Additional lexical actions can be written by the user) 207 668.66 P
+1.99 (, and) 536.58 668.66 P
+(daisychaining can occur with the existing lexical actions.) 207 656.66 T
+0.64 (The fundamental design principle of the Apt Scanning T) 207 632.66 P
+0.64 (ool was simplicity) 437.36 632.66 P
+0.64 (, ef) 511.29 632.66 P
+0.64 (\336ciency) 524.51 632.66 P
+0.64 (,) 555.5 632.66 P
+0.91 (and elegance. By elegance we do not insinuate the notion of theoretical elegance; we) 207 620.66 P
+-0.23 (were more concerned about structural \050and even an object-oriented\051 elegance. A scanner) 207 608.66 P
+0.41 (developed with AST has components which can directly be reused. W) 207 596.66 P
+0.41 (e even provide a) 490.98 596.66 P
+0.74 (library of rules which manifest the collection of dif) 207 584.66 P
+0.74 (ferent lexical elements \050identi\336ers,) 417.01 584.66 P
+1.5 (\337oating point numbers, the Pascal subrange operator [which is ..], various comment) 207 572.66 P
+-0.05 (styles, operators, and et cetera\051. The user of the Apt Scanning T) 207 560.66 P
+-0.05 (ool can design a scanner) 460.52 560.66 P
+2.23 (within minutes for most practical \050and well-designed from the lexical perspective\051) 207 548.66 P
+(programming languages.) 207 536.66 T
+0 F
+(3.2) 184.11 506.66 T
+(Speci\336cation File Syntax) 207 506.66 T
+1 F
+1.38 (As alluded to in the overview) 207 482.66 P
+1.38 (, the speci\336cation \336le for AST permits the simple and) 331.24 482.66 P
+-0.13 (concise speci\336cation of the deterministic \336nite state machine in a symbolic and intuitive) 207 470.66 P
+(manner) 207 458.66 T
+(. The line-oriented syntax in EBNF follows:) 236.42 458.66 T
+(<line> ::= <rule>) 207 440.66 T
+(<rule> ::= <source-state> <transition-label> <dest-state> <action> [<attribute>]) 207 428.66 T
+(<source-state> ::= <state>) 207 416.66 T
+(<dest-state> ::= <state>) 207 404.66 T
+(<transition-label> ::= <c-identi\336er> | <c-character) 207 392.66 T
+(-string>) 406.93 392.66 T
+(<action> ::= <identi\336er>) 207 380.66 T
+(<attribute> ::= <identi\336er>) 207 368.66 T
+0.77 (A brief discussion of the above grammar is warranted. Each line consists of a rule. A) 207 346.66 P
+0.09 (rule is de\336ned to be a transition from a source state to a destination state. The transition) 207 334.66 P
+2.07 (is either an identi\336er or a character string \050both as de\336ned in the C programming) 207 322.66 P
+1.39 (language\051. If a transition is encoded as an identi\336er) 207 310.66 P
+1.39 (, the identi\336er corresponds to an) 422.27 310.66 P
+1.93 (intrinsic character class \050described below\051; otherwise, the transition applies to each) 207 298.66 P
+0.55 (character in the character string. The action, an identi\336er) 207 286.66 P
+0.55 (, is either an intrinsic or user) 437.48 286.66 P
+0.55 (-) 554.67 286.66 P
+0.08 (de\336ned lexical action. As we will discuss later) 207 274.66 P
+0.08 (, the user) 392.57 274.66 P
+0.08 (-speci\336ed lexical action must be) 428.89 274.66 P
+-0.05 (either added to the Apt Scanning T) 207 262.66 P
+-0.05 (ool library or placed in a separate \336le which is linked) 345.89 262.66 P
+1.17 (with the scanner \050or translator\051 being built. An attribute may optionally be speci\336ed.) 207 250.66 P
+0.52 (This attribute implies that a token is returned by the lexical analyzer in the destination) 207 238.66 P
+1.08 (state. The destination state is determined to be an accepting state. T) 207 226.66 P
+1.08 (ransitions from a) 488.1 226.66 P
+0.31 (state which returns an attribute are unde\336ned, and will be ignored by the Apt Scanning) 207 214.66 P
+(T) 207 202.66 T
+(ool.) 212.41 202.66 T
+0.02 (The start state is determined to be the \336rst source state \050i.e. the source state listed on the) 207 178.66 P
+-0.25 (\336rst line\051. Accepting states are determined to be the source states which happen to list an) 207 166.66 P
+1.02 (attribute to be returned. It is possible for a state to be an accepting one and yet have) 207 154.66 P
+(transitions to other states.) 207 142.66 T
+0 9 Q
+(3.2.1) 178.01 119.33 T
+(Intrinsic Character Classes) 207 119.33 T
+1 10 Q
+(LowerAlpha - a lower case character in the range \324a\325 through \324z\325) 207 100.66 T
+FMENDPAGE
+%%EndPage: "13" 14
+%%Page: "14" 14
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Scanning T) 207 739.85 T
+(ool) 290.73 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(14 of 47) 524.53 60.96 T
+1 10 Q
+(UpperAlpha - an upper case character in the range \324A) 207 680.66 T
+(\325 through \324Z\325) 419.85 680.66 T
+(Alpha - either LowerAlpha or UpperAlpha) 207 668.66 T
+(AlphaNumeric - either Alpha or Numeric) 207 656.66 T
+(Numeric - a character in the range \3240\325 through \3249\325) 207 644.66 T
+(Default - any character) 207 632.66 T
+(Lambda - any character) 207 620.66 T
+(EndOfFile - the end-of-\336le character) 207 608.66 T
+(HexDigit - any Numeric or character in the range \324A) 207 596.66 T
+(\325 through \324F\325) 415.98 596.66 T
+(OctDigit - any Numeric except \3248\325 and \3249\325) 207 584.66 T
+(WhiteSpace - any of space, tab, or new-line \050carriage return/line feed\051) 207 572.66 T
+0 9 Q
+(3.2.2) 178.01 551.33 T
+(Intrinsic Lexical Actions) 207 551.33 T
+1 10 Q
+0.1 (Advance - add the transition character to the token buf) 207 526.66 P
+0.1 (fer and advance the input pointer) 425.64 526.66 P
+(to the next character) 207 514.66 T
+(Flush - clear the token buf) 207 490.66 T
+(fer and advance the input pointer to the next character) 312.02 490.66 T
+0.23 (Ignore - ignore the current character \050i.e. do not add it to the token buf) 207 466.66 P
+0.23 (fer\051 and advance) 490.94 466.66 P
+(the input pointer to the next character) 207 454.66 T
+1.71 (Match - add the current character to the token buf) 207 430.66 P
+1.71 (fer but do not advance the input) 420.63 430.66 P
+(pointer to the next character) 207 418.66 T
+(.) 318.58 418.66 T
+0.16 (InitAdvance - works exactly as Advance but informs the scanner to register the starting) 207 394.66 P
+(line and column positions of the token) 207 382.66 T
+(InitIgnore - analagous to InitAdvance; replace the word \322Advance\323 with \322Ignore\323) 207 358.66 T
+(InitMatch - analagous to InitAdvance; replace the word \322Advance\323 with \322Match\323) 207 334.66 T
+0.1 (PushBack - push back the current character) 207 310.66 P
+0.1 (. Note: when one uses this routine, he or she) 380.25 310.66 P
+0.12 (should return an attribute, as an in\336nite loop in the scanner is possible if the destination) 207 298.66 P
+(state is the same as the source state.) 207 286.66 T
+-0.08 (PushBackT) 207 262.66 P
+-0.08 (wo - push back the current character and the previous character placed in the) 252.38 262.66 P
+-0.22 (token buf) 207 250.66 P
+-0.22 (fer) 244.63 250.66 P
+-0.22 (. The note attached to PushBack applies to PushBackT) 255.18 250.66 P
+-0.22 (wo with one addition:) 471.2 250.66 P
+1.3 (when PushBackT) 207 238.66 P
+1.3 (wo is used, it is important \050to prevent lexical errors\051 that the token) 277.83 238.66 P
+(buf) 207 226.66 T
+(fer contains a positive number of characters.) 220.14 226.66 T
+0.87 (PushBackThree - analagous to PushBackT) 207 202.66 P
+0.87 (wo; replace \322previous character\323 with \322two) 380.21 202.66 P
+3.58 (previous characters\323 and \322a positive number of characters\323 with \322two or more) 207 190.66 P
+(characters\323.) 207 178.66 T
+0 F
+(3.3) 184.11 148.66 T
+(DF) 207 148.66 T
+(A Considerations) 219.77 148.66 T
+1 F
+2.62 (In encoding a DF) 207 124.66 P
+2.62 (A it is particularly important that the language implementor be) 283.78 124.66 P
+(concerned with two aspects:) 207 112.66 T
+3 11 Q
+(\245) 207 94.66 T
+1 10 Q
+(every state in the DF) 220.74 94.66 T
+(A must be reachable) 303.28 94.66 T
+FMENDPAGE
+%%EndPage: "14" 15
+%%Page: "15" 15
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(The Apt Scanning T) 207 739.85 T
+(ool) 290.73 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(15 of 47) 524.53 60.96 T
+3 11 Q
+(\245) 207 680.66 T
+1 10 Q
+(every state in the DF) 220.74 680.66 T
+(A must lead to an accepting state) 303.28 680.66 T
+1.83 (While neither of these two conditions assures an individual of the correctness of a) 207 632.66 P
+1.59 (lexical analyzer or the language it accepts, it minimizes the likelihood of a scanner) 207 620.66 P
+(being incorrect or exhibiting worst case behavior \050like entering into an in\336nite loop\051.) 207 608.66 T
+2.11 (The Apt Scanning T) 207 584.66 P
+2.11 (ool will inform the user of the existence of either of the two) 293.96 584.66 P
+0.62 (conditions above. The reachability test is determined via a transitive closure operation) 207 572.66 P
+0.74 (applied to the DF) 207 560.66 P
+0.74 (A from the start state. As mentioned in the discussion of syntax, the) 278.17 560.66 P
+0.31 (start state is determined from the \336rst transition rule. The test of whether all states lead) 207 548.66 P
+(to an accepting state is also determined from a transitive closure operation.) 207 536.66 T
+0.62 (It is important for the reader to understand why the two conditions are important. The) 207 512.66 P
+0.38 (\336rst condition, if not satis\336ed, is a potentially serious problem. A set of states which is) 207 500.66 P
+0.98 (expected to perform the analysis of a lexical element in fact does nothing, because it) 207 488.66 P
+0.38 (corresponds to a piece of dead code. The second condition, if not satis\336ed, is usually a) 207 476.66 P
+0.84 (very serious problem. If a state is entered which cannot lead to an accepting state, an) 207 464.66 P
+0.93 (in\336nite loop is certain to occur) 207 452.66 P
+0.93 (. Given the input to the actual scanner) 333.54 452.66 P
+0.93 (, it might be the) 491.24 452.66 P
+-0.17 (case that the state would never be entered; the scanner would not be correct nonetheless.) 207 440.66 P
+1.79 (It is possible for the scanning tool to determine a possible string which causes the) 207 428.66 P
+0.11 (scanner to get into a loop \050though we currently are not supporting this\051. In any case, we) 207 416.66 P
+1.2 (ur) 207 404.66 P
+1.2 (ge the reader to rectify the problem with the DFSM in the event one of the above) 215.15 404.66 P
+(conditions is diagnosed to be present in his or her DFSM.) 207 392.66 T
+0 F
+(3.4) 184.11 362.66 T
+(Command Line Interface) 207 362.66 T
+1 F
+1.28 (Analagous to the Apt Parsing T) 207 338.66 P
+1.28 (ool \050APT\051, the interface to the Apt Scanning T) 339 338.66 P
+1.28 (ool is) 534.78 338.66 P
+1.1 (command line oriented. The \336gure below illustrates the screen of text which appears) 207 326.66 P
+(when you invoke the Apt Scanning T) 207 314.66 T
+(ool with no command line ar) 355.65 314.66 T
+(guments:) 470.67 314.66 T
+2 F
+(Apt Scanning T) 207 272.66 T
+(ool 3.0) 273.28 272.66 T
+(Copyright \050c\051 1991 -- Apt T) 207 260.66 T
+(echnologies) 322.95 260.66 T
+(Apt Scanning T) 207 236.66 T
+(ool -- ANSI-C Language Edition) 273.28 236.66 T
+(An AST command line uses the following syntax:) 207 212.66 T
+(% ast-c <\336le-name> <options>) 207 188.66 T
+(wher) 207 164.66 T
+(e:) 228.47 164.66 T
+( <\336le-name> ::= <unix-path>) 207 152.66 T
+( <options> ::= { <option> }) 207 140.66 T
+( <option> ::= -a \050Analyze FSA only\051) 207 128.66 T
+( <option> ::= -i <list-of-header) 207 116.66 T
+(-\336les> \050Use alternative token de\336nition \336les\051) 336.57 116.66 T
+( <option> ::= -t \050Suppr) 207 104.66 T
+(ess generation of token or terminal symbol enumeration\051) 304.43 104.66 T
+FMENDPAGE
+%%EndPage: "15" 16
+%%Page: "16" 16
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Node T) 207 739.85 T
+(ool) 254.26 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(16 of 47) 524.53 60.96 T
+1 10 Q
+0.19 (The Apt Scanning T) 207 656.66 P
+0.19 (ool accepts as input a DF) 288.21 656.66 P
+0.19 (A speci\336cation \336le which conforms to the) 389.19 656.66 P
+(aforementioned syntax. Each of the options is explained below:) 207 644.66 T
+(-a : analyze FSA only) 207 620.66 T
+0.06 (Option a tells the Apt Scanning T) 207 596.66 P
+0.06 (ool to merely perform the analyses of reachability and) 341.02 596.66 P
+2.19 (states which can reach accepting states. If either of the analyses fails, a report of) 207 584.66 P
+0.91 (unreachable states and states which do not lead to accepting states is produced. Code) 207 572.66 P
+0.52 (generation is completely suppressed. By default this option is disabled, but analysis of) 207 560.66 P
+(the FSA always occurs and cannot be disabled.) 207 548.66 T
+(-i : include header \336les) 207 524.66 T
+0.69 (Option i informs AST to generate includes of all listed header \336les in the output code) 207 500.66 P
+1.42 (\336les. This option is commonly used to provide alternative de\336ntions of the terminal) 207 488.66 P
+(symbol values.) 207 476.66 T
+0 F
+(3.5) 184.11 446.66 T
+(Output \336les) 207 446.66 T
+1 F
+3.09 (T) 207 422.66 P
+3.09 (wo \336les are produced by the Apt Scanning T) 212.41 422.66 P
+3.09 (ool when code generation is not) 415.16 422.66 P
+-0.25 (suppressed: the code \336le and the export \336le. Assume the input speci\336cation \336le is named) 207 410.66 P
+(scanner) 207 398.66 T
+(.scn. Then the following \336les will be produced:) 236.97 398.66 T
+3 11 Q
+(\245) 207 380.66 T
+1 10 Q
+(language.c) 220.74 380.66 T
+1.01 (This is the code \336le. It contains a complete scanner and is directly encoded from the) 207 356.66 P
+-0.22 (speci\336cation \336le. The scanner is ef) 207 344.66 P
+-0.22 (fectively a big switch statement in the tar) 344.52 344.66 P
+-0.22 (get language) 507.42 344.66 P
+(with a number of local declarations to mimic the behavior of the DFSM.) 207 332.66 T
+3 11 Q
+(\245) 207 314.66 T
+1 10 Q
+(language.h) 220.74 314.66 T
+-0.1 (This is the export \336le. It contains an interface to the scanner) 207 290.66 P
+-0.1 (, as well as two enumeration) 444.72 290.66 P
+1.83 (types \050which are used by the scanner and required for a parser\051: T) 207 278.66 P
+1.83 (erminalDe\336tions) 490.82 278.66 P
+2.06 (\050which can be read as LexicalDe\336nitions or T) 207 266.66 P
+2.06 (okenT) 403.62 266.66 P
+2.06 (ypes\051 and States. The terminal) 428.46 266.66 P
+2.63 (de\336nition list is derived from the attributes used in the speci\336cation \336le and are) 207 254.66 P
+1.21 (preceded by \322T_\323. The states are derived from the speci\336cation \336le \050both the source) 207 242.66 P
+0.74 (states and destination states\051 and are preceded by \322S_\323. The use of enumeration types) 207 230.66 P
+1.38 (enhances the readability of the code \336le \050language.c\051 and the ability to integrate the) 207 218.66 P
+(scanner with the parser \050produced by APT for example\051.) 207 206.66 T
+72 163.33 558 166.33 C
+207 165.48 558 165.48 2 L
+0.25 H
+2 Z
+0 X
+0 K
+N
+72 165.48 198 165.48 2 L
+0 Z
+N
+0 0 612 792 C
+0 12 Q
+0 X
+0 K
+(4.0) 181.33 170.33 T
+(Apt Node T) 207 170.33 T
+(ool) 270.07 170.33 T
+0 10 Q
+(4.1) 184.11 136.66 T
+(Introduction and Overview and Features) 207 136.66 T
+1 F
+1.41 (The Apt Node T) 207 112.66 P
+1.41 (ool is a tool designed to generate code for the allocation, updation,) 276.31 112.66 P
+0.32 (shallow replication, deep replication, and skeletal traversal of recursive data structures.) 207 100.66 P
+FMENDPAGE
+%%EndPage: "16" 17
+%%Page: "17" 17
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Node T) 207 739.85 T
+(ool) 254.26 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(17 of 47) 524.53 60.96 T
+1 10 Q
+0.25 (Each data structure is speci\336ed as a node with a type system based on that found in the) 207 680.66 P
+0.31 (C language. A node structure is for all practical purposes a \322union\323 or \322variant record\323) 207 668.66 P
+1.43 (structure found in the familiar programming languages C and Modula-2 \050or Pascal\051,) 207 656.66 P
+(respectively) 207 644.66 T
+(. The \336elds of the node structure are either structured or scalar types.) 254.64 644.66 T
+0.4 (In the design of language translators and compilers it is important to be able to rapidly) 207 620.66 P
+1.02 (build data structures during the semantic analysis phase. Almost all semantic activity) 207 608.66 P
+0.98 (centers around the construction of data structures and the management of the symbol) 207 596.66 P
+0.44 (table. W) 207 584.66 P
+0.44 (ith the Apt Parsing T) 240.9 584.66 P
+0.44 (ool, the Apt Node T) 325.82 584.66 P
+0.44 (ool, and the Apt Data T) 407.11 584.66 P
+0.44 (ypes, one can) 503 584.66 P
+0.29 (literally design the entire semantic phase for a language translator and write little or no) 207 572.66 P
+1.82 (code at all. Often the only code to write is to call a function to enter or to \336nd a) 207 560.66 P
+(de\336nition in a symbol table.) 207 548.66 T
+0.57 (In the design of a code generator for a compiler there are two applications for the Apt) 207 524.66 P
+-0.24 (Node T) 207 512.66 P
+-0.24 (ool. The parse tree \050or annotated parse tree\051 must usually be rewritten into a form) 236.32 512.66 P
+1.63 (which is acceptable for code generation. W) 207 500.66 P
+1.63 (ith the Apt Node T) 389.32 500.66 P
+1.63 (ool one can generate) 470.67 500.66 P
+0.16 (procedures which will update or replicate a node in situ. As an example of the meaning) 207 488.66 P
+1.2 (of the latter) 207 476.66 P
+1.2 (, let us think about a node named Expression. This particular node has a) 255.08 476.66 P
+0.97 (member structure named BinaryExpression, which is de\336ned as an operator with two) 207 464.66 P
+1.04 (subexpressions \050each of which is a node of type Expression\051. Assume we have some) 207 452.66 P
+1.96 (other structures which are also lumped into node Expression which are conversion) 207 440.66 P
+1.79 (operators. Suppose we have a binary expression with an addition operator and two) 207 428.66 P
+0.43 (subexpressions of types integer and real. W) 207 416.66 P
+0.43 (e need to convert the integer subexpression) 382.8 416.66 P
+-0.01 (into a real subexpression. The following pseudocode describes how one can achieve the) 207 404.66 P
+(conversion with the aid of functions which can be generated with the node tool.) 207 392.66 T
+3 11 Q
+(\245) 207 374.66 T
+1 10 Q
+(replicate the integer subexpression eL as eL) 220.74 374.66 T
+(\325) 395.24 374.66 T
+3 11 Q
+(\245) 207 359.66 T
+1 10 Q
+(change the type of the eL into a conversion expression) 220.74 359.66 T
+3 11 Q
+(\245) 207 344.66 T
+1 10 Q
+(establish the subexpression of the conversion expression as eL) 220.74 344.66 T
+(\325) 469.65 344.66 T
+0.25 (The above example can be achieved in two steps with procedures generated by the Apt) 207 320.66 P
+0.18 (Node T) 207 308.66 P
+0.18 (ool. T) 236.73 308.66 P
+0.18 (rees can be rewritten with ANT procedures without the trees being passed) 260.44 308.66 P
+(by reference.) 207 296.66 T
+0 F
+(4.2) 184.11 266.66 T
+(Speci\336cation File Syntax) 207 266.66 T
+1 F
+(File -> Items) 207 250.66 T
+(Items -> { Item }) 207 238.66 T
+(Item -> Enum | Include | Node) 207 226.66 T
+(Enum -> enum ident { T) 207 214.66 T
+(ags }) 304.74 214.66 T
+(Include -> include \336leIdent) 207 202.66 T
+(Node -> node ident { Elements }) 207 190.66 T
+(T) 207 178.66 T
+(ags -> T) 212.41 178.66 T
+(ag { , T) 245.1 178.66 T
+(ag }) 274.73 178.66 T
+(T) 207 166.66 T
+(ag -> identi\336er) 212.41 166.66 T
+(Elements -> { Element }) 207 154.66 T
+(Element -> Slot | Decl) 207 142.66 T
+(Slot -> slot ident { Decls } _Slot SemiOpt) 207 130.66 T
+(Decls -> { Decl }) 207 118.66 T
+(Decl -> NullOp Specs V) 207 106.66 T
+(ars ;) 304.24 106.66 T
+(NullOp -> [ null ]) 207 94.66 T
+FMENDPAGE
+%%EndPage: "17" 18
+%%Page: "18" 18
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Node T) 207 739.85 T
+(ool) 254.26 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(18 of 47) 524.53 60.96 T
+1 10 Q
+(Specs -> SpecList) 207 680.66 T
+(SpecList -> ClassSpec) 207 668.66 T
+(SpecList -> { Spec }) 207 656.66 T
+(ClassSpec -> enum ident) 207 644.66 T
+(ClassSpec -> ident) 207 632.66 T
+(ClassSpec -> struct ident) 207 620.66 T
+(ClassSpec -> union ident) 207 608.66 T
+(Spec -> T) 207 596.66 T
+(ypeSpec | StClSpec | T) 245.8 596.66 T
+(ypeQual) 336.27 596.66 T
+(T) 207 584.66 T
+(ypeSpec -> void | char | int | \337oat | double | short | long | signed | unsigned) 212.41 584.66 T
+(StClSpec -> auto | static | extern) 207 572.66 T
+(T) 207 560.66 T
+(ypeQual -> const | volatile) 212.41 560.66 T
+(V) 207 548.66 T
+(ars -> V) 213.11 548.66 T
+(ar { , V) 244.83 548.66 T
+(ar }) 273.49 548.66 T
+(V) 207 536.66 T
+(ar -> Ptrs ident Arrays) 213.11 536.66 T
+(Ptrs -> { * }) 207 524.66 T
+(Arrays -> { Array }) 207 512.66 T
+(Array -> { [ [integer] ] }) 207 500.66 T
+-0.13 (As the speci\336cation \336le syntax includes much syntax for the declaration of C data types,) 207 478.66 P
+0.17 (it has a complicated appearance. Actually) 207 466.66 P
+0.17 (, the syntax is easy to comprehend by looking) 373.72 466.66 P
+3.88 (at the \336rst rules and then working downward, since the grammar is arranged) 207 454.66 P
+(hierarchically) 207 442.66 T
+(.) 261.3 442.66 T
+2.19 (A speci\336cation \336le is a list of items. An item is either an include, a node, or an) 207 418.66 P
+1.1 (enumeration. The include rule permits one to include other de\336nitions \050such as other) 207 406.66 P
+1.51 (data types and enumerations\051 for the de\336nition of nodes. An enumeration facility is) 207 394.66 P
+0.01 (provided, so members of a given node can be declared as an instance of an enumeration) 207 382.66 P
+0.74 (type. The enumeration type, as de\336ned in ANT) 207 370.66 P
+0.74 (, dif) 399.89 370.66 P
+0.74 (fers from C in that no initial value) 416.54 370.66 P
+0.1 (can be speci\336ed. Thus, an enumeration is de\336ned in ANT to always start with the value) 207 358.66 P
+0.67 (of zero. The node item, the most important item, is the item which allows the \337exible) 207 346.66 P
+(speci\336cation of user data structures.) 207 334.66 T
+-0.2 (A node declaration looks much like a union declaration in the C programming language,) 207 310.66 P
+0.7 (except for the keyword and the need to enclose it in a structure declaration with a tag) 207 298.66 P
+1.11 (member associated with the union. T) 207 286.66 P
+1.11 (o declare a node, simply specify the node name) 359.54 286.66 P
+0.96 (\050which is not optional\051 and a list of members. The members may be any C data type) 207 274.66 P
+(\050either a scalar or structured type\051.) 207 262.66 T
+-0.1 (As mentioned above, the members of a node are data types found in the C programming) 207 238.66 P
+0.01 (language. A member of a node can be optionally quali\336ed as null, if the user desires the) 207 226.66 P
+-0.22 (member variable\050s\051 to be invisible. In other words the member variable, while present in) 207 214.66 P
+2.31 (the generated code for the node, is never generated as a parameter to any of the) 207 202.66 P
+(functions which allocate or manipulate an instance of the node type.) 207 190.66 T
+0.01 (In the \336nal section of the manual we will illustrate a complete example translator which) 207 166.66 P
+0.82 (uses the three tools to solve a problem. ANT will be used to build the data structures) 207 154.66 P
+(required for code generation.) 207 142.66 T
+1.87 (Analagous to the Apt Scanning T) 207 118.66 P
+1.87 (ool \050AST\051, the interface to the Apt Node T) 349.19 118.66 P
+1.87 (ool is) 534.19 118.66 P
+1.1 (command line oriented. The \336gure below illustrates the screen of text which appears) 207 106.66 P
+(when you invoke the Apt Node T) 207 94.66 T
+(ool with no command line ar) 340.1 94.66 T
+(guments:) 455.12 94.66 T
+FMENDPAGE
+%%EndPage: "18" 19
+%%Page: "19" 19
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Node T) 207 739.85 T
+(ool) 254.26 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(19 of 47) 524.53 60.96 T
+2 10 Q
+(Apt Node T) 207 662.66 T
+(ool 3.0) 256.05 662.66 T
+(Copyright \050c\051 1991 -- Apt T) 207 650.66 T
+(echnologies) 322.95 650.66 T
+(Apt Node T) 207 626.66 T
+(ool) 256.05 626.66 T
+(ANT accepts a node description \336le and translates it into a header) 207 602.66 T
+(\336le and a code \336le. The header \336le contains enumeration types,) 207 590.66 T
+(structur) 207 578.66 T
+(e types, and union types, while the code \336le contains) 241.79 578.66 T
+(r) 207 566.66 T
+(outines to allocate the differ) 211.26 566.66 T
+(ent structur) 329.88 566.66 T
+(es.) 380.49 566.66 T
+(T) 207 542.66 T
+(o put the ANT to work, supply \336les of the form *.nt at the) 212.75 542.66 T
+(command line pr) 207 530.66 T
+(ompt:) 279.56 530.66 T
+(% ant \336le1.ant \336le2.ant ... \336len.ant) 207 506.66 T
+1 F
+2.85 (The command line syntax merely requires the user to specify one or more \336les) 207 484.66 P
+1.21 (\050containing node descriptions\051 to be translated. Currently) 207 472.66 P
+1.21 (, we have no command line) 442.05 472.66 P
+(\337ags to suppress the generation of code which is redundant for a speci\336c application.) 207 460.66 T
+0 F
+(4.3) 184.11 430.66 T
+(Output Files) 207 430.66 T
+1 F
+0.88 (T) 207 406.66 P
+0.88 (wo \336les are produced by the Apt Node T) 212.41 406.66 P
+0.88 (ool: a code \336le and a de\336nition/export \336le.) 381.95 406.66 P
+1.49 (The de\336nition/export \336le must be included by the application which needs to build/) 207 394.66 P
+2.62 (maintain nodes to ensure proper usage of the functions and linkage. Assume the) 207 382.66 P
+(speci\336cation \336le is named nodes.ant) 207 370.66 T
+3 11 Q
+(\245) 207 352.66 T
+1 10 Q
+(nodes.c) 220.74 352.66 T
+1.47 (For each node \050and structure within the node\051 functions to allocate \050New\051, replicate) 207 328.66 P
+0.29 (\050Duplicate\051, and modify \050Update\051 can be found in the \336le. In a future release two types) 207 316.66 P
+2.66 (of node duplication \050shallow and deep\051 will be supported by ANT) 207 304.66 P
+2.66 (, as well as a) 496.57 304.66 P
+2.57 (\322skeleton\323 traversal routine for recursive descent into a \050recursively de\336ned\051 data) 207 292.66 P
+(structure.) 207 280.66 T
+3 11 Q
+(\245) 207 262.66 T
+1 10 Q
+(nodes.h) 220.74 262.66 T
+0.86 (Every node is translated into a structure type. The structure contains a tag \336eld and a) 207 238.66 P
+-0.22 (union. The tag \336eld is of an enumeration type \050which is named after the node\051; the union) 207 226.66 P
+0.03 (\336eld is of a union type. The enumeration type, the union type, and the structure type are) 207 214.66 P
+0.16 (all de\336ned types in the \336le which can be used by an application which includes the \336le.) 207 202.66 P
+0.01 (The enumeration type provides a list of tags which can be used to label the node \050which) 207 190.66 P
+0.25 (are named after the node and the structure member\051. W) 207 178.66 P
+0.25 (e omit the speci\336c details of the) 429.36 178.66 P
+0.52 (code generated here, because applications really need not concern themselves with the) 207 166.66 P
+1.03 (implementation details of the data structures. An application can assume it is has the) 207 154.66 P
+0.08 (appropriate functionality to create an instance of a certain node and be complacent with) 207 142.66 P
+(the idea of it being done properly) 207 130.66 T
+(.) 339.59 130.66 T
+FMENDPAGE
+%%EndPage: "19" 20
+%%Page: "20" 20
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(20 of 47) 524.53 60.96 T
+1 10 Q
+0.55 (Now that we have a general understanding of how the various tools work, we proceed) 207 680.66 P
+1.66 (toward a discussion of the pragmatics of how the various tools are used to solve a) 207 668.66 P
+-0.01 (particular translation problem. From the example it is our hope the reader will be amply) 207 656.66 P
+0.61 (prepared to embark on a translation problem of greater complexity with the assistance) 207 644.66 P
+(of the Apt Compiler T) 207 632.66 T
+(oolkit.) 295.69 632.66 T
+72 589.33 558 592.33 C
+207 591.48 558 591.48 2 L
+0.25 H
+2 Z
+0 X
+0 K
+N
+72 591.48 198 591.48 2 L
+0 Z
+N
+0 0 612 792 C
+0 12 Q
+0 X
+0 K
+(5.0) 181.33 596.33 T
+(Apt Compiler T) 207 596.33 T
+(oolkit Libraries) 292.07 596.33 T
+0 10 Q
+(5.1) 184.11 562.66 T
+(The ADT Library) 207 562.66 T
+0 9 Q
+(5.1.1) 178.01 539.33 T
+(ADT) 207 539.33 T
+(s in General) 224.8 539.33 T
+1 10 Q
+2.29 (ADT library basically provides the data types and appropriate functions to create,) 207 514.66 P
+0.66 (manipulate, and dispose instances of these data types. Each ADT module contains the) 207 502.66 P
+1.4 (data type de\336nition, and related function templates and their implementations. Basic) 207 490.66 P
+-0.02 (data types, like queue, stack using queue, stack using array) 207 478.66 P
+-0.02 (, avl tree, bidirectional queue) 441.52 478.66 P
+2.83 (\050called dequeue\051, symbol table using avl tree, symbol table using hash table are) 207 466.66 P
+1.1 (supported by the ADT modules. Each data type is de\336ned and made available to the) 207 454.66 P
+(public use through the header \336les.) 207 442.66 T
+0.68 (Most of the ADT) 207 418.66 P
+0.68 (s have common operations de\336ned through the usage of the function) 277.47 418.66 P
+0.9 (templates. These operations are grouped into function classes that include generation,) 207 406.66 P
+(disposal, service, access, helper and application functions.) 207 394.66 T
+2.95 (ADT) 207 370.66 P
+2.95 (s support the storage, access and manipulation of generic data types within) 226.84 370.66 P
+1.03 (themselves. Hence, for example, character strings, integers, real numbers, etc. can be) 207 358.66 P
+(stored and manipulated in ADT) 207 346.66 T
+(s generically) 332.88 346.66 T
+(.) 383.02 346.66 T
+0.47 (In the following sections each ADT implementation is described in detail covering the) 207 322.66 P
+2.14 (de\336nition of the ADT) 207 310.66 P
+2.14 (, function templates for the operations, and the usage of the) 299.57 310.66 P
+(parameters in these templates.) 207 298.66 T
+0 9 Q
+(5.1.2) 178.01 275.33 T
+(Common T) 207 275.33 T
+(ypes and Functions for ADT) 253.27 275.33 T
+(s) 372.45 275.33 T
+3 11 Q
+(\245) 207 259.66 T
+1 10 Q
+(Comparison Function T) 220.74 259.66 T
+(ype) 315.55 259.66 T
+0.55 (These function types are declared and passed to the ADT functions that perform some) 207 235.66 P
+1.22 (lookup operation to \336nd a speci\336c data item over the whole data structure. The data) 207 223.66 P
+1.86 (items in the data structure are compared with the searched data item speci\336cations) 207 211.66 P
+0.42 (according to the parameters speci\336ed in the compare function parameter template. The) 207 199.66 P
+-0.17 (comparison function dectates how the actual comparison is to be performed between the) 207 187.66 P
+0.52 (data items in the structure and the searched data item. These comparison functions are) 207 175.66 P
+(necessary to support the generic data item handling in the ADT) 207 163.66 T
+(s.) 459.45 163.66 T
+0.34 (The type de\336nition for the comparison functions is declared in APT) 207 139.66 P
+0.34 (.H module, and the) 480.63 139.66 P
+(format is as follows:) 207 127.66 T
+(typedef int \050*ComparisonFunction\051\050void*, void*\051.) 207 103.66 T
+FMENDPAGE
+%%EndPage: "20" 21
+%%Page: "21" 21
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(21 of 47) 524.53 60.96 T
+1 10 Q
+-0.03 (In this template, two void pointers correspond to two data items that are to be compared) 207 680.66 P
+(according to the actual implementation of the comparison function.) 207 668.66 T
+(The function return code indicates the result of the comparison.) 207 644.66 T
+3 11 Q
+(\245) 207 626.66 T
+1 10 Q
+(Disposal Function T) 220.74 626.66 T
+(ype) 301.67 626.66 T
+0.55 (These function types are declared and passed to the ADT functions that perform some) 207 602.66 P
+-0.13 (delete operation to delete a speci\336c data item from the actual data structure. The dispose) 207 590.66 P
+0.33 (function dectates how to de-allocate the memory space reserved for the data item to be) 207 578.66 P
+2.3 (deleted. The disposal function type speci\336cations are the result of the support for) 207 566.66 P
+(generic data item hadling in the ADT) 207 554.66 T
+(s.) 355.64 554.66 T
+1.41 (The type de\336nition for the disposal functions is declared in APT) 207 530.66 P
+1.41 (.H module, and the) 477.43 530.66 P
+(format is as follows:) 207 518.66 T
+(typedef void \050*DisposeFunction\051\050void*\051.) 207 494.66 T
+1.6 (Here, the void pointer is the pointer that points to the data item to be deleted. The) 207 470.66 P
+-0.08 (internal structure of the data item is de-allocated according to the actual implementation) 207 458.66 P
+(of the dispose function.) 207 446.66 T
+3 11 Q
+(\245) 207 428.66 T
+1 10 Q
+(Constructor Function) 220.74 428.66 T
+0.12 (Constructor function is basically used to allocate a new instance of an ADT) 207 404.66 P
+0.12 (. Each ADT) 509.74 404.66 P
+(module has a speci\336c constructor function, associated with the name of the ADT) 207 392.66 T
+(.) 529.08 392.66 T
+1.73 (Although there are some ADT) 207 368.66 P
+1.73 (s using dif) 334.79 368.66 P
+1.73 (ferent templates, the general template of a) 379.71 368.66 P
+(constructor function is as follows:) 207 356.66 T
+(<ADT_T) 207 332.66 T
+(ype_Pointer> <ADT_Name>New\050void\051;) 243.58 332.66 T
+0.15 (Constructor function templates are declared in <ADT_Name>.H \336les. Each constructor) 207 308.66 P
+(function call returns a pointer to a new instance of the corresponding ADT) 207 296.66 T
+(.) 504.37 296.66 T
+3 11 Q
+(\245) 207 278.66 T
+1 10 Q
+(Destructor Function) 220.74 278.66 T
+0.62 (Destructor function is basically used to de-allocate an instance of an ADT) 207 254.66 P
+0.62 (. Each ADT) 508.74 254.66 P
+1.03 (module has a speci\336c destructor function, associated with the name of the ADT) 207 242.66 P
+1.03 (. The) 536.43 242.66 P
+2.56 (internal de-allocation of the data structure is performed according to the disposal) 207 230.66 P
+(function pointer speci\336ed in the destructor function call.) 207 218.66 T
+1.73 (Although there are some ADT) 207 194.66 P
+1.73 (s using dif) 334.79 194.66 P
+1.73 (ferent templates, the general template of a) 379.71 194.66 P
+(destructor function is as follows:) 207 182.66 T
+(void <ADT_Name>Dispose\050<ADT_Pointer>, DisposeFunction\051;) 207 158.66 T
+(Destructor function templates are declared in <ADT_Name>.H \336les.) 207 134.66 T
+FMENDPAGE
+%%EndPage: "21" 22
+%%Page: "22" 22
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(22 of 47) 524.53 60.96 T
+(5.1.3) 178.01 681.33 T
+(ADT Queue) 207 681.33 T
+3 11 Q
+(\245) 207 665.66 T
+1 10 Q
+(De\336nitions) 220.74 665.66 T
+2 F
+(Generic Queue Item De\336nition) 207 641.66 T
+1 F
+(typedef struct _QueueItem {) 207 623.66 T
+(void *element;) 225 611.66 T
+(int type;) 225 599.66 T
+(struct _QueueItem *next;) 225 587.66 T
+(} _QueueItem, *QueueItem;) 207 575.66 T
+2 F
+(Queue De\336nition) 207 551.66 T
+1 F
+(typedef struct _Queue {) 207 527.66 T
+(struct _QueueItem *head;) 225 515.66 T
+(struct _QueueItem *tail;) 225 503.66 T
+(int size;) 225 491.66 T
+(} _Queue, *Queue;) 207 479.66 T
+3 11 Q
+(\245) 207 454.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 454.66 T
+2 F
+(Service Functions) 207 430.66 T
+1 F
+(void QueueDispose\050Queue q, DisposeFunction f\051;) 207 406.66 T
+(Dispose the whole queue q using the disposal function f to de-allocate the items of q.) 207 382.66 T
+(void *QueueFindandRemove\050Queue q, void *v) 207 358.66 T
+(, ComparisonFunction f\051;) 395.95 358.66 T
+0.64 (Similar to QueueFind, but, if the item is found, it is removed from the queue q and  a) 207 334.66 P
+(pointer to the removed queue item is returned.) 207 322.66 T
+(void *QueueFindT) 207 298.66 T
+(ypeandRemove\050Queue q, int typeT) 282.09 298.66 T
+(oFind\051;) 421.84 298.66 T
+-0.07 (Similar to QueueFindT) 207 274.66 P
+-0.07 (ype, but, if the data item is found, it is removed from the queue q) 298.89 274.66 P
+(and a pointer to the removed queue item is returned.) 207 262.66 T
+(void *QueueGet\050Queue q\051;) 207 238.66 T
+0.04 (Return the element \336eld of the item pointed by the head of pointer of queue q. The item) 207 214.66 P
+(pointed by the head pointer is removed from the queue.) 207 202.66 T
+(Queue QueueNew\050void\051;) 207 178.66 T
+(Allocate a new instance of ADT Queue and return the pointer to the allocated queue.) 207 154.66 T
+(void QueuePut \050Queue q, void *item, int type\051;) 207 130.66 T
+FMENDPAGE
+%%EndPage: "22" 23
+%%Page: "23" 23
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(23 of 47) 524.53 60.96 T
+1 10 Q
+0.32 (Place the data item item at the end of the queue \050i.e. T) 207 680.66 P
+0.32 (ail pointer of the queue points to) 426.14 680.66 P
+0.82 (the newly put item after the operation is completed\051. The type \336eld of the new queue) 207 668.66 P
+(node is set to type.) 207 656.66 T
+(void QueuePutOnPriority\050Queue q, void *item, int type, ComparisonFunction f\051;) 207 632.66 T
+1.53 (Place the data item item at the end of the items in the priority group satisfying the) 207 608.66 P
+(function f. The type \336eld of the new queue node is set to type.) 207 596.66 T
+(int QueueSize\050Queue q\051;) 207 572.66 T
+(Return the number of items in the queue q.) 207 548.66 T
+2 F
+(Access Functions) 207 524.66 T
+1 F
+(void *QueueFindT) 207 500.66 T
+(ype\050Queue q, int typeT) 282.09 500.66 T
+(oFind\051;) 374.1 500.66 T
+0.76 (Find and return the \336rst queue item with type typeT) 207 476.66 P
+0.76 (oFind from the queue q. The data) 419.94 476.66 P
+(item is not removed from the queue.) 207 464.66 T
+(void *QueueItemElement\050QueueItem item\051;) 207 440.66 T
+(Return the data element part of the queue item item.) 207 416.66 T
+(int QueueItemT) 207 392.66 T
+(ype\050QueueItem item\051;) 269.86 392.66 T
+(Return the type part of the queue item item.) 207 368.66 T
+(void *QueueLook\050Queue q\051;) 207 344.66 T
+2.34 (Return the element \336eld of the item pointed by the head pointer of queue q. No) 207 320.66 P
+(modi\336cation is done on the queue q.) 207 308.66 T
+(void *QueueFind\050Queue q, void *itemT) 207 284.66 T
+(oFind, ComparisonFunction f\051;) 367.03 284.66 T
+0.97 (Find and return the queue item from the queue q. The comparison for search is done) 207 260.66 P
+1.71 (using the function f. The queue is searched for the data item speci\336ed by the void) 207 248.66 P
+(pointer it) 207 236.66 T
+(e) 243.37 236.66 T
+(mT) 247.81 236.66 T
+(oFind. The data item is not removed from the ADT Queue.) 260.99 236.66 T
+2 F
+(Helper Functions) 207 212.66 T
+1 F
+(QueueItem QueueNext\050QueueItem item\051;) 207 188.66 T
+(Return the queue item pointed by the next \336eld of the queue item item.) 207 164.66 T
+(QuueItem QueueSeek\050Queue q, int of) 207 140.66 T
+(fset\051;) 358.09 140.66 T
+(Return the queue item coming after of) 207 116.66 T
+(fset redirections from the head of the queue.) 359.49 116.66 T
+(QueueItem QueueHead\050Queue q\051;) 207 92.66 T
+FMENDPAGE
+%%EndPage: "23" 24
+%%Page: "24" 24
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(24 of 47) 524.53 60.96 T
+1 10 Q
+(Return the item pointed by the head pointer of queue q.) 207 680.66 T
+(QueueItem QueueT) 207 656.66 T
+(ail\050Queue q\051;) 285.4 656.66 T
+(Return the item pointed by the tail pointer of queue q.) 207 632.66 T
+2 F
+(Application Functions) 207 608.66 T
+1 F
+(void QueueApply\050Queue q, ApplyFunction f\051;) 207 584.66 T
+(Apply the function f to queue q.) 207 560.66 T
+(void QueueApply1\050Queue q, void *v) 207 536.66 T
+(, ApplyFunction1 f\051;) 354.86 536.66 T
+0.65 (Apply the function f to the whole queue q, keeping the result of the application in the) 207 512.66 P
+(variable pointed by void pointer v) 207 500.66 T
+(.) 342.1 500.66 T
+(void QueueApply2\050Queue q, void *v1, void *v2, ApplyFunction2 f\051;) 207 476.66 T
+0.41 (Apply the function f to the whole queue q, keeping the results of the application in the) 207 452.66 P
+(variables pointed by two void pointers v1 and v2.) 207 440.66 T
+(void QueueApply3\050Queue q, void *v1, void *v2, void *v3, ApplyFunction3 f\051;) 207 416.66 T
+0.41 (Apply the function f to the whole queue q, keeping the results of the application in the) 207 392.66 P
+(variables pointed by three void pointers v1, v2 and v3.) 207 380.66 T
+0 9 Q
+(5.1.4) 178.01 357.33 T
+(ADT Deque) 207 357.33 T
+3 11 Q
+(\245) 207 341.66 T
+1 10 Q
+(De\336nitions) 220.74 341.66 T
+2 F
+(Deque Link T) 207 315.66 T
+(ypes) 265.69 315.66 T
+1 F
+(typedef enum _DequeLinkT) 207 303.66 T
+(ypes {) 319.55 303.66 T
+(NoLink = -1, T) 225 291.66 T
+(op, Bottom, NumberOfLinks) 285.46 291.66 T
+(} DequeLinkT) 207 279.66 T
+(ypes;) 264.67 279.66 T
+2 F
+(Deque Item De\336nition) 207 255.66 T
+1 F
+(typedef struct _DequeItem {) 207 243.66 T
+(void *element;) 225 231.66 T
+(int type;) 225 219.66 T
+(struct _DequeItem *next[NumberOfLinks];) 225 207.66 T
+(} _DequeItem, *DequeItem;) 207 195.66 T
+2 F
+(Generic Deque De\336nition) 207 171.66 T
+1 F
+(typedef struct _Deque {) 207 159.66 T
+(struct _DequeItem *link[NumberOfLinks];) 225 147.66 T
+(int size;) 225 135.66 T
+(}) 207 123.66 T
+3 11 Q
+(\245) 207 110.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 110.66 T
+FMENDPAGE
+%%EndPage: "24" 25
+%%Page: "25" 25
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(25 of 47) 524.53 60.96 T
+2 10 Q
+(Service Functions) 207 680.66 T
+1 F
+(Deque DequeNew\050\051;) 207 668.66 T
+1 (Allocate a new instance of ADT Deque and return the pointer to the newly allocated) 207 656.66 P
+(deque.) 207 646.66 T
+(void DequeDispose\050Deque deq, DisposeFunction d\051;) 207 622.66 T
+(Dispose deque deq using dispose function d to deallocate the nodes of deque.) 207 610.66 T
+(void DequePut\050Deque deq, void *element, int type, DequeLinkT) 207 586.66 T
+(ypes l\051;) 465.57 586.66 T
+0.49 (Allocate a new deque node, set the element \336eld to element and type \336eld to type. Put) 207 574.66 P
+(the new node on side l of deque deq.) 207 564.66 T
+2.95 (void DequePutOnPriority\050Deque deq, void *element, int type, DequeLinkT) 207 540.66 P
+2.95 (ypes l,) 528.96 540.66 P
+(ComparisonFunction f\051;) 207 530.66 T
+0.49 (Allocate a new deque node, set the element \336eld to element and type \336eld to type. Put) 207 518.66 P
+(the new node on side l of the node group satisfying the comparison function f.) 207 508.66 T
+(void *DequeGet\050Deque deq, DequeLinkT) 207 484.66 T
+(ypes l\051;) 374.5 484.66 T
+-0.22 (Remove the deque node on side l of deque deq. Return the pointer to the element \336eld of) 207 472.66 P
+(the removed node.) 207 462.66 T
+2 F
+(Access Functions) 207 438.66 T
+1 F
+0.67 (void *DequeFind\050Deque deq, void *element, DequeLinkT) 207 426.66 P
+0.67 (ypes l, ComparisonFunction) 443.66 426.66 P
+(f\051;) 207 416.66 T
+0.01 (Return the pointer to the element \336eld of the deque node which satis\336es the comparison) 207 404.66 P
+0.69 (function f when applied to itself and the searched element speci\336cation. The search is) 207 394.66 P
+(done starting from side l of deque deq.) 207 384.66 T
+(int DequeSize\050Deque deq\051;) 207 360.66 T
+(Return the number of nodes in deque deq.) 207 348.66 T
+2 F
+(Helper Functions) 207 312.66 T
+1 F
+(void *DequeItemElement\050DequeItem d\051;) 207 300.66 T
+(Return the pointer to the element \336eld of deque item d.) 207 288.66 T
+(int DequeItemT) 207 264.66 T
+(ype\050DequeItem d\051;) 269.86 264.66 T
+(Return the type of deque item d.) 207 252.66 T
+(DequeItem DequeNext\050DequeItem d, DequeLinkT) 207 228.66 T
+(ypes l\051;) 410.02 228.66 T
+(Return the pointer to the deque node which is on side l of deque node d.) 207 216.66 T
+(DequeItem DequeSide\050Deque deq, DequeLinkT) 207 192.66 T
+(ypes l\051;) 399.47 192.66 T
+(Return the pointer to the deque node which is on side l of deque deq.) 207 180.66 T
+2 F
+(Application Functions) 207 144.66 T
+1 F
+(void DequeApply\050Deque deq, DequeLinkT) 207 132.66 T
+(ypes l, ApplyFunction f\051;) 380.05 132.66 T
+(Apply function f to deque deq, starting on side l.) 207 120.66 T
+FMENDPAGE
+%%EndPage: "25" 26
+%%Page: "26" 26
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(26 of 47) 524.53 60.96 T
+(5.1.5) 178.01 681.33 T
+(ADT AStack) 207 681.33 T
+3 11 Q
+(\245) 207 665.66 T
+1 10 Q
+(De\336nitions) 220.74 665.66 T
+2 F
+(Stack Operation Err) 207 641.66 T
+(or Codes) 295.1 641.66 T
+1 F
+(typedef enum _AStackErrorT) 207 623.66 T
+(ypes {) 325.1 623.66 T
+(AStackOK,) 225 611.66 T
+(AStackOver\337ow) 225 599.66 T
+(,) 291.52 599.66 T
+(AStackUnder\337ow) 225 587.66 T
+(,) 296.52 587.66 T
+(AStackRangeError) 225 575.66 T
+(,) 300.65 575.66 T
+(AStackT) 225 563.66 T
+(ypeMismatch,) 259.83 563.66 T
+(AStackBadDisplacement) 225 551.66 T
+(} AStackErrorT) 207 539.66 T
+(ypes;) 270.21 539.66 T
+2 F
+(Static Stack Item T) 207 517.66 T
+(ypes) 288.7 517.66 T
+1 F
+(typedef enum _AStackItemT) 207 499.66 T
+(ypes {) 322.33 499.66 T
+(NoT) 225 487.66 T
+(ype, Byte, LongW) 242.62 487.66 T
+(ord, Pointer) 315.66 487.66 T
+(, W) 362.45 487.66 T
+(ord) 376.09 487.66 T
+(} AStackItemT) 207 475.66 T
+(ypes;) 267.45 475.66 T
+2 F
+(Static Stack Item De\336nition) 207 453.66 T
+1 F
+(typedef struct _AStackItem {) 207 435.66 T
+(enum _AStackItemT) 225 423.66 T
+(ypes type;) 307.85 423.66 T
+(union {) 225 411.66 T
+(unsigned char b;) 243 399.66 T
+(unsigned short w;) 243 387.66 T
+(unsigned long lw;) 243 375.66 T
+(void *ptr;) 243 363.66 T
+(} u;) 225 351.66 T
+(} _AStackItem, *AStackItem;) 207 339.66 T
+2 F
+(Static Stack De\336nition) 207 305.66 T
+1 F
+(typedef struct _AStack {) 207 287.66 T
+(int size;) 225 275.66 T
+(int max;) 225 263.66 T
+(enum _AStackErrorT) 225 251.66 T
+(ypes error;) 310.62 251.66 T
+(struct _AStackItem *stack;) 225 239.66 T
+(} _AStack, *AStack;) 207 227.66 T
+3 11 Q
+(\245) 207 202.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 202.66 T
+2 F
+(Service Functions) 207 178.66 T
+1 F
+(AStack AStackNew\050int i\051;) 207 154.66 T
+1.15 (Allocate a new instance of ADT AStack of static size i and return the pointer to the) 207 130.66 P
+(allocated static stack.) 207 118.66 T
+(void AStackDispose\050AStack s, DisposeFunction f\051;) 207 94.66 T
+FMENDPAGE
+%%EndPage: "26" 27
+%%Page: "27" 27
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(27 of 47) 524.53 60.96 T
+1 10 Q
+(Dispose the static stack s using the disposal function f to de-allocate the items of s.) 207 680.66 T
+(unsigned char AStackGetByte\050AStack s, int disp\051;) 207 656.66 T
+1.13 (Return the data \336eld of the static stack node relative to disp nodes to the size of the) 207 632.66 P
+0.61 (stack. The stack error code is set appropriately) 207 620.66 P
+0.61 (. If the data type of the referred node is) 396.56 620.66 P
+0.77 (not byte, error code re\337ects a type mismatch \050i.e. set to AStackT) 207 608.66 P
+0.77 (ypeMismatch\051. If the) 472.36 608.66 P
+-0.21 (displacement disp is not within the allowable displacement range \050determined according) 207 596.66 P
+1.61 (to the size of the stack\051, error code is set to AStackBadDisplacement. A successful) 207 584.66 P
+0.36 (operation sets the error code to AStackOK. Successful operation results in the removal) 207 572.66 P
+(of the corresponding stack node, and the data \336eld of the removed node is returned.) 207 560.66 T
+(unsigned long AStackGetLongW) 207 536.66 T
+(ord\050AStack s, int disp\051;) 339.45 536.66 T
+(Similar to AStackGetByte, replacing byte by long instead.) 207 512.66 T
+(void *AStackGetPointer\050AStack s, int disp\051;) 207 488.66 T
+1.49 (Similar to AStackGetByte, replacing byte by pointer) 207 464.66 P
+1.49 (. Return the pointer \336eld of the) 425.53 464.66 P
+(removed stack node.) 207 452.66 T
+(unsigned short AStackGetW) 207 428.66 T
+(ord\050AStack s, int disp\051;) 320.57 428.66 T
+(Similar to AStackGetByte, replacing byte by word.) 207 404.66 T
+(int AStackSize\050AStack s\051;) 207 380.66 T
+(Return the number of items currently in the stack s.) 207 356.66 T
+(unsigned char AStackPopByte\050AStack s\051;) 207 332.66 T
+0.09 (If the stack s is not empty and the data type of the top node is equal to byte, pop the top) 207 308.66 P
+-0.16 (node from the stack s and return the data \336eld of the removed node. Set the error code to) 207 296.66 P
+0.58 (indicate type mismatch if the top of the stack is not of type byte. Set the error code to) 207 284.66 P
+0.67 (AStackUnder\337ow if the stack is empty before the operation. Successful operation sets) 207 272.66 P
+(the error code to AStackOK.) 207 260.66 T
+(unsigned long AStackPopLongW) 207 236.66 T
+(ord\050AStack s\051;) 340.57 236.66 T
+(Similar to AStackPopByte, replace byte with longword.) 207 212.66 T
+(void *AStackPopPointer\050AStack s\051;) 207 188.66 T
+(Similar to AStackPopByte, replace byte with pointer) 207 164.66 T
+(.) 417.15 164.66 T
+(unsigned short AStackPopW) 207 140.66 T
+(ord\050AStack s\051;) 321.69 140.66 T
+(Similar to AStackPopByte, replace byte with word.) 207 116.66 T
+(void AStackPushByte\050AStack s, unsigned char c\051;) 207 92.66 T
+FMENDPAGE
+%%EndPage: "27" 28
+%%Page: "28" 28
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(28 of 47) 524.53 60.96 T
+1 10 Q
+0.89 (Push a new stack node containing the byte c on top of the stack s. Set the error code) 207 680.66 P
+(appropriately) 207 668.66 T
+(, according to the size of the stack \050i.e. AStackOK or AStackOver\337ow\051.) 259.64 668.66 T
+(void AStackPushLongW) 207 644.66 T
+(ord\050AStack s, unsigned long l\051;) 305.87 644.66 T
+(Similar to AStackPushByte, but instead push long l.) 207 620.66 T
+(void AStackPushPointer\050AStack s, void *p\051;) 207 596.66 T
+(Similar to AStackPushByte, but instead push pointer p.) 207 572.66 T
+(void AStackPushW) 207 548.66 T
+(ord\050AStack s, unsigned short w\051;) 284.77 548.66 T
+(Similar to AStackPushByte, but instead push word w) 207 524.66 T
+(.) 419.01 524.66 T
+(void AStackSpill\050AStack s, int i, DisposeFunction f\051;) 207 500.66 T
+0.56 (Pop and discard the top i nodes of the stack s, using function f to de-allocate the node) 207 476.66 P
+(information. The stack error code is set according to the size of the stack and i.) 207 464.66 T
+2 F
+(Access Functions) 207 440.66 T
+1 F
+(unsigned char AStackLookByte\050AStack s\051;) 207 416.66 T
+-0.04 (If the stack s is not empty and the type of the top stack node is byte, return the data \336eld) 207 392.66 P
+0.1 (of the node and set the error code to AStackOK. Otherwise if the stack is empty) 207 380.66 P
+0.1 (, set the) 526.99 380.66 P
+-0.07 (error code to AStackUnder\337ow) 207 368.66 P
+-0.07 (. If the type of the top node is not byte, set the error code) 331.88 368.66 P
+(to AStackT) 207 356.66 T
+(ypeMismatch.) 252.1 356.66 T
+(unsigned long AStackLookLongW) 207 332.66 T
+(ord\050AStack s\051;) 346.11 332.66 T
+(Similar to AStackLookByte, replace byte with long word instead.) 207 308.66 T
+(void *AStackLookPointer\050AStack s\051;) 207 284.66 T
+(Similar to AStackLookByte, replace byte with pointer instead.) 207 260.66 T
+(unsigned short AStackLookW) 207 236.66 T
+(ord\050AStack s\051;) 327.23 236.66 T
+(Similar to AStackLookByte, replace byte with word instead.) 207 212.66 T
+(AStackItemT) 207 188.66 T
+(ypes AStackLookT) 260.15 188.66 T
+(ype\050AStack s\051;) 336.9 188.66 T
+(Return the data type of the top stack node of stack s.) 207 164.66 T
+(AStackErrorT) 207 140.66 T
+(ypes AStackError\050AStack s\051;) 262.92 140.66 T
+(Return the error code \336eld of stack s.) 207 116.66 T
+2 F
+(Helper Functions) 207 92.66 T
+FMENDPAGE
+%%EndPage: "28" 29
+%%Page: "29" 29
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(29 of 47) 524.53 60.96 T
+1 10 Q
+(int AStackCheckByte\050AStack s, int disp\051;) 207 680.66 T
+(Check if the type of the disp\325) 207 656.66 T
+(th node from the top of the stack s is byte or not.) 323.41 656.66 T
+(int AStackCheckLongW) 207 632.66 T
+(ord\050AStack s, int disp\051;) 304.75 632.66 T
+(Check if the type of the disp\325) 207 608.66 T
+(th node from the top of the stack s is longword or not.) 323.41 608.66 T
+(int AStackCheckPointer\050AStack s, int disp\051;) 207 584.66 T
+(Check if the type of the disp\325) 207 560.66 T
+(th node from the top of the stack s is pointer or not.) 323.41 560.66 T
+(int AStackCheckW) 207 536.66 T
+(ord\050AStack s, int disp\051;) 283.65 536.66 T
+(Check if the type of the disp\325) 207 512.66 T
+(th node from the top of the stack s is word or not.) 323.41 512.66 T
+(AStackItemT) 207 488.66 T
+(ypes AStackCheckT) 260.15 488.66 T
+(ype\050AStack s, int disp;) 341.34 488.66 T
+(Return the type of the disp\325) 207 464.66 T
+(th node from the top of the stack s.) 316.47 464.66 T
+(int AStackEmpty\050AStack s\051;) 207 440.66 T
+(Return if the stack s is empty or not.) 207 416.66 T
+(int AStackNotEmpty\050AStack s\051;) 207 392.66 T
+(Return if there are some items in stack s or not.) 207 368.66 T
+(void AStackClearError\050AStack s\051;) 207 344.66 T
+(Set the error code of stack s to AStackOK.) 207 320.66 T
+0 9 Q
+(5.1.6) 178.01 273.33 T
+(ADT Stack) 207 273.33 T
+3 11 Q
+(\245) 207 257.66 T
+1 10 Q
+(De\336nitions) 220.74 257.66 T
+2 F
+(Generic Stack Item De\336nition) 207 233.66 T
+1 F
+(typedef struct _StackItem {) 207 215.66 T
+(void *element;) 225 203.66 T
+(int type;) 225 191.66 T
+(struct _StackItem *next;) 225 179.66 T
+(} _StackItem, *StackItem;) 207 167.66 T
+2 F
+(Dynamic Stack De\336nition) 207 133.66 T
+1 F
+(typedef struct _Stack {) 207 115.66 T
+(struct _StackItem *head;) 225 103.66 T
+FMENDPAGE
+%%EndPage: "29" 30
+%%Page: "30" 30
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(30 of 47) 524.53 60.96 T
+1 10 Q
+(struct _StackItem *tail;) 225 680.66 T
+(int size;) 225 668.66 T
+(} _Stack, *Stack;) 207 656.66 T
+3 11 Q
+(\245) 207 619.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 619.66 T
+2 F
+(Service Functions) 207 595.66 T
+1 F
+(void StackDispose\050Stack s, DisposeFunction f\051;) 207 571.66 T
+2.08 (Dispose the stack s using dispose function f to de-allocate the internal stack node) 207 547.66 P
+(information.) 207 535.66 T
+(Stack StackNew\050void\051;) 207 511.66 T
+0.69 (Allocate a new instance of ADT dynamic stack and return the pointer to the allocated) 207 487.66 P
+(stack.) 207 475.66 T
+(void *StackPop\050Stack s\051;) 207 451.66 T
+0.35 (Remove the top node from the stack s and return the pointer to the element \336eld of the) 207 427.66 P
+(removed stack node.) 207 415.66 T
+(void StackPush\050Stack s, void *n, int type\051;) 207 391.66 T
+0.31 (Push a new node onto stack s. The type of the new node is set to type, and the element) 207 367.66 P
+(\336eld of the new node is set to pointer n.) 207 355.66 T
+(void StackPushOnPriority\050Stack s, void *n, int type, ComparisonFunction f\051;) 207 331.66 T
+0.74 (Push a new node on top of the nodes forming a priority group in stack s according to) 207 307.66 P
+0.22 (comparison function f. The type of the new node is set to type, and the element \336eld of) 207 295.66 P
+(the new node is set to pointer n.) 207 283.66 T
+(int StackSize\050Stack s\051;) 207 259.66 T
+(Return the number of nodes in stack s.) 207 235.66 T
+2 F
+(Access Functions) 207 211.66 T
+1 F
+(void *StackFind\050Stack s, void *item, ComparisonFunction f\051;) 207 187.66 T
+0.56 (Find and return the stack node element from the stack s. The comparison for search is) 207 163.66 P
+0.39 (done using the comparison function f. The stack is searched for the data item speci\336ed) 207 151.66 P
+(by the void pointer item. The stack node is not removed from the stack s.) 207 139.66 T
+(StackItem StackHead\050Stack s\051;) 207 115.66 T
+FMENDPAGE
+%%EndPage: "30" 31
+%%Page: "31" 31
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(31 of 47) 524.53 60.96 T
+1 10 Q
+(Return the pointer to the head stack node of stack s.) 207 680.66 T
+(StackItem StackT) 207 656.66 T
+(ail\050Stack s\051;) 277.64 656.66 T
+(Return the pointer to the tail stack node of stack s.) 207 632.66 T
+(void *StackItemElement\050StackItem item\051;) 207 608.66 T
+(Return the pointer to the element \336eld of the stack node item.) 207 584.66 T
+(int StackItemT) 207 560.66 T
+(ype\050StackItem item\051;) 265.99 560.66 T
+(Return the type \336eld of the stack node item.) 207 536.66 T
+(void *StackLook\050Stack s\051;) 207 512.66 T
+-0.1 (Return the pointer to the element \336eld of the top stack node of stack s. The stack node is) 207 488.66 P
+(not removed from the stack.) 207 476.66 T
+2 F
+(Helper Functions) 207 452.66 T
+1 F
+(StackItem StackNext\050StackItem item\051;) 207 428.66 T
+-0.08 (Return the pointer to the next stack node which is pointed by the next \336eld of stack item) 207 404.66 P
+(item.) 207 392.66 T
+2 F
+(Application Functions) 207 368.66 T
+1 F
+(void StackApply\050Stack s, ApplyFunction f\051;) 207 344.66 T
+(Apply function f to every node in the stack s.) 207 320.66 T
+0 9 Q
+(5.1.7) 178.01 273.33 T
+(ADT A) 207 273.33 T
+(VL) 233.79 273.33 T
+(T) 244.61 273.33 T
+(ree) 249.61 273.33 T
+3 11 Q
+(\245) 207 257.66 T
+1 10 Q
+(De\336nitions) 220.74 257.66 T
+2 F
+(Balance T) 207 233.66 T
+(ype De\336nition) 249.3 233.66 T
+1 F
+(typedef enum _A) 207 215.66 T
+(VL) 275.1 215.66 T
+(T) 287.51 215.66 T
+(reeBalanceT) 293.26 215.66 T
+(ypes {) 343.07 215.66 T
+(LEFTHIGH, EQUALHIGH, RIGHTHIGH) 225 203.66 T
+(} A) 207 191.66 T
+(VL) 220.22 191.66 T
+(T) 232.63 191.66 T
+(reeBalanceT) 238.38 191.66 T
+(ypes;) 288.18 191.66 T
+2 F
+(A) 207 169.66 T
+(VL) 212.93 169.66 T
+(T) 225.89 169.66 T
+(r) 231.82 169.66 T
+(ee Item De\336nition) 236.07 169.66 T
+1 F
+(typedef struct _A) 207 151.66 T
+(VL) 275.1 151.66 T
+(T) 287.51 151.66 T
+(reeItem {) 293.26 151.66 T
+(A) 225 139.66 T
+(VL) 230.93 139.66 T
+(T) 243.33 139.66 T
+(reeBalanceT) 249.09 139.66 T
+(ypes balance;) 298.89 139.66 T
+(int type;) 225 127.66 T
+(void *element;) 225 115.66 T
+(struct _A) 225 103.66 T
+(VL) 260.63 103.66 T
+(T) 273.03 103.66 T
+(reeItem *left;) 278.79 103.66 T
+FMENDPAGE
+%%EndPage: "31" 32
+%%Page: "32" 32
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(32 of 47) 524.53 60.96 T
+1 10 Q
+(struct _A) 225 680.66 T
+(VL) 260.63 680.66 T
+(T) 273.03 680.66 T
+(reeItem *right;) 278.79 680.66 T
+(} _A) 207 668.66 T
+(VL) 225.22 668.66 T
+(T) 237.62 668.66 T
+(reeItem, *A) 243.38 668.66 T
+(VL) 289.82 668.66 T
+(T) 302.23 668.66 T
+(reeItem;) 307.98 668.66 T
+2 F
+(A) 207 646.66 T
+(VL) 212.93 646.66 T
+(T) 225.89 646.66 T
+(r) 231.82 646.66 T
+(ee De\336nition) 236.07 646.66 T
+1 F
+(typedef struct _A) 207 628.66 T
+(VL) 275.1 628.66 T
+(T) 287.51 628.66 T
+(ree {) 293.26 628.66 T
+(int size;) 225 616.66 T
+(struct _A) 225 604.66 T
+(VL) 260.63 604.66 T
+(T) 273.03 604.66 T
+(reeItem *root;) 278.79 604.66 T
+(} _A) 207 592.66 T
+(VL) 225.22 592.66 T
+(T) 237.62 592.66 T
+(ree, *A) 243.38 592.66 T
+(VL) 271.51 592.66 T
+(T) 283.91 592.66 T
+(ree;) 289.67 592.66 T
+3 11 Q
+(\245) 207 567.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 567.66 T
+2 F
+(Service Functions) 207 543.66 T
+1 F
+(A) 207 519.66 T
+(VL) 212.93 519.66 T
+(T) 225.33 519.66 T
+(ree A) 231.09 519.66 T
+(VL) 251.71 519.66 T
+(T) 264.12 519.66 T
+(reeNew\050void\051;) 269.88 519.66 T
+(Allocate a new instance of ADT A) 207 495.66 T
+(VL) 344.48 495.66 T
+(T) 356.89 495.66 T
+(reeand return the pointer to the allocated tree.) 362.64 495.66 T
+(void A) 207 471.66 T
+(VL) 233.2 471.66 T
+(T) 245.6 471.66 T
+(reeDispose\050A) 251.36 471.66 T
+(VL) 305.02 471.66 T
+(T) 317.42 471.66 T
+(ree t, DisposeFunction f\051;) 323.18 471.66 T
+(Dispose the A) 207 447.66 T
+(VL) 262.34 447.66 T
+(T) 274.74 447.66 T
+(ree t using the disposal function f to de-allocate the nodes of the tree.) 280.5 447.66 T
+(int A) 207 423.66 T
+(VL) 225.98 423.66 T
+(T) 238.38 423.66 T
+(reeInsert\050A) 244.14 423.66 T
+(VL) 288.36 423.66 T
+(T) 300.76 423.66 T
+(ree t, void *n, int type, ComparisonFunction f\051;) 306.52 423.66 T
+0.6 (Insert a new tree node with the element pointer \336eld n and type type. Use comparison) 207 399.66 P
+(function f to search for the already existance of the new node.) 207 387.66 T
+(int A) 207 363.66 T
+(VL) 225.98 363.66 T
+(T) 238.38 363.66 T
+(reeDelete\050A) 244.14 363.66 T
+(VL) 291.68 363.66 T
+(T) 304.09 363.66 T
+(ree t, void *n, ComparisonFunction c, DisposeFunction d\051;) 309.84 363.66 T
+0.55 (Delete the tree node which satis\336es the comparison function c, which is applied to the) 207 339.66 P
+1.55 (tree node and the element information speci\336ed by n. The tree node is de-allocated) 207 327.66 P
+(using the disposal function d.) 207 315.66 T
+(void *A) 207 291.66 T
+(VL) 238.19 291.66 T
+(T) 250.6 291.66 T
+(reeDeleteLeftMost\050A) 256.35 291.66 T
+(VL) 341.1 291.66 T
+(T) 353.5 291.66 T
+(ree t\051;) 359.26 291.66 T
+0.17 (Remove the left most tree node of A) 207 267.66 P
+0.17 (VL) 352.62 267.66 P
+0.17 (T) 365.02 267.66 P
+0.17 (ree t and return the pointer to the element \336eld) 370.78 267.66 P
+(of the removed tree node.) 207 255.66 T
+(void *A) 207 231.66 T
+(VL) 238.19 231.66 T
+(T) 250.6 231.66 T
+(reeDeleteRightMost\050A) 256.35 231.66 T
+(VL) 346.66 231.66 T
+(T) 359.07 231.66 T
+(ree t\051;) 364.82 231.66 T
+-0.18 (Remove the right most tree node of A) 207 207.66 P
+-0.18 (VL) 355.75 207.66 P
+-0.18 (T) 368.15 207.66 P
+-0.18 (ree t and return the pointer to the element \336eld) 373.91 207.66 P
+(of the removed tree node.) 207 195.66 T
+2 F
+(Access Functions) 207 171.66 T
+1 F
+(void *A) 207 147.66 T
+(VL) 238.19 147.66 T
+(T) 250.6 147.66 T
+(reeFind\050A) 256.35 147.66 T
+(VL) 296.14 147.66 T
+(T) 308.54 147.66 T
+(ree t, void *n, ComparisonFunction f\051;) 314.3 147.66 T
+1.91 (Find the A) 207 123.66 P
+1.91 (VL) 252.29 123.66 P
+1.91 (T) 264.69 123.66 P
+1.91 (ree node which satis\336es the comparison function f. The comparison) 270.45 123.66 P
+1.9 (function is applied to tree node and n during the search. Return the pointer to the) 207 111.66 P
+(element \336eld of the found tree node.) 207 99.66 T
+FMENDPAGE
+%%EndPage: "32" 33
+%%Page: "33" 33
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(33 of 47) 524.53 60.96 T
+1 10 Q
+(void *A) 207 680.66 T
+(VL) 238.19 680.66 T
+(T) 250.6 680.66 T
+(reeFindLeftMost\050A) 256.35 680.66 T
+(VL) 333.34 680.66 T
+(T) 345.74 680.66 T
+(ree t\051;) 351.5 680.66 T
+(Return the pointer to the element \336eld of the left most node of A) 207 656.66 T
+(VL) 463.6 656.66 T
+(T) 476 656.66 T
+(ree t.) 481.76 656.66 T
+(void *A) 207 632.66 T
+(VL) 238.19 632.66 T
+(T) 250.6 632.66 T
+(reeFindRightMost\050A) 256.35 632.66 T
+(VL) 338.91 632.66 T
+(T) 351.31 632.66 T
+(ree t\051;) 357.07 632.66 T
+(Return the pointer to the element \336eld of the rigth most node of A) 207 608.66 T
+(VL) 469.16 608.66 T
+(T) 481.56 608.66 T
+(ree t.) 487.32 608.66 T
+(int A) 207 584.66 T
+(VL) 225.98 584.66 T
+(T) 238.38 584.66 T
+(reeHeight\050A) 244.14 584.66 T
+(VL) 292.8 584.66 T
+(T) 305.21 584.66 T
+(ree t\051;) 310.96 584.66 T
+(Return the level of the A) 207 560.66 T
+(VL) 304.81 560.66 T
+(T) 317.21 560.66 T
+(ree t.) 322.97 560.66 T
+(A) 207 536.66 T
+(VL) 212.93 536.66 T
+(T) 225.33 536.66 T
+(reeBalanceT) 231.09 536.66 T
+(ypes A) 280.89 536.66 T
+(VL) 307.64 536.66 T
+(T) 320.04 536.66 T
+(reeItemBalance\050A) 325.8 536.66 T
+(VL) 397.77 536.66 T
+(T) 410.17 536.66 T
+(reeItem item\051;) 415.92 536.66 T
+(Return the balance \336eld of the A) 207 512.66 T
+(VL) 336.17 512.66 T
+(T) 348.57 512.66 T
+(ree node item.) 354.33 512.66 T
+(void *A) 207 488.66 T
+(VL) 238.19 488.66 T
+(T) 250.6 488.66 T
+(reeItemElement\050A) 256.35 488.66 T
+(VL) 329.44 488.66 T
+(T) 341.85 488.66 T
+(reeItem item\051;) 347.6 488.66 T
+(Return the pointer to the element \336eld of A) 207 464.66 T
+(VL) 378.38 464.66 T
+(T) 390.78 464.66 T
+(ree node item.) 396.54 464.66 T
+(int A) 207 440.66 T
+(VL) 225.98 440.66 T
+(T) 238.38 440.66 T
+(reeItemT) 244.14 440.66 T
+(ype\050A) 280.07 440.66 T
+(VL) 303.76 440.66 T
+(T) 316.16 440.66 T
+(reeItem item\051;) 321.92 440.66 T
+(Return the type of the A) 207 416.66 T
+(VL) 302.59 416.66 T
+(T) 314.99 416.66 T
+(ree node item.) 320.75 416.66 T
+(int A) 207 392.66 T
+(VL) 225.98 392.66 T
+(T) 238.38 392.66 T
+(reeLeftHeight\050A) 244.14 392.66 T
+(VL) 309.45 392.66 T
+(T) 321.86 392.66 T
+(ree t\051;) 327.61 392.66 T
+(Return the left level of the A) 207 368.66 T
+(VL) 320.63 368.66 T
+(T) 333.03 368.66 T
+(ree t.) 338.79 368.66 T
+(int A) 207 344.66 T
+(VL) 225.98 344.66 T
+(T) 238.38 344.66 T
+(reeRightHeight\050A) 244.14 344.66 T
+(VL) 315.02 344.66 T
+(T) 327.42 344.66 T
+(ree t\051;) 333.18 344.66 T
+(Return the right level of the A) 207 320.66 T
+(VL) 326.18 320.66 T
+(T) 338.59 320.66 T
+(ree t.) 344.35 320.66 T
+(int A) 207 296.66 T
+(VL) 225.98 296.66 T
+(T) 238.38 296.66 T
+(reeSize\050A) 244.14 296.66 T
+(VL) 282.81 296.66 T
+(T) 295.21 296.66 T
+(ree t\051;) 300.97 296.66 T
+(Return the number of nodes in A) 207 272.66 T
+(VL) 337.29 272.66 T
+(T) 349.69 272.66 T
+(ree t.) 355.45 272.66 T
+(A) 207 248.66 T
+(VL) 212.93 248.66 T
+(T) 225.33 248.66 T
+(reeItem A) 231.09 248.66 T
+(VL) 270.04 248.66 T
+(T) 282.44 248.66 T
+(reeRoot\050A) 288.2 248.66 T
+(VL) 329.09 248.66 T
+(T) 341.5 248.66 T
+(ree t\051;) 347.25 248.66 T
+(Return the pointer to the root node of A) 207 224.66 T
+(VL) 364.49 224.66 T
+(T) 376.9 224.66 T
+(ree t.) 382.65 224.66 T
+2 F
+(Helper Functions) 207 200.66 T
+1 F
+(A) 207 176.66 T
+(VL) 212.93 176.66 T
+(T) 225.33 176.66 T
+(reeItem A) 231.09 176.66 T
+(VL) 270.04 176.66 T
+(T) 282.44 176.66 T
+(reeItemLeft\050A) 288.2 176.66 T
+(VL) 344.62 176.66 T
+(T) 357.03 176.66 T
+(reeItem item\051;) 362.78 176.66 T
+(Return the pointer to the left child of A) 207 152.66 T
+(VL) 362.27 152.66 T
+(T) 374.68 152.66 T
+(ree node item.) 380.43 152.66 T
+(A) 207 128.66 T
+(VL) 212.93 128.66 T
+(T) 225.33 128.66 T
+(reeItem A) 231.09 128.66 T
+(VL) 270.04 128.66 T
+(T) 282.44 128.66 T
+(reeItemRight\050A) 288.2 128.66 T
+(VL) 350.19 128.66 T
+(T) 362.59 128.66 T
+(reeItem item\051;) 368.35 128.66 T
+(Return the pointer to the right child of A) 207 104.66 T
+(VL) 367.83 104.66 T
+(T) 380.23 104.66 T
+(ree node item.) 385.99 104.66 T
+FMENDPAGE
+%%EndPage: "33" 34
+%%Page: "34" 34
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(34 of 47) 524.53 60.96 T
+2 10 Q
+(Application Functions) 207 680.66 T
+1 F
+(void A) 207 656.66 T
+(VL) 233.2 656.66 T
+(T) 245.6 656.66 T
+(reeInorderApply\050A) 251.36 656.66 T
+(VL) 327.21 656.66 T
+(T) 339.62 656.66 T
+(ree t, ApplyFunction f\051;) 345.37 656.66 T
+(Apply function f to the A) 207 632.66 T
+(VL) 307.04 632.66 T
+(T) 319.44 632.66 T
+(ree t, using inorder traversal of the tree.) 325.2 632.66 T
+(void A) 207 608.66 T
+(VL) 233.2 608.66 T
+(T) 245.6 608.66 T
+(reePostorderApply\050A) 251.36 608.66 T
+(VL) 336.11 608.66 T
+(T) 348.51 608.66 T
+(ree t, ApplyFunction f\051;) 354.27 608.66 T
+(Apply function f to the A) 207 584.66 T
+(VL) 307.04 584.66 T
+(T) 319.44 584.66 T
+(ree t, using postorder traversal of the tree.) 325.2 584.66 T
+(void A) 207 560.66 T
+(VL) 233.2 560.66 T
+(T) 245.6 560.66 T
+(reePreorderApply\050A) 251.36 560.66 T
+(VL) 332.21 560.66 T
+(T) 344.61 560.66 T
+(ree t, ApplyFunction f\051;) 350.37 560.66 T
+(Apply function f to the A) 207 536.66 T
+(VL) 307.04 536.66 T
+(T) 319.44 536.66 T
+(ree t, using preorder traversal of the tree.) 325.2 536.66 T
+0 9 Q
+(5.1.8) 178.01 513.33 T
+(ADT Buffer) 207 513.33 T
+3 11 Q
+(\245) 207 497.66 T
+1 10 Q
+(De\336nitions) 220.74 497.66 T
+2 F
+(Buffer De\336nition) 207 471.66 T
+1 F
+(typedef struct _Buf) 207 447.66 T
+(fer {) 283.99 447.66 T
+(Deque data;) 225 435.66 T
+(int pos;) 225 423.66 T
+(char *text;) 225 411.66 T
+(} _Buf) 207 399.66 T
+(fer) 234.1 399.66 T
+(, *Buf) 244.8 399.66 T
+(fer;) 269.61 399.66 T
+3 11 Q
+(\245) 207 374.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 374.66 T
+2 F
+(Service Functions) 207 348.66 T
+1 F
+(Buf) 207 324.66 T
+(fer Buf) 221.81 324.66 T
+(ferNew\050\051;) 250.22 324.66 T
+(Allocate a new instance of ADT Buf) 207 312.66 T
+(fer and return the pointer to the allocated buf) 353.37 312.66 T
+(fer) 532.49 312.66 T
+(.) 543.03 312.66 T
+(void Buf) 207 288.66 T
+(ferDispose\050Buf) 242.08 288.66 T
+(fer b\051;) 303.52 288.66 T
+(Dispose buf) 207 276.66 T
+(fer b, freeing the reserved space for b.) 254.84 276.66 T
+(char Buf) 207 252.66 T
+(ferDelChar\050Buf) 241.51 252.66 T
+(fer b\051;) 304.61 252.66 T
+-0.07 (Remove the last character from buf) 207 240.66 P
+-0.07 (fer b and return the pointer to the removed character) 347.73 240.66 P
+-0.07 (.) 555.5 240.66 P
+(If buf) 207 230.66 T
+(fer b is empty before the deletion, return EOF character) 229.3 230.66 T
+(.) 450.79 230.66 T
+(void Buf) 207 206.66 T
+(ferAddChar\050Buf) 242.08 206.66 T
+(fer b, char ch\051;) 307.95 206.66 T
+(Add character ch to the end of buf) 207 194.66 T
+(fer b.) 343.64 194.66 T
+(void Buf) 207 170.66 T
+(ferAddString\050Buf) 242.08 170.66 T
+(fer b; char *str\051;) 312.96 170.66 T
+(Add character string that is pointed by str to the end of buf) 207 158.66 T
+(fer b.) 441.1 158.66 T
+2 F
+(Access Functions) 207 122.66 T
+1 F
+(int Buf) 207 94.66 T
+(ferSize\050Buf) 234.87 94.66 T
+(fer b\051;) 281.31 94.66 T
+FMENDPAGE
+%%EndPage: "34" 35
+%%Page: "35" 35
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(35 of 47) 524.53 60.96 T
+1 10 Q
+(Return the number of characters in buf) 207 680.66 T
+(fer b.) 361.7 680.66 T
+2 F
+(Application Functions) 207 644.66 T
+1 F
+(char *Buf) 207 616.66 T
+(ferT) 246.51 616.66 T
+(oString\050Buf) 263.01 616.66 T
+(fer b\051;) 310.58 616.66 T
+0.96 (Form a string of characters that are in buf) 207 604.66 P
+0.96 (fer b and return the pointer to the resulting) 380.46 604.66 P
+(string.) 207 594.66 T
+3 11 Q
+(\245) 207 569.66 T
+1 10 Q
+(Server ADT\325) 220.74 569.66 T
+(s) 272.65 569.66 T
+(ADT Deque) 207 555.66 T
+0 9 Q
+(5.1.9) 178.01 522.33 T
+(ADT BufIO) 207 522.33 T
+1 10 Q
+1.21 (The current version of BufIO implements only buf) 207 497.66 P
+1.21 (fered input operations from a \336le.) 417.62 497.66 P
+(Output operations will be supported in the coming versions of ADT library) 207 485.66 T
+(.) 506.43 485.66 T
+3 11 Q
+(\245) 207 467.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 467.66 T
+2 F
+(ServiceFunctions) 207 443.66 T
+1 F
+(int BufIOGetChar\050FILE *\336le\051;) 207 419.66 T
+0.07 (Make a buf) 207 395.66 P
+0.07 (fered character input from the \336le \336le. If the buf) 252.48 395.66 P
+0.07 (fer is empty) 445.04 395.66 P
+0.07 (, the character is) 492.28 395.66 P
+-0.02 (read from the \336le. Otherwise, the \336rst character in the buf) 207 383.66 P
+-0.02 (fer is removed from the buf) 436.99 383.66 P
+-0.02 (fer) 546.91 383.66 P
+(and returned.) 207 371.66 T
+(char *BufIOGetString\050FILE *\336le\051;) 207 347.66 T
+(Make a buf) 207 323.66 T
+(fered character string input from the \336le \336le.) 252.34 323.66 T
+(void BufIOUnGetChar\050int ch, FILE *\336le\051;) 207 299.66 T
+(Unget the character ch to the beginning of the buf) 207 275.66 T
+(fer associated with \336le \336le.) 405.83 275.66 T
+(void BufIOInitialize\050void\051;) 207 251.66 T
+(Initiate the buf) 207 227.66 T
+(fered input of the characters by allocating a buf) 265.67 227.66 T
+(fer structure.) 454.77 227.66 T
+2 F
+(Access Functions) 207 203.66 T
+1 F
+(int BufIOBuf) 207 179.66 T
+(ferSize\050FILE *\336le\051;) 260.4 179.66 T
+(Return the number of characters in the input buf) 207 155.66 T
+(fer associated with \336le \336le.) 399.45 155.66 T
+0 9 Q
+(5.1.10) 173.01 108.33 T
+(ADT Hash T) 207 108.33 T
+(able) 257.27 108.33 T
+3 11 Q
+(\245) 207 92.66 T
+1 10 Q
+(De\336nitions) 220.74 92.66 T
+FMENDPAGE
+%%EndPage: "35" 36
+%%Page: "36" 36
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(36 of 47) 524.53 60.96 T
+2 10 Q
+(Hash T) 207 668.66 T
+(able Element De\336nition) 237.46 668.66 T
+1 F
+(typedef struct _HashT) 207 644.66 T
+(ableElement {) 295.12 644.66 T
+(void *key;) 225 632.66 T
+(int tag;) 225 620.66 T
+(int type;) 225 608.66 T
+(union {) 225 596.66 T
+(void *dataPtr;) 225 584.66 T
+(QueuePtr qPtr;) 225 572.66 T
+(} u;) 225 560.66 T
+(} HashT) 207 548.66 T
+(ableElement, *HashT) 240.24 548.66 T
+(ableElementPtr;) 326.14 548.66 T
+2 F
+(Hash T) 207 524.66 T
+(able De\336nition) 237.46 524.66 T
+1 F
+(typedef struct _HashT) 207 500.66 T
+(ableA) 295.12 500.66 T
+(VL {) 317.7 500.66 T
+(int size;) 225 488.66 T
+(HashFunctionPtr hash;) 225 476.66 T
+(HashCompareFunctionPtr compare;) 225 464.66 T
+(HashT) 225 452.66 T
+(ableElementDisposeFunctionPtr elementDisposeFunction;) 250.95 452.66 T
+(A) 225 440.66 T
+(VL) 230.93 440.66 T
+(T) 243.33 440.66 T
+(reePtr *bucket;) 249.09 440.66 T
+(HashT) 225 428.66 T
+(ableA) 250.95 428.66 T
+(VLPtr scopeLink;) 273.52 428.66 T
+(} HashT) 207 416.66 T
+(ableA) 240.24 416.66 T
+(VL;) 262.82 416.66 T
+3 11 Q
+(\245) 207 379.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 379.66 T
+2 F
+(Service Functions) 207 365.66 T
+(Access Functions) 207 329.66 T
+(Helper Functions) 207 293.66 T
+(Application Functions) 207 257.66 T
+3 11 Q
+(\245) 207 220.66 T
+1 10 Q
+(Server ADT\325) 220.74 220.66 T
+(s) 272.65 220.66 T
+(ADT Queue, ADT A) 207 206.66 T
+(VL T) 290.08 206.66 T
+(ree.) 311.66 206.66 T
+0 9 Q
+(5.1.1) 173.51 173.33 T
+(1) 193 173.33 T
+(ADT A) 207 173.33 T
+(VL T) 233.79 173.33 T
+(able) 252.6 173.33 T
+3 11 Q
+(\245) 207 157.66 T
+1 10 Q
+(De\336nitions) 220.74 157.66 T
+2 F
+(A) 207 131.66 T
+(VL T) 212.93 131.66 T
+(able Item) 235.05 131.66 T
+1 F
+(typedef struct _A) 207 107.66 T
+(VL) 275.1 107.66 T
+(T) 287.51 107.66 T
+(ableItem {) 292.91 107.66 T
+(char *key;) 225 95.66 T
+FMENDPAGE
+%%EndPage: "36" 37
+%%Page: "37" 37
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(37 of 47) 524.53 60.96 T
+1 10 Q
+(void *element;) 225 680.66 T
+(int type;) 225 668.66 T
+(} _A) 207 656.66 T
+(VL) 225.22 656.66 T
+(T) 237.62 656.66 T
+(ableItem, *A) 243.03 656.66 T
+(VL) 293.92 656.66 T
+(T) 306.33 656.66 T
+(ableItem;) 311.73 656.66 T
+2 F
+(A) 207 632.66 T
+(VL T) 212.93 632.66 T
+(able) 235.05 632.66 T
+1 F
+(typedef struct _A) 207 608.66 T
+(VL) 275.1 608.66 T
+(T) 287.51 608.66 T
+(able {) 292.91 608.66 T
+(struct _A) 225 596.66 T
+(VL) 260.63 596.66 T
+(T) 273.03 596.66 T
+(able *ScopeLink;) 278.44 596.66 T
+(A) 225 584.66 T
+(VL) 230.93 584.66 T
+(T) 243.33 584.66 T
+(ree Space;) 249.09 584.66 T
+(} _A) 207 572.66 T
+(VL) 225.22 572.66 T
+(T) 237.62 572.66 T
+(able, *A) 243.03 572.66 T
+(VL) 275.6 572.66 T
+(T) 288.01 572.66 T
+(able;) 293.41 572.66 T
+3 11 Q
+(\245) 207 535.66 T
+1 10 Q
+(Exported Function Prototypes) 220.74 535.66 T
+2 F
+(Service Functions) 207 509.66 T
+1 F
+(A) 207 485.66 T
+(VL) 212.93 485.66 T
+(T) 225.33 485.66 T
+(able A) 230.74 485.66 T
+(VL) 255.81 485.66 T
+(T) 268.22 485.66 T
+(ableNew\050A) 273.62 485.66 T
+(VL) 318.4 485.66 T
+(T) 330.8 485.66 T
+(able scopeLink\051;) 336.21 485.66 T
+0.49 (Allocate a new instance of ADT A) 207 473.66 P
+0.49 (VL) 347.4 473.66 P
+0.49 (T) 359.8 473.66 P
+0.49 (able, set the scope link \336eld of the new table to) 365.21 473.66 P
+(scopeLink and return the pointer to the newly allocated A) 207 463.66 T
+(VL) 436.37 463.66 T
+(T) 448.78 463.66 T
+(able.) 454.18 463.66 T
+(void A) 207 439.66 T
+(VL) 233.2 439.66 T
+(T) 245.6 439.66 T
+(ablePut\050A) 251.01 439.66 T
+(VL) 290.24 439.66 T
+(T) 302.65 439.66 T
+(able table, char *key) 308.05 439.66 T
+(, void *element, int type\051;) 390.11 439.66 T
+(Put an association for the \050key) 207 427.66 T
+(, element, type\051 tuple in A) 327.65 427.66 T
+(VL) 431.02 427.66 T
+(T) 443.42 427.66 T
+(able table.) 448.83 427.66 T
+(void *A) 207 403.66 T
+(VL) 238.19 403.66 T
+(T) 250.6 403.66 T
+(ableGet\050A) 256 403.66 T
+(VL) 296.34 403.66 T
+(T) 308.74 403.66 T
+(able table, char *key) 314.15 403.66 T
+(, int type\051;) 396.21 403.66 T
+1.22 (Find the \336rst association having \050key) 207 391.66 P
+1.22 (, type\051 in A) 360.44 391.66 P
+1.22 (VL) 408.34 391.66 P
+1.22 (T) 420.74 391.66 P
+1.22 (able table. If found, remove the) 426.15 391.66 P
+4.17 (association from the table and return the pointer to the element \336eld of the) 207 381.66 P
+(corresponding association. Otherwise return NULL.) 207 371.66 T
+(Queue A) 207 347.66 T
+(VL) 241.51 347.66 T
+(T) 253.91 347.66 T
+(ableGetAll\050A) 259.32 347.66 T
+(VL) 312.43 347.66 T
+(T) 324.83 347.66 T
+(able table, char *key\051;) 330.24 347.66 T
+2.08 (Find all associations having \050key\051 in A) 207 335.66 P
+2.08 (VL) 373.1 335.66 P
+2.08 (T) 385.5 335.66 P
+2.08 (able table, remove them from the table) 390.91 335.66 P
+(forming a queue of \050element, type\051 tuples of those associations. Return the queue.) 207 325.66 T
+2 F
+(Access Functions) 207 301.66 T
+1 F
+(void *A) 207 277.66 T
+(VL) 238.19 277.66 T
+(T) 250.6 277.66 T
+(ableFind\050A) 256 277.66 T
+(VL) 300.24 277.66 T
+(T) 312.64 277.66 T
+(able table, char *k, int type\051;) 318.05 277.66 T
+1.69 (Find the \336rst association having \050key) 207 265.66 P
+1.69 (, type\051 in A) 362.79 265.66 P
+1.69 (VL) 412.1 265.66 P
+1.69 (T) 424.5 265.66 P
+1.69 (able table. If found, return the) 429.91 265.66 P
+(pointer to the element \336eld of the corresponding association. Otherwise return NULL.) 207 255.66 T
+(Queue A) 207 231.66 T
+(VL) 241.51 231.66 T
+(T) 253.91 231.66 T
+(ableFindAll\050A) 259.32 231.66 T
+(VL) 316.33 231.66 T
+(T) 328.73 231.66 T
+(able table, char *key\051;) 334.14 231.66 T
+0.73 (Find all associations having \050key\051 in A) 207 219.66 P
+0.73 (VL) 364.97 219.66 P
+0.73 (T) 377.37 219.66 P
+0.73 (able table, form a queue of \050element, type\051) 382.78 219.66 P
+(tuples of those associations. Return the queue.) 207 209.66 T
+(A) 207 185.66 T
+(VL) 212.93 185.66 T
+(T) 225.33 185.66 T
+(able A) 230.74 185.66 T
+(VL) 255.81 185.66 T
+(T) 268.22 185.66 T
+(ableScopeLink\050A) 273.62 185.66 T
+(VL) 342.83 185.66 T
+(T) 355.24 185.66 T
+(able table\051;) 360.65 185.66 T
+(Return the scopeLink \336eld of A) 207 173.66 T
+(VL) 332.57 173.66 T
+(T) 344.97 173.66 T
+(able table.) 350.38 173.66 T
+3 11 Q
+(\245) 207 148.66 T
+1 10 Q
+(Server ADT\325) 220.74 148.66 T
+(s) 272.65 148.66 T
+(ADT A) 207 134.66 T
+(VL T) 235.96 134.66 T
+(ree, ADT Queue.) 257.54 134.66 T
+0 F
+(The ADT Iterators Library) 207 106.66 T
+FMENDPAGE
+%%EndPage: "37" 38
+%%Page: "38" 38
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(38 of 47) 524.53 60.96 T
+0 10 Q
+(5.2) 184.11 680.66 T
+(The ADT Iterators Library) 207 680.66 T
+0 9 Q
+(5.2.1) 178.01 657.33 T
+(Iterators in General) 207 657.33 T
+1 10 Q
+-0.08 (An iterator for an abstract data type is an abstraction for iteration on the data type. What) 207 642.66 P
+1.57 (an iterator allows one to do depends upon the particular data structure. Iteration, to) 207 632.66 P
+1.02 (which we are accustomed, enables us to consider elements of a sequence in forward,) 207 622.66 P
+(reverse, alternating, or random fashion.) 207 612.66 T
+1.86 (The iterator encapsulates the details of iteration for iteration patterns common to a) 207 588.66 P
+2.79 (particular data type. For most data types iteration is straightforward. A queue is) 207 578.66 P
+0.3 (typically iterated from its head to its tail, which a tree is typically iterated via on of the) 207 568.66 P
+0.42 (common traversals. In the case of a tree the traversal pattern must be done recursively) 207 558.66 P
+0.42 (,) 555.5 558.66 P
+1.04 (but this can be somewhat cumbersome. While we do not intend to belabor the point,) 207 548.66 P
+1.03 (suppose we had a tree which contains 1,000 words. W) 207 538.66 P
+1.03 (e want to print out the \336rst 50) 432.25 538.66 P
+1.99 (words, or every one of the \336rst 100 words, or perhaps we have some other novel) 207 528.66 P
+2.19 (iteration pattern. T) 207 518.66 P
+2.19 (o achieve a recursive solution to the suggested iterations would) 285.36 518.66 P
+1.99 (require somewhat nontrivial recursion. W) 207 508.66 P
+1.99 (ith an iterator which permits the dif) 381.37 508.66 P
+1.99 (ferent) 534.69 508.66 P
+(iterations the process is suddenly simple:) 207 498.66 T
+(1. create a tree iterator - inorder) 225 474.66 T
+(2. count <- 1) 225 462.66 T
+(2. advance to the \336rst position in the iterator) 225 450.66 T
+(3. while not at the end of the iteration and count <= 50) 225 438.66 T
+(3.a. print the item) 225 426.66 T
+(3.b. count <- count + 1) 225 414.66 T
+(3.c. advance to position count + 1) 225 402.66 T
+-0.16 (The iterator abstacts the problem of iteration on an ADT and does not require the user to) 207 378.66 P
+1.22 (be familiar with the low-level routines for iteration which are provided by the ADT) 207 368.66 P
+1.22 (.) 555.5 368.66 P
+0.01 (Furthermore, iteration on any ADT is virtually the same, though the user must be aware) 207 358.66 P
+1.16 (of potential inef) 207 348.66 P
+1.16 (\336ciency which results from naive use of the iterator) 272.98 348.66 P
+1.16 (. As an example,) 487.64 348.66 P
+0.68 (backward iteration on a queue is guaranteed to be slow) 207 338.66 P
+0.68 (, even though it is achieved by) 432.04 338.66 P
+(the iterator routines in a manner identical to that of forward iteration.) 207 328.66 T
+0 9 Q
+(5.2.2) 178.01 295.33 T
+(ADT Queue Iterator) 207 295.33 T
+3 11 Q
+(\245) 207 279.66 T
+1 10 Q
+(Discussion) 220.74 279.66 T
+3 11 Q
+(\245) 207 252.66 T
+1 10 Q
+(De\336nitions) 220.74 252.66 T
+(typedef struct _QueueIterator {) 207 238.66 T
+(int position;) 225 226.66 T
+(Queue queue;) 225 214.66 T
+(QueueItem currentItem, previousItem;) 225 202.66 T
+(} _QueueIterator) 207 190.66 T
+(, *QueueIterator;) 274.39 190.66 T
+3 11 Q
+(\245) 207 165.66 T
+1 10 Q
+(Constructor) 220.74 165.66 T
+(QueueIterator QueueIteratorNew\050Queue queue, int position\051) 207 151.66 T
+0.25 (Allocate a queue iterator and set the position to point to the \336rst addressible position in) 207 127.66 P
+-0.01 (the queue. Set currentItem to point to the head of the queue and previousItem to NULL.) 207 117.66 P
+3 11 Q
+(\245) 207 92.66 T
+1 10 Q
+(Destructor) 220.74 92.66 T
+FMENDPAGE
+%%EndPage: "38" 39
+%%Page: "39" 39
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(39 of 47) 524.53 60.96 T
+1 10 Q
+(void QueueIteratorDispose\050QueueIterator qi\051;) 207 680.66 T
+(Deallocate the queue iterator) 207 656.66 T
+(.) 321.63 656.66 T
+3 11 Q
+(\245) 207 631.66 T
+1 10 Q
+(Status Functions) 220.74 631.66 T
+(int QueueIteratorAtT) 207 605.66 T
+(op\050QueueIterator qi\051;) 290.95 605.66 T
+0.19 (Returns TRUE when the queue iterator) 207 581.66 P
+0.19 (, qi, points to the \336rst addressible position in the) 363.85 581.66 P
+(queue; F) 207 571.66 T
+(ALSE otherwise.) 240.96 571.66 T
+(int QueueIteratorAtBottom\050QueueIterator qi\051;) 207 547.66 T
+0.31 (Returns TRUE when the queue iterator) 207 523.66 P
+0.31 (, qi, points to the last addressible position in the) 364.44 523.66 P
+(queue; F) 207 513.66 T
+(ALSE otherwise.) 240.96 513.66 T
+(int QueueIteratorAtPosition\050QueueIterator qi, int position\051;) 207 489.66 T
+1.81 (Returns TRUE when the queue iterator) 207 465.66 P
+1.81 (, qi, points to the position whose address is) 371.93 465.66 P
+(position; F) 207 455.66 T
+(ALSE otherwise or when position is not valid.) 249.31 455.66 T
+3 11 Q
+(\245) 207 430.66 T
+1 10 Q
+(Access Functions) 220.74 430.66 T
+(int QueueIteratorPosition\050QueueIterator qi\051;) 207 404.66 T
+-0.05 (Returns the integer position of the queue iterator with respect to the queue over which it) 207 380.66 P
+(iterates. The value of position is always non-negative.) 207 370.66 T
+(int QueueIteratorCurrentData\050QueueIterator qi\051;) 207 346.66 T
+1.87 (Returns the data contained in the current queue item \050NULL if the current item is) 207 322.66 P
+(NULL\051.) 207 312.66 T
+(int QueueIteratorPreviousData\050QueueIterator qi\051;) 207 288.66 T
+1 (Returns the data contained in the previous queue item \050NULL if the previous item is) 207 264.66 P
+(NULL\051.) 207 254.66 T
+3 11 Q
+(\245) 207 229.66 T
+1 10 Q
+(Iteration Functions) 220.74 229.66 T
+(void QueueIteratorAdvance\050QueueIterator qi\051;) 207 203.66 T
+0.34 (Advance to the next addressible position in the queue, if the addressible position is not) 207 179.66 P
+(the last addressible position; otherwise, remain at the last addressible position.) 207 169.66 T
+(void QueueIteratorBackup\050QueueIterator qi\051;) 207 145.66 T
+0.74 (Move to the previous addressible position in the queue, if the previous position is not) 207 121.66 P
+1.22 (less than the lowest addressible position; otherwise, remain at the lowest addressible) 207 111.66 P
+(position. This function is translated into QueueIteratorRelativeSeek\050qi,-1\051.) 207 101.66 T
+FMENDPAGE
+%%EndPage: "39" 40
+%%Page: "40" 40
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(40 of 47) 524.53 60.96 T
+1 10 Q
+(void QueueIteratorAbsoluteSeek\050QueueIterator qi, int delta\051) 207 668.66 T
+(void QueueIteratorRelativeSeek\050QueueIterator qi, int position\051) 207 644.66 T
+0 F
+(5.3) 184.11 604.66 T
+(The APT Library - a library speci\336c to APT) 207 604.66 T
+0 9 Q
+(5.3.1) 178.01 581.33 T
+(Overview) 207 581.33 T
+1 10 Q
+0.46 (The APT Library is a collection of functions which are speci\336cally needed by projects) 207 554.66 P
+0.32 (to utilize the tables produced by the Apt Parsing T) 207 544.66 P
+0.32 (ool. While the Apt Compiler T) 410.48 544.66 P
+0.32 (oolkit) 534.67 544.66 P
+0.12 (provides a canned main module which must be linked with the generated code modules) 207 534.66 P
+-0.09 (and user) 207 524.66 P
+-0.09 (-speci\336ed semantics \050and possibly other modules\051, one ought to know about the) 240.29 524.66 P
+1.57 (dif) 207 514.66 P
+1.57 (ferent functions available. The functions available include initialization functions,) 217.92 514.66 P
+(LL\0501\051 parsers, EOPM parsers, and miscellaneous functions.) 207 504.66 T
+0 9 Q
+(5.3.2) 178.01 483.33 T
+(Functions) 207 483.33 T
+3 11 Q
+(\245) 207 455.66 T
+1 10 Q
+(Initialization and T) 220.74 455.66 T
+(ermination Functions) 296.66 455.66 T
+(void ParseInitialize\050\051;) 207 429.66 T
+(Allocate the data structures required for any of the LL\0501\051 Parsers) 207 405.66 T
+(void ParseT) 207 381.66 T
+(erminate\050\051;) 254.32 381.66 T
+(Free all data structures allocated by ParseInitialize.) 207 357.66 T
+3 11 Q
+(\245) 207 332.66 T
+1 10 Q
+(LL\0501\051 Parsers) 220.74 332.66 T
+(Parse\050FILE *\336le, VOID_FN_T) 207 306.66 T
+(OKEN printT) 332.01 306.66 T
+(oken\051;) 386.55 306.66 T
+0.4 (Parse the token stream generated from \336le \050which must be opened for read prior to the) 207 282.66 P
+1.58 (call\051. Execute semantics as phrases are determined. A function which prints tokens,) 207 272.66 P
+0.7 (printT) 207 262.66 P
+0.7 (oken, may be supplied to print a token every time the LL\0501\051 parser successfully) 231.29 262.66 P
+(matches a terminal symbol. Supply NULL, if token printing is not desired.) 207 252.66 T
+(ParseEOPMOut\050FILE *\336le, FILE *eopmFile, VOID_FN_T) 207 228.66 T
+(OKEN printT) 446.12 228.66 T
+(oken\051;) 500.66 228.66 T
+1.1 (Parse the token stream generated from \336le into eopmFile \050which must be opened for) 207 204.66 P
+0.33 (write prior to the call\051. No semantics are executed, as a companion function exists \050see) 207 194.66 P
+-0.07 (EOPM Parsers\051. As with Parse, a function which prints tokens may be supplied with the) 207 184.66 P
+(same regulations.) 207 174.66 T
+(ParseEOPMOutQ\050Queue queue, FILE *eopmFile, VOID_FN_T) 207 150.66 T
+(OKEN printT) 464.42 150.66 T
+(oken\051;) 518.96 150.66 T
+0.18 (Identical to ParseEOPMOut with one exception. A queue of tokens is passed instead of) 207 126.66 P
+0.03 (a \336le to be scanned for tokens. A function is provided \050see Miscellaneous\051 which builds) 207 116.66 P
+(a token queue from a \336le.) 207 106.66 T
+FMENDPAGE
+%%EndPage: "40" 41
+%%Page: "41" 41
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(Apt Compiler T) 207 739.85 T
+(oolkit Libraries) 270.75 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(41 of 47) 524.53 60.96 T
+3 11 Q
+(\245) 207 680.66 T
+1 10 Q
+(EOPM Parsers) 220.74 680.66 T
+(void ParseEOPMIn\050FILE *eopmFile, VOID_FN_T) 207 654.66 T
+(OKEN printT) 413.36 654.66 T
+(oken\051;) 467.9 654.66 T
+0.82 (The companion routine to ParseEOPMOut. Execute semantics on token stream which) 207 630.66 P
+2.12 (was successfully parsed into phrases \050and written to eopmFile\051. As with the parse) 207 620.66 P
+0.6 (functions, a function may be supplied to print a token. Each time a token is read from) 207 610.66 P
+(eopmFile, it is printed with printT) 207 600.66 T
+(oken.) 342.35 600.66 T
+3 11 Q
+(\245) 207 575.66 T
+1 10 Q
+(Miscellaneous Functions) 220.74 575.66 T
+(void SetDebugOption\050ParseDebugOptions option\051;) 207 545.66 T
+-0.22 (Enable one of the debugging options supported by the LL\0501\051 parsers and EOPM parsers:) 207 521.66 P
+(DebugT) 225 509.66 T
+(oken) 257.05 509.66 T
+(DebugPredictionStack) 225 497.66 T
+(DebugSemanticStack) 225 485.66 T
+(DebugSemanticAction) 225 473.66 T
+3.66 (What is being debugged is self-explanatory) 207 449.66 P
+3.66 (. What output occurs requires some) 398.14 449.66 P
+0.25 (explanation. The output occurs in a line-oriented fashion. One line will appear for each) 207 439.66 P
+-0.23 (enabled debug option. For tokens and actions, the output is simply the name of the token) 207 429.66 P
+2.91 (\050preceded by the word \322token\323\051 or action \050preceded by the word \322action\323\051. The) 207 419.66 P
+0.13 (prediction stack and semantic stacks will be dumped on a line with the leftmost symbol) 207 409.66 P
+0.69 (representing the top of the stack. T) 207 399.66 P
+0.69 (o enable an option requires a separate call for each) 349.49 399.66 P
+(one. A future release will provide more elegant support for debugging.) 207 389.66 T
+(void ResetDebugOption\050ParseDebugOption\051;) 207 365.66 T
+(Disable one of the debugging options \050which was enabled by SetDebugOption\051.) 207 341.66 T
+(Queue BuildT) 207 317.66 T
+(okenQueue\050FILE *\336le, int end\051;) 263.21 317.66 T
+0.09 (Build a queue of tokens which are generated via application of the scanner) 207 293.66 P
+0.09 (, Scan, to the) 505.81 293.66 P
+0.22 (\336le, \336le, which must be opened for input. When the token, end, is encountered, it is the) 207 283.66 P
+(last token scanned, and the queue is returned.) 207 273.66 T
+0 F
+(5.4) 184.11 245.66 T
+(The AST Library - a library speci\336c to AST) 207 245.66 T
+0 9 Q
+(5.4.1) 178.01 222.33 T
+(Overview) 207 222.33 T
+1 10 Q
+-0.23 (The AST Library is a library of functions required for the maintenance of the state of the) 207 195.66 P
+0.49 (scanner) 207 185.66 P
+0.49 (. As mentioned in the discussion of the APT Library) 236.97 185.66 P
+0.49 (, one need not know much) 450.06 185.66 P
+(about the functions of the AST Library) 207 175.66 T
+(, since a canned main module is provided.) 362.36 175.66 T
+0 9 Q
+(5.4.2) 178.01 154.33 T
+(Functions) 207 154.33 T
+1 10 Q
+(ScanInfo ScanInfoNew\050\051) 207 127.66 T
+(Allocate an instance of ScanInfo to maintain information about the current input \336le.) 207 103.66 T
+FMENDPAGE
+%%EndPage: "41" 42
+%%Page: "42" 42
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(How to Design a T) 207 739.85 T
+(ranslator) 284.41 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(42 of 47) 524.53 60.96 T
+1 10 Q
+(void ScanStateInit\050ScanInfo *info, FILE *\336le\051;) 207 668.66 T
+0.75 (Set \336le as the current \336le for lexical analysis \050scanning\051. The \336le must have just been) 207 644.66 P
+(opened for input, else all subsequent lexical analysis is unde\336ned.) 207 634.66 T
+(void ScanStateSwitch\050ScanInfo *info, FILE *\336le\051;) 207 610.66 T
+-0.19 (Allocate a new instance of ScanInfo \050with ScanInfoNew\051 and set the current input \336le to) 207 586.66 P
+0.73 (\336le. The last allocated instance is placed beneath the current instance on a stack, so it) 207 576.66 P
+(can be reverted to at some point, if desired.) 207 566.66 T
+(void ScanStateRevert\050ScanInfo *info\051;) 207 542.66 T
+0.49 (Revert to the scanning state which is pointed to by the current scanning state. Free the) 207 518.66 P
+(space being occupied by the current scanning state.) 207 508.66 T
+72 467.33 558 470.33 C
+207 469.48 558 469.48 2 L
+0.25 H
+2 Z
+0 X
+0 K
+N
+72 469.48 198 469.48 2 L
+0 Z
+N
+0 0 612 792 C
+0 12 Q
+0 X
+0 K
+(6.0) 181.33 474.33 T
+(How to Design a T) 207 474.33 T
+(ranslator) 310.3 474.33 T
+0 10 Q
+(6.1) 184.11 440.66 T
+(The T) 207 440.66 T
+(ranslation Problem) 233.11 440.66 T
+1 F
+2.69 (In this section we will illustrate how ACT is used to develop a translator for a) 207 416.66 P
+0.87 (reasonably interesting language. Our problem is to design an evaluator for a series of) 207 404.66 P
+0.44 (equations. Each equation is an assignment expression such that a variable is de\336ned in) 207 392.66 P
+0.97 (terms of a function of other variables. The other variables can be de\336ned in terms of) 207 380.66 P
+-0.13 (other variables \050and et cetera\051; however) 207 368.66 P
+-0.13 (, no variable can be directly or indirectly de\336ned) 364.43 368.66 P
+(in terms of itself \050to keep the problem from gravitating away from a pedagogical one\051.) 207 356.66 T
+0 F
+(6.2) 184.11 326.66 T
+(Language De\336nition) 207 326.66 T
+1 F
+3.16 (As is disucssed in many texts on the implementation of programming language) 207 310.66 P
+1.58 (translators and compilers, a language is de\336ned at four levels: lexical, grammatical,) 207 300.66 P
+0.67 (semantics, and evaluation \050or code generation\051. Each of the four levels is discussed in) 207 290.66 P
+-0.25 (the following four sections. Their implementation in the framework of the Apt Compiler) 207 280.66 P
+(T) 207 270.66 T
+(oolkit is the subject of the next section.) 212.41 270.66 T
+0 9 Q
+(6.2.1) 178.01 249.33 T
+(EBNF Grammar) 207 249.33 T
+1 10 Q
+0.46 (Below is a grammar for the Equation Language which was outlined in section 6.1. W) 207 234.66 P
+0.46 (e) 553.56 234.66 P
+0.42 (de\336ne it in EBNF form to be concise. As an exercise for the reader) 207 224.66 P
+0.42 (, convert the EBNF) 479.02 224.66 P
+1.32 (grammar into LL\0501\051 form. W) 207 214.66 P
+1.32 (e do not require you to do this exercise but consider it) 328.34 214.66 P
+(worth your while from a pedagogical standpoint.) 207 204.66 T
+(Program ::= { Equation }) 207 180.66 T
+(Equation ::= V) 207 168.66 T
+(ar := Expression) 265.39 168.66 T
+(Expression ::= T) 207 156.66 T
+(erm { AddOp T) 273.01 156.66 T
+(erm }) 335.68 156.66 T
+(T) 207 144.66 T
+(erm ::= Factor { MulOp Factor }) 212.41 144.66 T
+(Factor ::= Base { ExpOp Base }) 207 132.66 T
+(Base ::= integer | number | V) 207 120.66 T
+(ar | \050 Expression \051) 321.01 120.66 T
+(MulOp ::= * | /) 207 108.66 T
+(AddOp ::= + / -) 207 96.66 T
+FMENDPAGE
+%%EndPage: "42" 43
+%%Page: "43" 43
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(How to Design a T) 207 739.85 T
+(ranslator) 284.41 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(43 of 47) 524.53 60.96 T
+1 10 Q
+(ExpOp ::= **) 207 680.66 T
+(V) 207 668.66 T
+(ar ::= identi\336er) 213.11 668.66 T
+0.39 (A program is de\336ned to be a list of equations, which possibly is empty) 207 644.66 P
+0.39 (. An equation is) 493.52 644.66 P
+3.29 (an assignment of an arithmetic expression to a variable. The dif) 207 634.66 P
+3.29 (ferent types of) 493.69 634.66 P
+2.37 (expression are addition, subtraction, multiplication, division, and exponentiation in) 207 624.66 P
+3.5 (increasing precedence. The precedence levels can be overridden via the use of) 207 614.66 P
+0.92 (parentheses \050also known as the grouping operators\051. The operands of expressions can) 207 604.66 P
+(either be numbers, variables, or expressions \050because of grouping\051.) 207 594.66 T
+0.04 (In our de\336nition of the language syntax it is especially important to note that we are not) 207 570.66 P
+0.75 (de\336ning semantics. For instance the details of intermediate representation, translation,) 207 560.66 P
+2.16 (and evaluation are omitted. The discussion of semantics is deferred until we have) 207 550.66 P
+(discussed the lexical elements of the equation language.) 207 540.66 T
+0 9 Q
+(6.2.2) 178.01 519.33 T
+(Lexical Elements \050T) 207 519.33 T
+(okens\051) 290.25 519.33 T
+1 10 Q
+(The de\336nition of lexical elements is commonly derived from two sources:) 207 492.66 T
+3 11 Q
+(\245) 207 479.66 T
+1 10 Q
+(the language grammar \050above\051) 220.74 479.66 T
+3 11 Q
+(\245) 207 464.66 T
+1 10 Q
+(non-syntactic lexical elements) 220.74 464.66 T
+0.87 (The lexical elements from the language grammar include all of the terminal symbols.) 207 438.66 P
+0.16 (W) 207 428.66 P
+0.16 (e caution the reader that we are making a distinction which is not commonly made in) 215.63 428.66 P
+-0.24 (the de\336nition of a language. The Pascal and C programming language grammars contain) 207 418.66 P
+1.39 (de\336nitions for lexical elements which are nonterminal symbols. W) 207 408.66 P
+1.39 (e believe this is a) 483.58 408.66 P
+1.59 (rotten idea, because it is dif) 207 398.66 P
+1.59 (\336cult to comprehend the dif) 324.71 398.66 P
+1.59 (ference between lexical and) 441.94 398.66 P
+2.12 (syntactic constructs. As we only intend to caution you, we now de\336ne the lexical) 207 388.66 P
+(elements which are terminal symbols.) 207 378.66 T
+(:=) 207 354.66 T
+(the assignment operator) 360 354.66 T
+(+) 207 342.66 T
+(the addition operator) 360 342.66 T
+(-) 207 330.66 T
+(the subtraction operator) 360 330.66 T
+(*) 207 318.66 T
+(the multiplication operator) 360 318.66 T
+(**) 207 306.66 T
+(the exponentiation operator) 360 306.66 T
+(/) 207 294.66 T
+(the division operator) 360 294.66 T
+(identi\336er) 207 282.66 T
+(an alphabetic character followed by alphabetic) 360 282.66 T
+(or) 360 270.66 T
+(numeric char) 370.82 270.66 T
+(number) 207 258.66 T
+(a signed integer or \337oating point number) 360 258.66 T
+(\050) 207 246.66 T
+(left parenthesis) 360 246.66 T
+(\051) 207 234.66 T
+(right parenthesis) 360 234.66 T
+0.1 (Also included among the lexical elements are non-syntactic constructs. A non-syntactic) 207 210.66 P
+2.49 (construct is one which has no syntactic value. One non-syntactic construct is the) 207 200.66 P
+0.03 (comment, which is found in many useful programming languages. There are others, but) 207 190.66 P
+(we will not discuss them here.) 207 180.66 T
+0.66 (W) 207 156.66 P
+0.66 (e de\336ne two styles of comment: line-comments and free-comments. Line-comments) 215.63 156.66 P
+0.92 (are de\336ned as a pound sign, #, followed by any characters and terminated by end-of-) 207 146.66 P
+0.37 (line. Free-comments are de\336ned to be identical to C comments: an opener /*, followed) 207 136.66 P
+0.38 (by any characters, and terminated by a closer */. As in the C language, comments may) 207 126.66 P
+(not be nested.) 207 116.66 T
+FMENDPAGE
+%%EndPage: "43" 44
+%%Page: "44" 44
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(How to Design a T) 207 739.85 T
+(ranslator) 284.41 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(44 of 47) 524.53 60.96 T
+(6.2.3) 178.01 681.33 T
+(Intermediate Representation) 207 681.33 T
+1 10 Q
+1.53 (There is one type of structure to be built based on syntax alone: an expression. An) 207 666.66 P
+0.01 (expression is either a binary expression, or a leaf. A binary expression is de\336ned to be a) 207 656.66 P
+0.04 (binary operator \050one of the above addition, multiplication, or exponentiation operators\051.) 207 646.66 P
+(A leaf expression is de\336ned to be either a number or an identi\336er) 207 636.66 T
+(.) 466.26 636.66 T
+2.68 (In addition to the above data structure, a symbol table will be used to maintain) 207 614.66 P
+0.63 (associations between a variable and an expression \050which is really the de\336nition of an) 207 602.66 P
+-0.08 (equation\051. A list of variables to be evaluated will also be maintained in a queue. W) 207 590.66 P
+-0.08 (e will) 535.59 590.66 P
+1.46 (encode semantic actions for these purposes; however) 207 578.66 P
+1.46 (, most semantic actions will be) 427.43 578.66 P
+(generated by the Apt Node T) 207 566.66 T
+(ool.) 322.6 566.66 T
+0.16 (Now we will encode APT) 207 542.66 P
+0.16 (, AST) 310.7 542.66 P
+0.16 (, and ANT speci\336cation \336les for the language grammar) 333.99 542.66 P
+0.16 (,) 555.5 542.66 P
+(then lexical scanner) 207 530.66 T
+(, and the data structures.) 285.98 530.66 T
+0 9 Q
+(6.2.4) 178.01 507.33 T
+(Evaluation Semantics) 207 507.33 T
+1 10 Q
+0.22 (Once the intermediate representation has been determined, we can de\336ne the semantics) 207 492.66 P
+-0.01 (of the equation language. W) 207 482.66 P
+-0.01 (e know from syntax that a program is a list of equations. As) 319.12 482.66 P
+0.53 (we encounter an equation, we can maintain a list of variables which appear on the left) 207 472.66 P
+1.65 (hand side of the assignment operator) 207 462.66 P
+1.65 (. This list comprises the list of variables to be) 361.56 462.66 P
+0.01 (evaluated. For each variable v in the list L, we call a function to evaluate the expression) 207 452.66 P
+2.85 (which de\336nes the variable v) 207 442.66 P
+2.85 (. The evaluation function recursively walks over the) 329.88 442.66 P
+0.92 (expression tree and encounters variables and numbers. The evaluation of a number is) 207 432.66 P
+0.03 (simply the number itself; the evaluation of a variable is an evaluation of its de\336nition in) 207 422.66 P
+1.1 (the symbol table. When a value is obtained as a result of evaluating a de\336nition, the) 207 412.66 P
+0.11 (de\336nition is updated to be a value \050which will cause the next evaluation of a variable to) 207 402.66 P
+(be trivial, since it will be associated with a number instead of an expression\051.) 207 392.66 T
+0 F
+(6.3) 184.11 364.66 T
+(Implementation) 207 364.66 T
+0 9 Q
+(6.3.1) 178.01 341.33 T
+(The APT Speci\336cation File) 207 341.33 T
+1 10 Q
+2.04 (The APT speci\336cation \336le is encoded directly from the EBNF grammar after it is) 207 326.66 P
+-0.22 (translated by hand into LL\0501\051 form. W) 207 316.66 P
+-0.22 (e have also de\336ned the end-of-phrase markers and) 358.91 316.66 P
+(the interface to the semantic routines \050whose details will be unveiled later\051.) 207 306.66 T
+(%PRODUCTIONS) 207 282.66 T
+(Program -> _Prologue EquationList _Evaluate _Epilogue) 207 270.66 T
+(EquationList -> Equation ; EquationList) 207 258.66 T
+(EquationList ->) 207 246.66 T
+(Equation -> V) 207 234.66 T
+(ar := Expression _Equation) 263.16 234.66 T
+(Expression ->T) 207 222.66 T
+(erm) 268.29 222.66 T
+(Expression1 -> AddOp T) 207 210.66 T
+(erm _ExprBinOpNew) 307.7 210.66 T
+(Expression1 ->) 207 198.66 T
+(T) 207 186.66 T
+(erm -> Factor T) 212.41 186.66 T
+(erm1) 275.35 186.66 T
+(T) 207 174.66 T
+(erm1 -> MulOp Factor _ExprBinOpNew) 212.41 174.66 T
+(T) 207 162.66 T
+(erm1 ->) 212.41 162.66 T
+(Factor -> Base) 207 150.66 T
+(Factor1 ->ExpOp Base _ExprBinOpNew) 207 138.66 T
+(Factor1 ->) 207 126.66 T
+(Base -> number _ExprLeafNumNew) 207 114.66 T
+(Base -> V) 207 102.66 T
+(ar _ExprLeafV) 246.5 102.66 T
+(arNew) 305.61 102.66 T
+FMENDPAGE
+%%EndPage: "44" 45
+%%Page: "45" 45
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(How to Design a T) 207 739.85 T
+(ranslator) 284.41 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(45 of 47) 524.53 60.96 T
+1 10 Q
+(Base -> \050 Expression \051 _Parens) 207 680.66 T
+(MulOp ->*) 207 668.66 T
+(MulOp -> /) 207 656.66 T
+(AddOp -> +) 207 644.66 T
+(AddOp -> -) 207 632.66 T
+(ExpOp -> **) 207 620.66 T
+(V) 207 608.66 T
+(ar -> identi\336er) 213.11 608.66 T
+(%ALIASES) 207 596.66 T
+(:= assign) 207 584.66 T
+(* mulop) 207 572.66 T
+(/ divop) 207 560.66 T
+(+ addop) 207 548.66 T
+(- subop) 207 536.66 T
+(** expop) 207 524.66 T
+(\050 lparen) 207 512.66 T
+(\051 rparen) 207 500.66 T
+(; semico) 207 488.66 T
+(%ACTIONS) 207 476.66 T
+(_Prologue) 207 464.66 T
+(SemPrologue\050\051:\050V) 248.09 464.66 T
+(oid,0\051) 320.64 464.66 T
+(_Evaluate) 207 452.66 T
+(SemEvaluate\050\051:\050V) 249.47 452.66 T
+(oid,0\051) 320.9 452.66 T
+(_Equation) 207 440.66 T
+(SemEquation\0503:T) 248.09 440.66 T
+(oken,1:Expr\051:\050V) 318.46 440.66 T
+(oid,3\051) 382.95 440.66 T
+(_ExprBinOpNew) 207 428.66 T
+(ExprBinOpNew\0503:Expr) 276.95 428.66 T
+(,2:T) 372.04 428.66 T
+(oken,1:Expr\051:\050Expr) 387.72 428.66 T
+(,3\051) 465.32 428.66 T
+(_ExprLeafNumNew) 207 416.66 T
+(ExprLeafNumNew\0501:T) 288.6 416.66 T
+(oken\051:\050Expr) 381.7 416.66 T
+(,1\051) 429.6 416.66 T
+(_ExprLeafV) 207 404.66 T
+(arNew) 255.84 404.66 T
+(ExprLeafV) 282.48 404.66 T
+(arNew\0501:T) 326.32 404.66 T
+(oken\051:\050Expr) 369.47 404.66 T
+(,1\051) 417.36 404.66 T
+(_Parens) 207 392.66 T
+(SemParens\0502:Expr\051:\050Expr) 238.64 392.66 T
+(,3\051) 342.06 392.66 T
+(_Epilogue) 207 380.66 T
+(SemEpilogue\050\051:\050V) 248.09 380.66 T
+(oid,0\051) 320.64 380.66 T
+(%FIDUCIALS) 207 368.66 T
+(;) 207 356.66 T
+0 9 Q
+(6.3.2) 178.01 335.33 T
+(The AST Speci\336cation File) 207 335.33 T
+1 10 Q
+1.36 (The AST speci\336cation \336le is directly encoded as a DFSM which accepts the lexical) 207 320.66 P
+0.78 (elements described previously) 207 310.66 P
+0.78 (. Every lexical action which occurs on a transition from) 328.93 310.66 P
+0.16 (the start state \050prominently labelled Start\051 employs an initial form of the built-in lexical) 207 300.66 P
+0.96 (actions to record the starting line and column positions of the token. Also, notice the) 207 290.66 P
+1.43 (existence of a rule for the de\336nition of a special token EoF) 207 280.66 P
+1.43 (. This token is presently) 456.5 280.66 P
+0.43 (required by the Apt Compiler T) 207 270.66 P
+0.43 (oolkit and is assumed to exist by the Apt Parsing T) 335.32 270.66 P
+0.43 (ool.) 542.73 270.66 P
+(Always include the rule in the AST speci\336cation \336le.) 207 260.66 T
+(Start \322:\323 AssignOp InitAdvance) 207 236.66 T
+(Start \322+\323 Start InitMatch addop) 207 224.66 T
+(Start \322-\323 Start InitMatch subop) 207 212.66 T
+(Start \322*\323 ExpOp InitAdvance) 207 200.66 T
+(Start \322/\323 Start InitMatch divop) 207 188.66 T
+(Start alpha Identi\336er InitAdvance) 207 176.66 T
+(Start numeric Number InitAdvance) 207 164.66 T
+(Start \322\050\322 Start InitMatch lparen) 207 152.66 T
+(Start \322\051\323 Start InitMatch rparen) 207 140.66 T
+(Start \322;\323 Start InitMatch semico) 207 128.66 T
+(Start EndOfFile Start InitIgnore EoF) 207 116.66 T
+(AssignOp \322=\323 AssignOpMatch assign) 207 104.66 T
+(AssignOp lambda PushBack Start) 207 92.66 T
+FMENDPAGE
+%%EndPage: "45" 46
+%%Page: "46" 46
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(How to Design a T) 207 739.85 T
+(ranslator) 284.41 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(46 of 47) 524.53 60.96 T
+1 10 Q
+(ExpOp \322*\323 ExpOp Match expop) 207 680.66 T
+(ExpOp lambda ExpOp PushBack mulop) 207 668.66 T
+(Identi\336er alphanumeric Identi\336er Advance) 207 656.66 T
+(Identi\336er lambda Identi\336er PushBack identi\336er) 207 644.66 T
+(Number numeric Number Advance) 207 632.66 T
+(Number \322.\323 NumberDot Advance) 207 620.66 T
+(Number lambda Number PushBack number) 207 608.66 T
+(NumberDot number NumberDot Advance) 207 596.66 T
+(NumberDot lambda NumberDot PushBack number) 207 584.66 T
+0 9 Q
+(6.3.3) 178.01 563.33 T
+(The ANT Speci\336cation File) 207 563.33 T
+1 10 Q
+0.08 (The ANT speci\336cation \336le will generate code to build the various data structures which) 207 548.66 P
+3.22 (comprise the intermediate representation. The three slots \050BinOp, LeafNum, and) 207 538.66 P
+0.81 (LeafV) 207 528.66 P
+0.81 (ar\051 are all classi\336ed as Expr) 231.42 528.66 P
+0.81 (. When this \336le is processed by the Apt Node T) 345.68 528.66 P
+0.81 (ool,) 542.73 528.66 P
+2.12 (three semantic routines will be generated: ExprBinOpNew) 207 518.66 P
+2.12 (, ExprLeafNumNew) 453.37 518.66 P
+2.12 (, and) 536.45 518.66 P
+(ExprLeafV) 207 508.66 T
+(arNew) 250.85 508.66 T
+(.) 276.83 508.66 T
+(include \322asttype.h\323) 207 484.66 T
+(node Expr {) 207 460.66 T
+(slot BinOp {) 225 448.66 T
+(T) 243 436.66 T
+(oken operator;) 248.41 436.66 T
+(Expr left, right;) 243 424.66 T
+(};) 225 412.66 T
+(slot LeafNum {) 225 400.66 T
+(T) 243 388.66 T
+(oken number;) 248.41 388.66 T
+(};) 225 376.66 T
+(slot LeafV) 225 364.66 T
+(ar {) 266.36 364.66 T
+(T) 243 352.66 T
+(oken name;) 248.41 352.66 T
+(};) 225 340.66 T
+(}) 207 328.66 T
+0 9 Q
+(6.3.4) 178.01 307.33 T
+(The Remaining Semantic Actions) 207 307.33 T
+1 10 Q
+0.57 (As the Apt Compiler T) 207 292.66 P
+0.57 (oolkit does not yet include a code generation tool \050or a tool for) 300.76 292.66 P
+0.16 (the automatic speci\336cation of semantics\051, one must write some code by hand. The code) 207 282.66 P
+0.4 (one must write, however) 207 272.66 P
+0.4 (, is generally more interesting than the code one must write to) 306.6 272.66 P
+-0.12 (do lexical analysis, parsing, and data structures. The \336ve routines which must be written) 207 262.66 P
+1.85 (for the equation language include the prologue and the epilogue, the evaluator) 207 252.66 P
+1.85 (, the) 538.94 252.66 P
+-0.17 (routine which does nothing, and the installation of an equation into the symbol table and) 207 242.66 P
+(the list of variables to be evaluated.) 207 232.66 T
+(#include \322eqnodes.h\323) 207 196.66 T
+(#include \322eqparse.h\323) 207 184.66 T
+(#include \322eqscanner) 207 172.66 T
+(.h\323) 287.77 172.66 T
+(Queue varQueue;) 207 148.66 T
+(HashT) 207 136.66 T
+(able varT) 232.95 136.66 T
+(able;) 270.27 136.66 T
+(/* allocate global data structures */) 207 112.66 T
+(V) 207 100.66 T
+(oid SemPrologue\050void\051) 212.93 100.66 T
+FMENDPAGE
+%%EndPage: "46" 47
+%%Page: "47" 47
+612 792 0 FMBEGINPAGE
+72 750.68 558 750.68 2 L
+2 H
+0 Z
+0 X
+0 K
+N
+0 9 Q
+(How to Design a T) 207 739.85 T
+(ranslator) 284.41 739.85 T
+72 726.98 558 726.98 2 L
+0.25 H
+N
+72 75.33 558 75.33 2 L
+2 Z
+N
+(Apt Compiler T) 207 60.96 T
+(oolkit) 270.75 60.96 T
+(47 of 47) 524.53 60.96 T
+1 10 Q
+({) 207 680.66 T
+(varQueue = QueueNew\050\051;) 225 668.66 T
+(varT) 225 656.66 T
+(able = HashT) 243.17 656.66 T
+(ableA) 296.4 656.66 T
+(VLNew\050100, StringHash1, CompareStrings, NULL\051;) 318.98 656.66 T
+(}) 207 644.66 T
+(/* install de\336nition of var into symbol table */) 207 620.66 T
+(V) 207 608.66 T
+(oid SemEquation\050T) 212.93 608.66 T
+(oken var) 290.79 608.66 T
+(, Expr expression\051) 325.08 608.66 T
+({) 207 596.66 T
+(if \050HashT) 225 584.66 T
+(ableA) 262.88 584.66 T
+(VLLookUpFirst\050varT) 285.46 584.66 T
+(able, var) 371.92 584.66 T
+(->text\051 == NULL\051) 406.13 584.66 T
+(HashT) 243 572.66 T
+(ableA) 268.95 572.66 T
+(VLInsert\050varT) 291.52 572.66 T
+(able, var) 349.1 572.66 T
+(->text, expression\051;) 383.31 572.66 T
+(else) 225 560.66 T
+(error\050\322rede\336ned variable\323, var) 243 548.66 T
+(->text\051;) 364.06 548.66 T
+(}) 207 536.66 T
+(/* an action which merely returns the expression enclosed in parentheses */) 207 512.66 T
+(V) 207 500.66 T
+(oid SemParens\050Expr parenExp\051) 212.93 500.66 T
+({) 207 488.66 T
+(return parenExp;) 225 476.66 T
+(}) 207 464.66 T
+(/* evaluate all variables in the global queue */) 207 440.66 T
+(V) 207 428.66 T
+(oid SemEvaluate\050void\051) 212.93 428.66 T
+({) 207 416.66 T
+(/* see distribution diskettes/tape for the code */) 225 404.66 T
+(}) 207 392.66 T
+(/* clean up the global data structures */) 207 368.66 T
+(V) 207 356.66 T
+(oid SemEpilogue\050void\051) 212.93 356.66 T
+({) 207 344.66 T
+(QueueDispose\050varQueue, NULL\051;) 225 332.66 T
+(HashT) 225 320.66 T
+(ableA) 250.95 320.66 T
+(VLPtrDispose\050varT) 273.52 320.66 T
+(able\051;) 352.21 320.66 T
+(}) 207 308.66 T
+0 F
+(6.4) 184.11 268.66 T
+(Conclusion) 207 268.66 T
+1 F
+2.63 (W) 207 252.66 P
+2.63 (e have successfully designed and implemented our \336rst translator with the Apt) 215.63 252.66 P
+1.37 (Compiler T) 207 242.66 P
+1.37 (oolkit. All there is to it involves the parser speci\336cation \336le, the scanner) 254.03 242.66 P
+-0.25 (speci\336cation \336le, the node speci\336cation \336le, and the user speci\336cation \336le of actions. All) 207 232.66 P
+1.12 (of these \336les are included in the ACT distribution archive \050which is described in the) 207 222.66 P
+-0.25 (appendix\051. Supplied with these \336les is a relatively generic make\336le which can be used to) 207 212.66 P
+1.3 (automate the compilation and linkage of the translator) 207 202.66 P
+1.3 (. All one must do is name the) 431.77 202.66 P
+1.53 (speci\336cation and code \336les appropriately) 207 192.66 P
+1.53 (. As all of these are implementation details) 376.26 192.66 P
+0.37 (\050which are somewhat speci\336c to operating systems and compiler implementations\051, we) 207 182.66 P
+(elide all details of the build process here and defer it to the appendix.) 207 172.66 T
+0.05 (W) 207 148.66 P
+0.05 (e now turn you loose on the Apt Compiler T) 215.63 148.66 P
+0.05 (oolkit and hope you will \336nd it useful for) 392.73 148.66 P
+1.01 (either a course on compilers or your own personal translator) 207 138.66 P
+1.01 (. The appendices discuss) 456.16 138.66 P
+0.37 (how to obtain the current version of ACT) 207 128.66 P
+0.37 (, how to use ACT under Unix and DOS, how) 374.54 128.66 P
+0.77 (to rebuild ACT with another compiler) 207 118.66 P
+0.77 (, and how the generic make\336le can be used and) 362.31 118.66 P
+(tailored to suit your needs.) 207 108.66 T
+FMENDPAGE
+%%EndPage: "47" 48
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%Pages: 47 1
+%%DocumentFonts: Helvetica-Bold
+%%+ Times-Roman
+%%+ Times-Bold
+%%+ Courier-Bold

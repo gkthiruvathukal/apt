@@ -1,0 +1,68 @@
+#ifndef test_pt
+#define test_pt
+
+#include "test.td"
+
+#ifdef __ANSI_C__
+Token semBeginActions(void);
+Token semBeginAliases(void);
+Token semBeginFiducials(void);
+Token semBeginPhaseIds(void);
+Token semBeginPhases(void);
+Token semBeginProductions(void);
+Token semBeginSpec(void);
+Token semDoAction(Token, Token, Token, Token);
+Token semDoAlias(Token, Token);
+Token semDoFiducial(Token);
+Token semDoPhase(Token);
+Token semDoPhaseId(Token);
+Token semDoProduction(Token);
+Void semEatEoL(void);
+Token semEndActions(void);
+Token semEndAliases(void);
+Token semEndFiducials(void);
+Token semEndPhaseIds(void);
+Token semEndPhases(void);
+Token semEndProductions(void);
+Token semEndSpec(void);
+Token semListEmpty(void);
+Token semListGroup(void);
+Token semParamChar(Token);
+Token semParamEnum(Token);
+Token semParamInt(Token);
+Token semParamStack(Token, Token);
+Token semParamString(Token);
+Token semRhsIdent(Token);
+#else
+Token semBeginActions();
+Token semBeginAliases();
+Token semBeginFiducials();
+Token semBeginPhaseIds();
+Token semBeginPhases();
+Token semBeginProductions();
+Token semBeginSpec();
+Token semDoAction();
+Token semDoAlias();
+Token semDoFiducial();
+Token semDoPhase();
+Token semDoPhaseId();
+Token semDoProduction();
+Void semEatEoL();
+Token semEndActions();
+Token semEndAliases();
+Token semEndFiducials();
+Token semEndPhaseIds();
+Token semEndPhases();
+Token semEndProductions();
+Token semEndSpec();
+Token semListEmpty();
+Token semListGroup();
+Token semParamChar();
+Token semParamEnum();
+Token semParamInt();
+Token semParamStack();
+Token semParamString();
+Token semRhsIdent();
+#endif /* __ANSI_C__ */
+
+#endif /* test_pt */

@@ -1,0 +1,26 @@
+simple.ast is a description of an FSA to support input tokens similar to
+those found in languages like Perl, Icon, and Python. (Comment lines 
+begin with "#", which is the major difference.
+
+test1.data and test2.data are sample input files. You can use these to see
+the tokens printed one by one.
+
+To run, here is all you need to do:
+
+1. Recompile everything. Best way to do that:
+   javac *.java org/jhpc/apt/*.java
+
+2. Run TestScannerSimple with the test cases.
+   java TestScannerSimple test1.data
+   java TestScannerSimple test2.data
+   
+
+Note: ScannerSimple is a generated file. It makes use of the Apt Scanning
+Library, which was ported to Java by George T. on July 31, 1999. This library
+can be studied in subdirectory org/jhpc/apt.
+
+Good luck.
+George
+
+
+

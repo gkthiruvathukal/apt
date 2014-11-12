@@ -1,0 +1,117 @@
+/*
+ * a-<<<TYPE>>>.c - functions to allocate arrays of <<<TYPE>>>
+ *
+ * copyright (c) 1991, George K. Thiruvathukal
+ * This file is distributed with the Apt Compiler Toolkit
+ * see array.ht for instructions
+ */
+
+#include "a-<<<TYPE>>>.h"
+
+#include <stdio.h>
+#ifdef __STDC__
+#include <stdlib.h>
+#endif
+
+#ifdef __STDC__
+<<<TYPE>>> *New1DOf<<<TYPE>>> (int l1, int h1)
+#else
+<<<TYPE>>> *New1DOf<<<TYPE>>> (l1, h1)
+int l1, h1;
+#endif
+{
+  <<<TYPE>>> *x = (<<<TYPE>>> *)calloc( (h1 - l1 + 1), sizeof(<<<TYPE>>>));
+  if (x == NULL) {
+    fprintf(stderr,"New1DOf<<<TYPE>>>: allocation failure.\n");
+    return NULL;
+  }
+  return x - l1;
+}
+
+#ifdef __STDC__
+<<<TYPE>>> **New2DOf<<<TYPE>>> (int l1, int h1, int l2, int h2)
+#else
+<<<TYPE>>> **New2DOf<<<TYPE>>> (l1, h1, l2, h2)
+int l1, h1, l2, h2;
+#endif
+{
+  <<<TYPE>>> **x = (<<<TYPE>>> **)calloc( (h1 - l1 + 1), sizeof(<<<TYPE>>> *));
+  int i;
+
+  if (x == NULL) {
+    fprintf(stderr,"New2DOf<<<TYPE>>>: allocation failure; dimension 1\n");
+    return NULL;
+  }
+  x -= l1;
+  for (i=l1; i <= h1; i++) {
+    x[i] = New1DOf<<<TYPE>>> (l2, h2);
+    if (x[i] == NULL) {
+      gprintf(stderr,"New2DOf<<<TYPE>>>: allocation failure; dimension 2\n");
+      return NULL;
+    }
+  }
+  return x;
+} 
+    
+#ifdef __STDC__
+<<<TYPE>>> ***New3DOf<<<TYPE>>> (int l1, int h1, int l2, int h2, int l3, int h3)
+#else
+<<<TYPE>>> ***New3DOf<<<TYPE>>> (l1, h1, l2, h2, l3, h3)
+int l1, h1, l2, h2, l3, h3;
+#endif
+{
+  <<<TYPE>>> ***x = (<<<TYPE>>> ***)calloc( (h1 - l1 + 1), sizeof(<<<TYPE>>> **));
+  int i;
+
+  if (x == NULL) {
+    fprintf(stderr,"New3DOf<<<TYPE>>>: allocation failure; dimension 1\n");
+    return NULL;
+  }
+  x -= l1;
+  for (i=l1; i <= h1; i++) {
+    x[i] = New2DOf<<<TYPE>>> (l2, h2, l3, h3);
+    if (x[i] == NULL) {
+      gprintf(stderr,"New3DOf<<<TYPE>>>: allocation failure; dimension 2\n");
+      return NULL;
+    }
+  }
+  return x;
+}
+
+#ifdef __STDC__
+void Dispose1DOf<<<TYPE>>> (<<<TYPE>>> *a)
+#else
+void Dispose1DOf<<<TYPE>>> (a)
+<<<TYPE>>> *a;
+#endif
+{
+  free(a);
+}
+
+#ifdef __STDC__
+void Dispose2DOf<<<TYPE>>> (<<<TYPE>>> **a, int l1, int h1)
+#else
+void Dispose2DOf<<<TYPE>>> (a, l1, h1)
+<<<TYPE>>> **a;
+int l1, h1;
+#endif
+{
+  int i;
+
+  for (i=l1; i <= h1; i++)
+    Dispose1DOf<<<TYPE>>> (a[i]);
+}
+
+#ifdef __STDC__
+void Dispose3DOf<<<TYPE>>> (<<<TYPE>>> ***a, int l1, int h1, int l2, int h2)
+#else
+void Dispose3DOf<<<TYPE>>> (a, l1, h1, l2, h2)
+<<<TYPE>>> ***a;
+int l1, h1, l2, h2;
+#endif
+{
+  int i;
+
+  for (i=l1; i <= h1; i++)
+    Dispose2DOf<<<TYPE>>> (a[i],l2,h2);
+}

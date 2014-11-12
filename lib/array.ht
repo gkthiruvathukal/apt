@@ -1,0 +1,49 @@
+/*
+ * array.ht - header file template for the parameterized array package
+ *
+ * author: George K. Thiruvathukal
+ *
+ * note: these routines are supplied with the Apt Compiler Toolkit
+ *       copyright (c); 1991, George K. Thiruvathukal
+ *
+ * to make routines to allocate 1D, 2D, and 3D arrays of a named type,
+ * use the Unix sed utility, replace <type-name> with an identifier.:
+ *
+ *  sed -e '1,$ s/<<<TYPE>>>/<type-name>/g' array.ht > <type-name>-array.h
+ */
+
+#ifdef __ANSI_C__
+<<<TYPE>>> *New1DOf<<<TYPE>>> (int l1, int h1);
+#else
+<<<TYPE>>> *New1DOf<<<TYPE>>> ();
+#endif
+
+#ifdef __ANSI_C__
+<<<TYPE>>> **New2DOf<<<TYPE>>> (int l1, int h1, int l2, int h2);
+#else
+<<<TYPE>>> **New2DOf<<<TYPE>>> ();
+#endif
+    
+#ifdef __ANSI_C__
+<<<TYPE>>> ***New3DOf<<<TYPE>>> (int l1, int h1, int l2, int h2, int l3, int h3);
+#else
+<<<TYPE>>> ***New3DOf<<<TYPE>>> ();
+#endif
+
+#ifdef __ANSI_C__
+void Dispose1DOf<<<TYPE>>> (<<<TYPE>>> *a);
+#else
+void Dispose1DOf<<<TYPE>>> ();
+#endif
+
+#ifdef __ANSI_C__
+void Dispose2DOf<<<TYPE>>> (<<<TYPE>>> **a, int l1, int h1);
+#else
+void Dispose2DOf<<<TYPE>>> ();
+#endif
+
+#ifdef __ANSI_C__
+void Dispose3DOf<<<TYPE>>> (<<<TYPE>>> ***a, int l1, int h1, int l2, int h2);
+#else
+void Dispose3DOf<<<TYPE>>> ();
+#endif

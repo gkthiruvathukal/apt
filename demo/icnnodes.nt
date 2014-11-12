@@ -1,0 +1,282 @@
+include asttype.h
+include queue.h
+
+enum BinOp {
+  BinOpMultiply,
+  BinOpDivide,
+  BinOpMod,
+  BinOpIntersect,
+  BinOpAdd,
+  BinOpSubtract,
+  BinOpUnion,
+  BinOpDifference,
+  BinOpScan,
+  BinOpAssign,
+  BinOpConjoin,
+  BinOpAlternate,
+  BinOpMultiplyAssign,
+  BinOpDivideAssign,
+  BinOpModAssign,
+  BinOpIntersectAssign,
+  BinOpAddAssign,
+  BinOpSubtractAssign,
+  BinOpUnionAssign,
+  BinOpDifferenceAssign,
+  BinOpScanAssign,
+  BinOpUndefined
+};
+
+enum LeafType {
+  LeafTypeAny,
+  LeafTypeInteger,
+  LeafTypeReal,
+  LeafTypeString,
+  LeafTypeCset,
+  LeafTypeVoid,
+  LeafTypeUndefined
+};
+
+enum RangeType {
+  RangeStandard,
+  RangePlus,
+  RangeMinus,
+  RangeUndefined
+};
+
+enum RelOp {
+  RelOpEqual,
+  RelOpLessThan,
+  RelOpLessThanEqual,
+  RelOpGreaterThan,
+  RelOpGreaterThanEqual,
+  RelOpNotEqual,
+  RelOpUndefined
+};
+
+enum Sides {
+  Left,
+  Right
+};
+
+enum TernaryOp {
+  TernaryOpToBy
+};
+
+enum UnaryOp {
+  UnaryOpNot,
+  UnaryOpAlternate,
+  UnaryOpGenerate,
+  UnaryOpSizeOf,
+  UnaryOpPlus,
+  UnaryOpMinus,
+  UnaryOpDereference,
+  UnaryOpNull,
+  UnaryOpEqual,
+  UnaryOpScan,
+  UnaryOpNotNull,
+  UnaryOpCsetComplement,
+  UnaryOpActivate,
+  UnaryOpRefresh,
+  UnaryOpUndefined
+};
+
+node CaseClause {
+  Expression tag, e;
+} 
+
+node EquivInfo {
+  Token x, y;
+}
+
+node Type {
+  slot Record {
+    Queue fields;
+  }
+  slot Union {
+    Queue fields;
+  }
+  slot Field {
+    Token name;
+    Type type;
+  }
+  slot Id {
+    Token id;
+  }
+  slot Leaf {
+    LeafType type;
+  }
+  slot Set {
+    Type type;
+  }
+  slot List {
+    Type type;
+  }
+  slot Table {
+    Type index, type;
+  }
+  slot Procedure {
+    Queue params;
+    Type type;
+  }
+  slot Ref {
+    Type type;
+  } 
+}
+ 
+node Expression {
+  slot Unary {
+    UnaryOp op;
+    Expression e;
+  }
+  slot Binary {
+    BinOp op;
+    Expression e1, e2;
+  }
+  slot Ternary {
+    TernaryOp op;
+    Expression e1, e2, e3;
+  }
+  slot RelOp {
+    RelOp op;
+    Expression e1, e2;
+  }
+  slot ProcCall {
+    Expression proc;
+    Queue params;
+  }
+  slot Subscript {
+    Expression array;
+    Expression subscript;
+  }
+  slot Cast {
+    Expression e;
+    Type t;
+  }
+  slot FieldRef {
+    Expression e;
+    Token field;
+  }
+  slot Repeat {
+    Expression e;
+  }
+  slot While {
+    Expression e, body;
+  }
+  slot Until {
+    Expression e, body;
+  }
+  slot Every {
+    Expression e, body;
+  }
+  slot If {
+    Expression cond, e_true, e_false;
+  }
+  slot Case {
+    Expression cond;
+    Queue cases;
+  }
+  slot Next {
+  }
+  slot Break {
+    Expression e;
+  }
+  slot Return {
+    Expression e;
+  }
+  slot Suspend {
+    Expression e;
+  }
+  slot Fail {
+  } 
+  slot Create {
+    Expression e;
+  }
+  slot ListCons {
+    Queue elements;
+  }
+  slot Range {
+    RangeType rt;
+    Expression low;
+    Expression high;
+  }
+  slot Sequence {
+    Queue elements;
+  }
+  slot ConstInt {
+    signed long int value;
+  }
+  slot ConstReal {
+    double value;
+  }
+  slot ConstCset {
+    char *value;
+  }
+  slot ConstString {
+    char *value;
+  }
+  slot Var {
+    Token id;
+    null int location;
+  }
+  slot Convert {
+    Type srcType;
+    Type dstType;
+    Expression e;
+  }
+  null Sides side;
+  null Type type;
+}
+
+node Misc {
+  slot Parameter {
+    int refFlag;
+    Token name;
+    Type type;
+  }
+  slot ProcHead {
+    Token name;
+    Queue parameters;
+    int refFlag;
+    Type retType;
+  }
+  slot TypePair {
+    Type t1, t2;
+  }
+}
+
+node SymNode {
+  slot Type {
+    int line, column;
+    Type type;
+  }
+  slot Global {
+    int line, column;
+    Type type;
+  }
+  slot External {
+    int line, column;
+    Type type;
+  }
+  slot LocalStatic {
+    int line, column;
+    Type type;
+  }
+  slot LocalAuto {
+    int line, column;
+    Type type;
+  }
+  slot LocalDynamic {
+    int line, column;
+    Type type;
+  }
+  slot Parameter {
+    int line, column;
+    Type type;
+  }
+  slot Procedure {
+    int line, column;
+    Queue parameters;
+    Type retType;
+  }
+  slot Undefined { }
+}

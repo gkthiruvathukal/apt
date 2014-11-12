@@ -1,0 +1,28 @@
+Start EndOfFile Start InitIgnore EoF
+Start alpha Ident InitAdvance
+Start numeric FileIdent InitAdvance
+Start "_" Ident InitAdvance
+Start "./" FileIdent InitAdvance
+Start "#" Comment Ignore
+Ident alpha Ident Advance
+Ident numeric Ident Advance
+Ident "_" Ident Advance
+Ident "./" FileIdent Advance
+Ident lambda Ident PushBack ident
+FileIdent alpha FileIdent Advance
+FileIdent "./" FileIdent Advance
+FileIdent numeric FileIdent Advance
+FileIdent lambda FileIdent PushBack fileIdent
+Start "{" Start InitMatch lbrace
+Start "}" Start InitMatch rbrace
+Start ";" Start InitMatch semico
+Start "[" Start InitMatch lbrack
+Start "]" Start InitMatch rbrack
+Start "*" Start InitMatch deref
+Start "," Start InitMatch comma
+Start numeric Integer InitAdvance
+Integer numeric Integer Advance
+Integer lambda Integer PushBack integer
+Start lambda Start Ignore
+Comment "\n" Start Ignore
+Comment lambda Comment Ignore

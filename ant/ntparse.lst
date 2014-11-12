@@ -1,0 +1,261 @@
+[ Symbol Table ]
+
+Goal :: Nonterminal Finite (1) 
+Items :: Nonterminal Null-deriving Finite (0) 
+File :: Nonterminal Null-deriving Finite (0) 
+ItemList :: Nonterminal Null-deriving Finite (0) 
+Item :: Nonterminal Finite (2) 
+Enum :: Nonterminal Finite (4) 
+Include :: Nonterminal Finite (2) 
+Node :: Nonterminal Finite (4) 
+Tags :: Nonterminal Null-deriving Finite (0) 
+SemiOpt :: Nonterminal Null-deriving Finite (0) 
+Elements :: Nonterminal Null-deriving Finite (0) 
+TagList :: Nonterminal Null-deriving Finite (0) 
+Tag :: Nonterminal Finite (1) 
+TagListTail :: Nonterminal Null-deriving Finite (0) 
+ElementList :: Nonterminal Null-deriving Finite (0) 
+Element :: Nonterminal Finite (3) 
+Slot :: Nonterminal Finite (4) 
+Decl :: Nonterminal Finite (3) 
+Decls :: Nonterminal Null-deriving Finite (0) 
+DeclList :: Nonterminal Null-deriving Finite (0) 
+NullOp :: Nonterminal Null-deriving Finite (0) 
+Specs :: Nonterminal Finite (1) 
+Vars :: Nonterminal Finite (1) 
+Semi :: Nonterminal Finite (1) 
+SpecList :: Nonterminal Finite (1) 
+ClassSpec :: Nonterminal Finite (1) 
+Spec :: Nonterminal Finite (1) 
+SpecListTail :: Nonterminal Null-deriving Finite (0) 
+TypeSpec :: Nonterminal Finite (1) 
+StClSpec :: Nonterminal Finite (1) 
+TypeQual :: Nonterminal Finite (1) 
+VarList :: Nonterminal Finite (1) 
+Var :: Nonterminal Finite (1) 
+VarListTail :: Nonterminal Null-deriving Finite (0) 
+Ptrs :: Nonterminal Null-deriving Finite (0) 
+Arrays :: Nonterminal Null-deriving Finite (0) 
+PtrList :: Nonterminal Null-deriving Finite (0) 
+ArrayList :: Nonterminal Null-deriving Finite (0) 
+Array :: Nonterminal Finite (2) 
+ArrayTail :: Nonterminal Finite (1) 
+EoF :: Terminal 
+enum :: Terminal 
+ident :: Terminal 
+{ :: Terminal 
+} :: Terminal 
+include :: Terminal 
+fileIdent :: Terminal 
+node :: Terminal 
+, :: Terminal 
+slot :: Terminal 
+null :: Terminal 
+struct :: Terminal 
+union :: Terminal 
+void :: Terminal 
+char :: Terminal 
+int :: Terminal 
+float :: Terminal 
+double :: Terminal 
+short :: Terminal 
+long :: Terminal 
+signed :: Terminal 
+unsigned :: Terminal 
+typedef :: Terminal 
+auto :: Terminal 
+static :: Terminal 
+extern :: Terminal 
+const :: Terminal 
+volatile :: Terminal 
+* :: Terminal 
+[ :: Terminal 
+integer :: Terminal 
+] :: Terminal 
+; :: Terminal 
+_Encode :: Action 
+_Q :: Action 
+_NQEnum :: Action 
+_NQInclude :: Action 
+_NQNode :: Action 
+_Enum :: Action 
+_Zap :: Action 
+_Node :: Action 
+_NQToken :: Action 
+_NQSlot :: Action 
+_Slot :: Action 
+_FakeToken :: Action 
+_NQVar :: Action 
+
+[ First Sets ]
+
+Goal :: EoF enum include node 
+Items :: enum include node 
+File :: enum include node 
+ItemList :: enum include node 
+Item :: enum include node 
+Enum :: enum 
+Include :: include 
+Node :: node 
+Tags :: ident 
+SemiOpt :: ; 
+Elements :: enum ident slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+TagList :: ident 
+Tag :: ident 
+TagListTail :: , 
+ElementList :: enum ident slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Element :: enum ident slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Slot :: slot 
+Decl :: enum ident null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Decls :: enum ident null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+DeclList :: enum ident null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+NullOp :: null 
+Specs :: enum ident struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Vars :: ident * 
+Semi :: ; 
+SpecList :: enum ident struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+ClassSpec :: enum ident struct union 
+Spec :: void char int float double short long signed unsigned typedef auto static extern const volatile 
+SpecListTail :: void char int float double short long signed unsigned typedef auto static extern const volatile 
+TypeSpec :: void char int float double short long signed unsigned 
+StClSpec :: typedef auto static extern 
+TypeQual :: const volatile 
+VarList :: ident * 
+Var :: ident * 
+VarListTail :: , 
+Ptrs :: * 
+Arrays :: [ 
+PtrList :: * 
+ArrayList :: [ 
+Array :: [ 
+ArrayTail :: integer ] 
+
+[ Last Sets ]
+
+Goal :: EoF 
+Items :: } fileIdent ; 
+File :: } fileIdent ; 
+ItemList :: } fileIdent ; 
+Item :: } fileIdent ; 
+Enum :: } ; 
+Include :: fileIdent ; 
+Node :: } ; 
+Tags :: ident 
+SemiOpt :: ; 
+Elements :: } ; 
+TagList :: ident 
+Tag :: ident 
+TagListTail :: ident 
+ElementList :: } ; 
+Element :: } ; 
+Slot :: } ; 
+Decl :: ; 
+Decls :: ; 
+DeclList :: ; 
+NullOp :: null 
+Specs :: ident void char int float double short long signed unsigned typedef auto static extern const volatile 
+Vars :: ident ] 
+Semi :: ; 
+SpecList :: ident void char int float double short long signed unsigned typedef auto static extern const volatile 
+ClassSpec :: ident 
+Spec :: void char int float double short long signed unsigned typedef auto static extern const volatile 
+SpecListTail :: void char int float double short long signed unsigned typedef auto static extern const volatile 
+TypeSpec :: void char int float double short long signed unsigned 
+StClSpec :: typedef auto static extern 
+TypeQual :: const volatile 
+VarList :: ident ] 
+Var :: ident ] 
+VarListTail :: ident ] 
+Ptrs :: * 
+Arrays :: ] 
+PtrList :: * 
+ArrayList :: ] 
+Array :: ] 
+ArrayTail :: ] 
+
+[ Next To Sets ]
+
+Goal :: 
+Items :: 
+File :: EoF 
+ItemList :: 
+Item :: 
+Enum :: 
+Include :: 
+Node :: 
+Tags :: } 
+SemiOpt :: 
+Elements :: } 
+TagList :: 
+Tag :: 
+TagListTail :: 
+ElementList :: 
+Element :: 
+Slot :: 
+Decl :: 
+Decls :: } 
+DeclList :: 
+NullOp :: 
+Specs :: 
+Vars :: 
+Semi :: 
+SpecList :: 
+ClassSpec :: 
+Spec :: 
+SpecListTail :: 
+TypeSpec :: 
+StClSpec :: 
+TypeQual :: 
+VarList :: 
+Var :: 
+VarListTail :: 
+Ptrs :: ident 
+Arrays :: 
+PtrList :: 
+ArrayList :: 
+Array :: 
+ArrayTail :: 
+
+[ Follow Sets ]
+
+Goal :: 
+Items :: EoF 
+File :: EoF 
+ItemList :: EoF 
+Item :: EoF enum include node 
+Enum :: EoF enum include node 
+Include :: EoF enum include node 
+Node :: EoF enum include node 
+Tags :: } 
+SemiOpt :: EoF enum ident } include node slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Elements :: } 
+TagList :: } 
+Tag :: } , 
+TagListTail :: } 
+ElementList :: } 
+Element :: enum ident } slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Slot :: enum ident } slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Decl :: enum ident } slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Decls :: } 
+DeclList :: } 
+NullOp :: enum ident struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+Specs :: ident * 
+Vars :: ; 
+Semi :: EoF enum ident } include node slot null struct union void char int float double short long signed unsigned typedef auto static extern const volatile 
+SpecList :: ident * 
+ClassSpec :: ident * 
+Spec :: ident void char int float double short long signed unsigned typedef auto static extern const volatile * 
+SpecListTail :: ident * 
+TypeSpec :: ident void char int float double short long signed unsigned typedef auto static extern const volatile * 
+StClSpec :: ident void char int float double short long signed unsigned typedef auto static extern const volatile * 
+TypeQual :: ident void char int float double short long signed unsigned typedef auto static extern const volatile * 
+VarList :: ; 
+Var :: , ; 
+VarListTail :: ; 
+Ptrs :: ident 
+Arrays :: , ; 
+PtrList :: ident 
+ArrayList :: , ; 
+Array :: , [ ; 
+ArrayTail :: , [ ; 
+

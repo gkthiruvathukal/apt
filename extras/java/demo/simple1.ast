@@ -1,0 +1,31 @@
+Start EndOfFile Start InitIgnore EoF
+Start alpha Ident InitAdvance
+Start "_" Ident InitAdvance
+Start numeric Integer InitAdvance
+Start "#" Comment Ignore
+Integer numeric Integer Advance
+Integer "." Float1 Advance
+Integer lambda Integer PushBack Integer
+Float1 numeric Float2 Advance
+Float1 lambda Float1 PushBack Float
+Float2 numeric Float2 Advance 
+Float2 lambda Float2 PushBack Float
+Ident alpha Ident Advance
+Ident numeric Ident Advance
+Ident "_" Ident Advance
+Ident lambda Ident PushBack ident
+Start "{" Start InitMatch lbrace
+Start "}" Start InitMatch rbrace
+Start ";" Start InitMatch semico
+Start "[" Start InitMatch lbrack
+Start "]" Start InitMatch rbrack
+Start "+" Start InitMatch add
+Start "-" Start InitMatch sub
+Start "*" Start InitMatch mul
+Start "/" Start InitMatch div
+Start "%" Start InitMatch mod
+Start "," Start InitMatch comma
+Start whitespace Start Ignore
+Start lambda Start InitMatch error
+Comment "\n" Start Ignore
+Comment lambda Comment Ignore

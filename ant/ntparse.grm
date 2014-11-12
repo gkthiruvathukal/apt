@@ -1,0 +1,122 @@
+%PRODUCTIONS
+File -> Items _Encode
+
+Items -> _Q _Q _Q ItemList
+ItemList -> Item ItemList
+ItemList ->
+
+Item -> Enum _NQEnum
+Item -> Include _NQInclude
+Item -> Node _NQNode
+
+Enum -> enum ident { Tags } _Enum SemiOpt
+Include -> include _Zap fileIdent SemiOpt
+Node -> node ident { Elements } _Node SemiOpt
+
+Tags -> _Q TagList
+TagList -> Tag TagListTail
+TagList ->
+TagListTail -> , _Zap Tag TagListTail
+TagListTail ->
+
+Tag -> ident _NQToken
+
+Elements -> _Q _Q ElementList
+ElementList -> Element ElementList
+ElementList ->
+
+Element -> Slot _NQSlot
+Element -> Decl
+
+Slot -> slot ident { Decls } _Slot SemiOpt
+
+Decls -> _Q DeclList
+DeclList -> Decl DeclList
+DeclList ->
+
+Decl -> NullOp Specs Vars _Zap _Zap Semi
+
+NullOp -> null
+NullOp -> _FakeToken
+
+Specs -> _Q SpecList 
+SpecList -> ClassSpec
+SpecList -> Spec SpecListTail
+SpecListTail -> Spec SpecListTail
+SpecListTail ->
+
+ClassSpec -> enum _NQToken ident _NQToken
+ClassSpec -> ident _NQToken
+ClassSpec -> struct _NQToken ident _NQToken
+ClassSpec -> union _NQToken ident _NQToken
+
+Spec -> TypeSpec _NQToken
+Spec -> StClSpec _NQToken
+Spec -> TypeQual _NQToken
+
+TypeSpec -> void
+TypeSpec -> char
+TypeSpec -> int
+TypeSpec -> float
+TypeSpec -> double
+TypeSpec -> short
+TypeSpec -> long
+TypeSpec -> signed
+TypeSpec -> unsigned
+
+StClSpec -> typedef
+StClSpec -> auto
+StClSpec -> static
+StClSpec -> extern
+
+TypeQual -> const
+TypeQual -> volatile
+
+Vars -> VarList
+VarList -> Var VarListTail
+VarListTail -> , _Zap Var VarListTail
+VarListTail ->
+Var -> Ptrs ident Arrays _NQVar
+
+Ptrs -> _Q PtrList
+PtrList -> * _NQToken PtrList
+PtrList ->
+
+Arrays -> _Q ArrayList
+ArrayList -> Array ArrayList
+ArrayList ->
+
+Array -> [ _NQToken ArrayTail
+ArrayTail -> integer _NQToken ] _NQToken
+ArrayTail -> ] _NQToken 
+
+Semi -> ; _Zap
+SemiOpt -> Semi
+SemiOpt ->
+
+%ALIASES
+{ lbrace
+} rbrace
+[ lbrack
+] rbrack
+* deref
+; semico
+, comma
+
+%PHASES
+XL
+
+%ACTIONS XL
+_Encode doEncode(3:Queue,2:Queue,1:Queue):(Void,3)
+_Enum doEnum(4:Token,2:Queue):(Enum,5)
+_FakeToken doFakeToken():(Token,0)
+_Node doNode(5:Token,3:Queue,2:Queue):(Node,6)
+_NQEnum doNQEnum(4:Queue,1:Enum):(Void,1)
+_NQInclude doNQInclude(3:Queue,1:Token):(Void,1)
+_NQNode doNQNode(2:Queue,1:Node):(Void,1)
+_NQSlot doNQSlot(3:Queue,1:Slot):(Void,1)
+_NQToken doNQToken(2:Queue,1:Token):(Void,1)
+_NQVar doNQVar(6:Queue,5:Token,4:Queue,3:Queue,2:Token,1:Queue):(Void,3)
+_Q doQ():(Queue,0)
+_Slot doSlot(4:Token,2:Queue):(Slot,5)
+_Zap doNothing():(Void,1)
