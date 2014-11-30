@@ -1,8 +1,6 @@
 language: c
 before_script:
-  - which aclocal
-  - aclocal --version
+  - automake
   - ./configure --prefix=/usr/local
 script:
   - make
-  - sudo make install
