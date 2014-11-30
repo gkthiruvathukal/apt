@@ -1,6 +1,6 @@
 language: c
 before_script:
-  - configure --prefix=/usr/local
+  - ./configure --prefix=/usr/local
 script:
   - make
   - sudo make install
