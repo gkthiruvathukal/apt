@@ -1,0 +1,6 @@
+language: c
+before_script:
+  - configure
+script:
+  - make
+  - sudo make install
