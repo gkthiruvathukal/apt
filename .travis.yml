@@ -1,5 +1,7 @@
 language: c
 before_script:
+  - sudo apt-get update -qq
+  - sudo apt-get install automake -y
   - ./configure --prefix=/usr/local
 script:
   - make
